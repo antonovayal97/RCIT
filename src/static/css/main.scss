@@ -1,0 +1,77 @@
+:root
+{
+  --color-blue: linear-gradient(83.49deg, #175DF8 10.09%, #004EFB 98.26%);
+  --color-blue2: #024FFA;
+  --color-blue-light: #F0F5FB;
+  --color-blue-light2: #CADCF2;
+  --color-blue-dark: #2E3449;
+  --color-green: linear-gradient(62.92deg, #37C239 0%, #31DC33 0.01%, #2DE72F 100%);
+  --color-grey-light: #B8B4B4;
+  --color-white: #ffffff;
+  --color-grey: #636363;
+}
+
+// font-d-1
+// font-t-1
+// font-m-1
+.icon
+{
+  width: 24px;
+  height: 24px;
+}
+@import "./font-mixin.scss";
+@import "./media-mixin.scss";
+@import "./reset.scss";
+.index-wrap
+{
+  box-sizing:content-box;
+  max-width: 1300px;
+  padding: 0 70px;
+  margin: 0 auto;
+  @include l
+  {
+    // width: 100%;
+    padding: 0 24px;
+    margin: 0 auto
+  }
+  @include xm
+  {
+    padding: 0 14px;
+  }
+}
+@import "./block/header/header.scss";
+@import "./block/footer/footer.scss";
+@font-face {
+  font-family: "Golos";
+  src: url("../fonts/Golos-Text_Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../fonts/Golos-Text_Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../fonts/Golos-Text_DemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../fonts/Golos-Text_Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../fonts/Golos-Text_Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+*
+{
+  font-family: "Golos", sans-serif;
+}

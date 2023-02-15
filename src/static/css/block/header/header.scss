@@ -1,0 +1,183 @@
+header
+{
+  width: 100vw;
+}
+.header__wrap
+{
+  display: flex;
+  justify-content: space-between;
+}
+.header__options
+{
+  display: flex;
+  max-width: 985px;
+  width: 100%;
+  gap: 20px;
+}
+.header__top
+{
+  width: 100%;
+  padding: 30px 0;
+  background-color: var(--color-blue-light)
+}
+.header__logo
+{
+
+}
+.header__logo-image
+{
+  height: 48px;
+  width: auto;
+}
+.header__search
+{
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 48px;
+  flex: 1;
+}
+.header__search-input
+{
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 64px;
+  border: 1px solid var(--color-blue-light2);
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+  border-radius: 100px;
+  background-color: transparent;
+  @include font-d-6;
+  &:focus
+  {
+    outline: none;
+    border: 1px solid var(--color-blue-light2);
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5)
+  }
+  &:hover
+  {
+    border: 1px solid var(--color-blue-light2);
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5)
+  }
+}
+.header__search-btn
+{
+  position: absolute;
+  right: 20px;
+  height: 24px;
+  width: 24px;
+}
+.header__search-btn-icon
+{
+
+}
+.header__a11y
+{
+  height: 48px;
+  width: 280;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 100px;
+  &:hover
+  {
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  }
+}
+.header__a11y-text
+{
+  span
+  {
+    @include font-d-5
+    {
+      color: var(--color-blue2)
+    }
+  }
+}
+.header__a11y-icon
+{
+  width: 24px;
+  height: 24px;
+  .icon
+  {
+    width: 100%;
+    height: 100%;
+  }
+}
+.header__btn-user
+{
+  cursor: pointer;
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  &:hover
+  {
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  }
+}
+.header__dropdown-select
+{
+  width: 197px;
+  height: 48px;
+  background-color: gray;
+}
+.header__mid
+{
+  width: 100%;
+  background-color: var(--color-blue2)
+}
+.header__mid-wrap
+{
+  position: relative;
+  padding: 20px 0;
+}
+.header__lines
+{
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 95px;
+  background-image: url("../img/Union.svg");
+  background-size:100% 100%;
+  background-size:cover;
+}
+.header__menu-links
+{
+  display: flex;
+  justify-content: center;
+  ul
+  {
+    display: flex;
+    gap: 60px;
+  }
+}
+.header__links-text
+{
+  @include font-d-5
+  {
+    text-transform: uppercase;
+    color: var(--color-white)
+  }
+}
+.header__bottom
+{
+  background-color: var(--color-white)
+}
+.header__notifications
+{
+  padding-top: 10px;
+  padding-bottom: 13px;
+  span
+  {
+    @include font-d-7
+    {
+      color: var(--color-grey)
+    }
+  }
+}

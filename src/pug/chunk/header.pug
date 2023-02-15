@@ -1,0 +1,32 @@
+header
+  .header__top
+    .index-wrap
+      .header__wrap
+        a(href="#").header__logo
+          +icon('logo','header__logo-image')
+        .header__options
+          .header__search
+            input(type="text" placeholder="Поиск").header__search-input
+            .header__search-btn
+              +icon('search-normal','header__search-btn-icon')
+          a(href="#").header__a11y
+            .header__a11y-text
+              span Версия для слабовидящих
+            .header__a11y-icon
+              +icon('akar-icons_glasses')
+          .header__btn-user
+            +icon('profile')
+          .header__dropdown-select
+  .header__mid
+    .index-wrap.header__mid-wrap
+      .header__lines
+      .header__menu-links
+        ul
+          each link in [{name: 'О нас',url: '#'},{name: 'Услуги',url: '#'},{name: 'Сервисы',url: '#'},{name: 'Пресс-центр',url: '#'},{name: 'Техническая поддержка',url: '#'},{name: 'Телефонный справочник',url: '#'}]
+            li
+              a(href=link.url)
+                span.header__links-text=link.name
+  .header__bottom
+    .index-wrap
+      .header__notifications
+        span Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной без...

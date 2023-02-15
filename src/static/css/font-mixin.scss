@@ -1,0 +1,135 @@
+@mixin font-d-1
+{
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 60px;
+  @content;
+}
+@mixin font-d-2
+{
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  @content;
+}
+@mixin font-d-3
+{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  @content;
+}
+@mixin font-d-4
+{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  @content;
+}
+@mixin font-d-5
+{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  @content;
+}
+@mixin font-d-6
+{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  @content;
+}
+@mixin font-d-7
+{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  @content;
+}
+
+@mixin font-t-1
+{
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  @content;
+}
+@mixin font-t-2
+{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  @content;
+}
+@mixin font-t-3
+{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  @content;
+}
+@mixin font-t-4
+{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  @content;
+}
+@mixin font-t-5
+{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  @content;
+}
+@mixin font-t-6
+{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  @content;
+}
+
+@mixin font-m-1
+{
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  @content;
+}
+@mixin font-m-2
+{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  @content;
+}
+@mixin font-m-3
+{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  @content;
+}
+@mixin font-m-4
+{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  @content;
+}
+@mixin font-m-5
+{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  @content;
+}
+@mixin font-m-6
+{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  @content;
+}

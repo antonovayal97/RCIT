@@ -1,0 +1,56 @@
+footer
+  .index-wrap
+    .footer__top
+      a(href="#").footer__logo
+        +icon('logoshort')
+      .footer__socials
+        a(href="#").footer__social-icon
+          +icon('whatsapp')
+        a(href="#").footer__social-icon
+          +icon('vk')
+        a(href="#").footer__social-icon
+          +icon('telegram')
+    .footer__mid
+      .footer__section.footer__section_A
+        .footer__section-name
+          span Разделы
+        .footer__section-items
+          ul
+            each fi in [{name: 'О нас',url: '#'},{name: 'Услуги',url: '#'},{name: 'Справочник',url: '#'},{name: 'Загрузки',url: '#'},{name: 'Техническая поддержка',url: '#'},{name: 'Телефонный справочник',url: '#'}]
+              li
+                a(href=fi.url)
+                  span=fi.name
+      .footer__section.footer__section_B
+        .footer__section-name
+          span Контакты
+        .footer__section-items
+          ul
+            li
+              a(href="tel:+74112398000")
+                span +7 (4112) 398-000
+            li
+              a(href="tel:+74112398233")
+                span +7 (4112) 398-233
+            li
+              a(href="mailto:secretar@yaensb.ru")
+                span secretar@yaensb.ru
+      .footer__section.footer__section3_C
+        .footer__section-name
+          span Головной офис
+        .footer__section-items
+          .footer__section-text
+            p 677980, г. Якутск, ул. Октябрьская, <br>дом 22, офис 313
+      .footer__section.footer__section4_D
+        .footer__section-name
+          span Обратная связь
+        .footer__section-items
+          .footer__section-text
+            p Нашли ошибку? Сообщите нам! Выделите и нажмите Ctrl+Enter
+    .footer__bottom
+      .footer__copyright
+        span © 2022 ГБУ РС(Я) “РЦИТ”
+      .footer__dev
+        .footer__dev-text
+          span Разработан в
+        a(href="https://platforma.bz/").footer__dev-icon
+          +icon('logo-platform')

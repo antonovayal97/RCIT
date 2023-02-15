@@ -1,0 +1,157 @@
+footer
+{
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #0A1A3A;
+}
+.footer__top
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+.footer__logo
+{
+  .icon
+  {
+    width: 130px;
+    height: 50px;
+  }
+}
+.footer__socials
+{
+  display: flex;
+  gap: 27px;
+  a
+  {
+    display: block;
+  }
+}
+.footer__mid
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  border-top: 1px solid var(--color-grey-light);
+  border-bottom: 1px solid var(--color-grey-light);
+  @include l
+  {
+    width: 100%;
+    display: grid;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    grid-row-gap: 20px;
+    grid-template-areas:
+    "A B C"
+    "A B D";
+    // transition: all 2s ease;
+  }
+  @include xm
+  {
+    padding-top: 20px;
+    padding-bottom: 26px;
+    grid-row-gap: 20px;
+    grid-template-areas:
+    "A B"
+    "A C"
+    "D C"
+  }
+}
+.footer__section
+{
+  width: 221px;
+  @include xm
+  {
+    width: 158px;
+  }
+}
+.footer__section_A
+{
+  grid-area: A
+}
+.footer__section_B
+{
+  grid-area: B
+}
+.footer__section_C
+{
+  grid-area: C
+}
+.footer__section_D
+{
+  grid-area: D
+}
+.footer__section-name
+{
+  margin-bottom: 22px;
+  @include font-d-5;
+  @include l
+  {
+    @include font-t-4;
+  }
+  @include xm
+  {
+    margin-bottom: 15px;
+    @include font-m-4;
+  }
+  color: var(--color-white);
+}
+.footer__section-items
+{
+  ul
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include xm
+    {
+      gap: 15px;
+    }
+  }
+  @include font-d-7;
+  @include l
+  {
+    @include font-t-5;
+  }
+  @include xm
+  {
+    @include font-m-6;
+  }
+  color: var(--color-grey-light)
+}
+.footer__bottom
+{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  @include font-d-7
+  {
+    color: var(--color-grey-light)
+  }
+  @include l
+  {
+    @include font-t-5;
+  }
+}
+.footer__copyright
+{
+
+}
+.footer__dev
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer__dev-icon
+{
+  width: 16px;
+  height: 16px;
+  .icon
+  {
+    width: 16px;
+    height: 16px;
+  }
+}
