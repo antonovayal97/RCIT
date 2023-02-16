@@ -134,6 +134,10 @@ footer
   {
     @include font-t-5;
   }
+  @include xm
+  {
+    @include font-m-6;
+  }
 }
 .footer__copyright
 {

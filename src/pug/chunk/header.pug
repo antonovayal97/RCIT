@@ -5,28 +5,68 @@ header
         a(href="#").header__logo
           +icon('logo','header__logo-image')
         .header__options
-          .header__search
+          .header__search.hidden-l
             input(type="text" placeholder="Поиск").header__search-input
             .header__search-btn
               +icon('search-normal','header__search-btn-icon')
-          a(href="#").header__a11y
+          a(href="#").header__a11y.hidden-l
             .header__a11y-text
               span Версия для слабовидящих
             .header__a11y-icon
               +icon('akar-icons_glasses')
           .header__btn-user
             +icon('profile')
-          .header__dropdown-select
+          .header__dd.hidden-l
+            include ./header-dropdown/header-dropdown.pug
+          .header__menu-btn.visible-l
+            +icon('menu-header')
   .header__mid
     .index-wrap.header__mid-wrap
-      .header__lines
-      .header__menu-links
+      .header__lines.hidden-l
+      nav.header__menu-links.hidden-l
         ul
           each link in [{name: 'О нас',url: '#'},{name: 'Услуги',url: '#'},{name: 'Сервисы',url: '#'},{name: 'Пресс-центр',url: '#'},{name: 'Техническая поддержка',url: '#'},{name: 'Телефонный справочник',url: '#'}]
             li
               a(href=link.url)
                 span.header__links-text=link.name
+      .header__search.visible-l-flex
+        input(type="text" placeholder="Поиск").header__search-input
+        .header__search-btn
+          +icon('search-normal','header__search-btn-icon')
   .header__bottom
     .index-wrap
       .header__notifications
         span Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной без...
+  .header__burger-inside
+    .header__burger-inside-head.index-wrap
+      .header__burger-inside-head-left
+        include ./header-dropdown/header-dropdown.pug
+        a(href="#").header__a11y.hidden-xm
+          .header__a11y-text
+            span Версия для слабовидящих
+          .header__a11y-icon
+            +icon('akar-icons_glasses')
+      .header__burger-inside-head-right
+        .header__btn-user
+          +icon('profile')
+        .header__burger-inside-close
+          +icon('header-burger-x')
+    .header__burger-inside-main.index-wrap
+      nav.header__burger-inside-main-menu
+        ul.header__burger-inside-main-menu-ul
+          each tt in [{name: 'О нас',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекты',url: '#'}]},{name: 'Услуги',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Справочник',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
+            li
+              if tt.links.length >= 0
+                .header__burger-inside-main-menu-first
+                  .header__burger-inside-main-menu-first-name
+                    +icon('arrow-down')
+                    span=tt.name
+                  .header__burger-inside-main-menu-second
+                    ul
+                      each link in tt.links
+                        li
+                          a(href="link.url")
+                            span=link.name
+              else
+                li
+                  a(href="#")

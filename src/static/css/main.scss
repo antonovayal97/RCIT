@@ -26,21 +26,25 @@
 {
   box-sizing:content-box;
   max-width: 1300px;
-  padding: 0 70px;
+  padding-left: 70px;
+  padding-right: 70px;
   margin: 0 auto;
   @include l
   {
     // width: 100%;
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
     margin: 0 auto
   }
   @include xm
   {
-    padding: 0 14px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
 @import "./block/header/header.scss";
 @import "./block/footer/footer.scss";
+@import "./block/header-dropdown/header-dropdown.scss";
 @font-face {
   font-family: "Golos";
   src: url("../fonts/Golos-Text_Regular.ttf");
@@ -74,4 +78,58 @@
 *
 {
   font-family: "Golos", sans-serif;
+}
+// Аккордион
+.accord-outside
+{
+  cursor: pointer;
+}
+.accord-inside
+{
+  height: 0;
+  overflow: hidden;
+}
+.accord-inside-active
+{
+  height: 100%
+}
+.accord-arrow
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accord-arrow-active
+{
+  transform: rotateZ(180deg);
+}
+.hidden-l
+{
+  @include l
+  {
+    display: none;
+  }
+}
+.hidden-xm
+{
+  @include xm
+  {
+    display: none;
+  }
+}
+.visible-l
+{
+  display: none;
+  @include l
+  {
+    display: block;
+  }
+}
+.visible-l-flex
+{
+  display: none;
+  @include l
+  {
+    display: flex;
+  }
 }

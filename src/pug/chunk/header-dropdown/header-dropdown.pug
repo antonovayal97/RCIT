@@ -1,0 +1,14 @@
+.header__dropdown.accord
+  .header__dropdown-outside.accord-outside
+    .header__dropdown-circle
+      span Г
+    .header__dropdown-name
+      span Для граждан
+      +icon('header-dropdown-arrow', 'accord-arrow')
+  .header__dropdown-inside.accord-inside
+    .header__dropdown-wrap
+      ul
+        each h in [{name: "Для граждан",url: "#"},{name: "Для бизнеса",url: "#"},{name: "Для ИОГВ",url: "#"}]
+          li
+            a(href=h.url)
+              span=h.name
