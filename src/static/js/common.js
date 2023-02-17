@@ -51,6 +51,46 @@ menuFirst.forEach(item => {
   })
 });
 
+let menuOpenBtn = document.querySelector('.header__menu-btn')
+let menuWindow = document.querySelector('.header__burger-inside')
+let menuCloseBtn = document.querySelector('.header__burger-inside-close')
+menuOpenBtn.addEventListener('click',() => {
+  menuWindow.classList.toggle('header__burger-active')
+})
+menuCloseBtn.addEventListener('click',() => {
+  menuWindow.classList.remove('header__burger-active')
+})
+
+
+
+// let swiperOptions = {
+//   loop: true,
+//   freeMode: true,
+//   autoplay: {
+//     delay: 1,
+//     disableOnInteraction: false
+//   },
+//   slidesPerView: 'auto',
+//   speed: 5000,
+//   grabCursor: true,
+//   mousewheelControl: true,
+//   keyboardControl: true,
+// };
+//
+// let swiper = new Swiper(".header__notifications-swiper", swiperOptions);
+
+
+let swiper = new Swiper(".main-banner-swiper", {
+  loop: true,
+  pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
 
 // МОДАЛКИ НАЧАЛО
 const myModal = new HystModal({

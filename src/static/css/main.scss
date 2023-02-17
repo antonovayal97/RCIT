@@ -22,6 +22,10 @@
 @import "./font-mixin.scss";
 @import "./media-mixin.scss";
 @import "./reset.scss";
+body
+{
+  background-color: var(--color-blue-light);
+}
 .index-wrap
 {
   box-sizing:content-box;
@@ -45,6 +49,7 @@
 @import "./block/header/header.scss";
 @import "./block/footer/footer.scss";
 @import "./block/header-dropdown/header-dropdown.scss";
+@import "./block/main-banner/main-banner.scss";
 @font-face {
   font-family: "Golos";
   src: url("../fonts/Golos-Text_Regular.ttf");
@@ -129,6 +134,22 @@
 {
   display: none;
   @include l
+  {
+    display: flex;
+  }
+}
+.visible-xm
+{
+  display: none;
+  @include xm
+  {
+    display: block;
+  }
+}
+.visible-xm-flex
+{
+  display: none;
+  @include xm
   {
     display: flex;
   }

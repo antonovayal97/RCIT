@@ -1,3 +1,5 @@
+- var linksArr = [{name: 'О нас',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекты',url: '#'}]},{name: 'Услуги',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Справочник',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
+
 header
   .header__top
     .index-wrap
@@ -25,10 +27,24 @@ header
       .header__lines.hidden-l
       nav.header__menu-links.hidden-l
         ul
-          each link in [{name: 'О нас',url: '#'},{name: 'Услуги',url: '#'},{name: 'Сервисы',url: '#'},{name: 'Пресс-центр',url: '#'},{name: 'Техническая поддержка',url: '#'},{name: 'Телефонный справочник',url: '#'}]
-            li
-              a(href=link.url)
-                span.header__links-text=link.name
+          each link in linksArr
+            if link.links.length > 0
+              li
+                .header__menu-links-link
+                  .header__menu-links-link-first
+                    a(href=link.links[0].url).header__links-text=link.name
+                    .header__menu-links-link-second
+                      .header__menu-links-link-second-wrap
+                        ul
+                          each ll in link.links
+                            li
+                              a(href="ll.url")
+                                .header__menu-links-link-second-icon
+                                .header__menu-links-link-second-name=ll.name
+            else
+              li
+                a(href="#").header__menu-links-link
+                  span.header__links-text=link.name
       .header__search.visible-l-flex
         input(type="text" placeholder="Поиск").header__search-input
         .header__search-btn
@@ -36,6 +52,10 @@ header
   .header__bottom
     .index-wrap
       .header__notifications
+        //
+          .swiper.header__notifications-swiper
+            .swiper-wrapper
+              .swiper-slide
         span Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной без...
   .header__burger-inside
     .header__burger-inside-head.index-wrap
@@ -52,11 +72,12 @@ header
         .header__burger-inside-close
           +icon('header-burger-x')
     .header__burger-inside-main.index-wrap
+      .header__burger-inside-main-logo.visible-xm
       nav.header__burger-inside-main-menu
         ul.header__burger-inside-main-menu-ul
-          each tt in [{name: 'О нас',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекты',url: '#'}]},{name: 'Услуги',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Справочник',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
-            li
-              if tt.links.length >= 0
+          each tt in linksArr
+            if tt.links.length > 0
+              li
                 .header__burger-inside-main-menu-first
                   .header__burger-inside-main-menu-first-name
                     +icon('arrow-down')
@@ -67,6 +88,15 @@ header
                         li
                           a(href="link.url")
                             span=link.name
-              else
-                li
+            else
+              li
+                .header__burger-inside-main-menu-first-name
                   a(href="#")
+                    span=tt.name
+    .header__burger-inside-bot.index-wrap.visible-xm
+      .header__burger-inside-bot-wrap
+        a(href="#").header__a11y.visible-xm-flex
+          .header__a11y-text
+            span Версия для слабовидящих
+          .header__a11y-icon
+            +icon('akar-icons_glasses')
