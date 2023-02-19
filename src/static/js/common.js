@@ -61,26 +61,7 @@ menuCloseBtn.addEventListener('click',() => {
   menuWindow.classList.remove('header__burger-active')
 })
 
-
-
-// let swiperOptions = {
-//   loop: true,
-//   freeMode: true,
-//   autoplay: {
-//     delay: 1,
-//     disableOnInteraction: false
-//   },
-//   slidesPerView: 'auto',
-//   speed: 5000,
-//   grabCursor: true,
-//   mousewheelControl: true,
-//   keyboardControl: true,
-// };
-//
-// let swiper = new Swiper(".header__notifications-swiper", swiperOptions);
-
-
-let swiper = new Swiper(".main-banner-swiper", {
+let mainBanner = new Swiper(".main-banner-swiper", {
   loop: true,
   pagination: {
         el: ".swiper-pagination",
@@ -91,7 +72,24 @@ let swiper = new Swiper(".main-banner-swiper", {
         prevEl: ".swiper-button-prev",
       },
     });
-
+let homePartners = new Swiper(".home-parnters", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: true,
+  speed: 10000,
+  autoplay:{
+    delay: 0
+  }
+    });
+let homeUslugi = new Swiper(".home-uslugi", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: ".home-uslugi__slide-btn-next",
+    prevEl: ".home-uslugi__slide-btn-prev",
+  },
+    });
 // МОДАЛКИ НАЧАЛО
 const myModal = new HystModal({
     linkAttributeName: "data-hystmodal",

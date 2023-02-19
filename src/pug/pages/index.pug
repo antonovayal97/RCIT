@@ -1,6 +1,13 @@
 extends ../layout/app
+include ../chunk/home-cards/home-cards
 block page
   include ../chunk/header
   main
     include ../chunk/main-banner/main-banner
+    +homeCard()
+    include ../chunk/home-uslugi/home-uslugi
+    +homeCard("obyavl")
+    include ../chunk/home-news/home-news
+    include ../chunk/home-faq/home-faq
+    include ../chunk/home-partners/home-partners
   include ../chunk/footer

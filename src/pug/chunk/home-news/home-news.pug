@@ -1,0 +1,14 @@
+include ../components/news-card
+section.section_white-p
+  .index-wrap
+    .section__head
+      h2 Новости
+    .section__cards.section__cards_xl
+      .home-news
+        +newsCard()
+        +newsCard()
+        +newsCard()
+      .dotted.section__dotted-1
+      .dotted.section__dotted-2
+    .section__btn
+      +button("Все новости")

@@ -1,7 +1,6 @@
 .main-banner-swiper
 {
   margin-top: 50px;
-  margin-bottom: 60px;
   .swiper-pagination
   {
     bottom: 0;
@@ -125,6 +124,28 @@
   {
     width: 40px;
     height: 40px;
+    use
+    {
+      fill: none;
+       stroke:var(--color-blue2);
+       stroke-width:1.5px;
+       stroke-miterlimit:10;
+       stroke-linecap:round;
+       stroke-linejoin:round;
+       transition: all .2s ease;
+    }
+    &:hover,&:focus
+    {
+      use
+      {
+        fill: var(--color-blue2);
+         stroke:var(--color-white);
+         stroke-width:1.5px;
+         stroke-miterlimit:10;
+         stroke-linecap:round;
+         stroke-linejoin:round;
+      }
+    }
   }
   @include xm
   {

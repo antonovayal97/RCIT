@@ -1,0 +1,41 @@
+mixin homeCard(variant="orcit")
+  section
+    .index-wrap
+      .section__head
+        if variant == "orcit"
+          h2 О РЦИТ
+        if variant == "obyavl"
+          h2 Объявления
+      .section__cards
+        .home-card-wrap
+          .home-card__name
+            if variant == "orcit"
+              span Наша компания дарит радость и комфорт
+            if variant == "obyavl"
+              span Технические работы на узлах ИТКС "СахаИнформ-Сеть"
+          .home-card__text
+            if variant == "orcit"
+              p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00запланировано проведение регламентных работ программно-аппаратногокомплекса обеспечения информационной безопасности на узлах «СахаИнформ-Сеть».Во время проведения регламентных работ будут кратковременные перебои телефонной связи.Работы будут выполнены по следующим адресам:
+            if variant == "obyavl"
+              p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00запланировано проведение регламентных работ программно-аппаратногокомплекса обеспечения информационной безопасности на узлах «СахаИнформ-Сеть».Во время проведения регламентных работ будут кратковременные перебои телефонной связи.Работы будут выполнены по следующим адресам:
+        if variant == "orcit"
+          .dotted.section__dotted-1
+          .dotted.section__dotted-2
+        if variant == "obyavl"
+          .dotted.section__dotted-1
+      if variant == "obyavl"
+        .home-mini-cards
+          each jj in [1,2,3,4]
+            a(href="#").home-mini-card
+              .home-mini-card__text
+                span Технические работы на узлах ИТКС "СахаИнформ-Сеть"
+              .home-mini-card__bottom
+                .home-mini-card__icon
+                  +icon('calendar')
+                .home-mini-card__date
+                  span 30.11.2022
+      .section__btn
+        if variant == "orcit"
+          +button("Подробнее")
+        if variant == "obyavl"
+          +button("Все объявления")

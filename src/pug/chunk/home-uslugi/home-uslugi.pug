@@ -1,0 +1,17 @@
+include ../components/usluga-card
+section
+  .index-wrap
+    .section__head
+      h2 Популярные услуги
+    .section__cards.section__cards_xl
+      .swiper.home-uslugi
+        .swiper-wrapper.home-uslugi__wrapper
+          each j in [{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет'},]
+            .swiper-slide.home-uslugi__slide
+              +uslugaCard(j.name,j.text)
+      .swiper-button-next.home-uslugi__slide-btn.home-uslugi__slide-btn-next
+        +icon('uslugi-right-arrow')
+      .swiper-button-prev.home-uslugi__slide-btn.home-uslugi__slide-btn-prev
+        +icon('uslugi-left-arrow')
+    .section__btn
+      +button("Все услуги")

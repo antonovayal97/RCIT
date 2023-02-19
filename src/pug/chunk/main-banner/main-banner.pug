@@ -1,21 +1,22 @@
-.index-wrap
-  .swiper.main-banner-swiper
-    .swiper-wrapper
-      each ban in [1,2,3,4,5,6]
-        .swiper-slide
-          .main-banner
-            .main-banner__text-n-btn
-              .main-banner__text
-                span // Есть возможность выбора типа канала
-                h2 Аренда каналов связи
-                p Есть возможность выбора типа канала
-              a(href="#").main-banner__btn
-                span Подробнее
-            .main-banner__img
-              img(src="./img/main-banner-img.png")
-    .swiper-pagination
-    .main-banner-swiper__btns
-      .swiper-button-next.main-banner__slide-btn
-        +icon('banner-btn-left')
-      .swiper-button-prev.main-banner__slide-btn
-        +icon('banner-btn-right')
+section
+  .index-wrap
+    .swiper.main-banner-swiper
+      .swiper-wrapper
+        each ban in [1,2,3,4,5,6]
+          .swiper-slide
+            .main-banner
+              .main-banner__text-n-btn
+                .main-banner__text
+                  span // Есть возможность выбора типа канала
+                  h2 Аренда каналов связи
+                  p Есть возможность выбора типа канала
+                a(href="#").main-banner__btn
+                  span Подробнее
+              .main-banner__img
+                img(src="./img/main-banner-img.png")
+      .swiper-pagination
+      .main-banner-swiper__btns
+        .swiper-button-next.main-banner__slide-btn
+          +icon('banner-btn-left')
+        .swiper-button-prev.main-banner__slide-btn
+          +icon('banner-btn-right')

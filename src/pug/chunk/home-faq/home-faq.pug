@@ -1,0 +1,21 @@
+mixin faqCard(name="Имя FAQ",url="#")
+  a(href=url).faq-card
+    .faq-card__text
+      h3=name
+    .faq-card__btn
+      +icon('faq-card-arrow')
+    .faq-card__logo
+section
+  .index-wrap
+    .section__head
+      h2 Часто задаваемые вопросы
+    .section__cards.section__cards_xl
+      .home-faq
+        +faqCard('Где можно узнать номера IP телефонов ОГВ И ОМСУ?')
+        +faqCard('Где можно просмотреть информацию о предоставляемых Учреждением услугах?')
+        +faqCard('Почему не работает Skype? Почему не открываются некоторые развлекательные и информационные страницы.')
+      .dotted.section__dotted-1
+      .dotted.section__dotted-2
+    .section__btn
+      +button("В раздел","a","button_white")
+  .section__angle

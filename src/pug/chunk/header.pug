@@ -27,18 +27,18 @@ header
       .header__lines.hidden-l
       nav.header__menu-links.hidden-l
         ul
-          each link in linksArr
+          each link, index in linksArr
             if link.links.length > 0
               li
-                .header__menu-links-link
+                div(tabindex=0).header__menu-links-link
                   .header__menu-links-link-first
-                    a(href=link.links[0].url).header__links-text=link.name
+                    a(href=link.links[0].url aria-role="menuitem" aria-haspopup="true").header__links-text=link.name
                     .header__menu-links-link-second
                       .header__menu-links-link-second-wrap
                         ul
                           each ll in link.links
                             li
-                              a(href="ll.url")
+                              a(href="ll.url" aria-role="menuitem")
                                 .header__menu-links-link-second-icon
                                 .header__menu-links-link-second-name=ll.name
             else

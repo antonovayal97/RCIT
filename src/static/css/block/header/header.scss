@@ -110,7 +110,7 @@ header
   gap: 12px;
   border: 1px solid var(--color-blue-light2);
   border-radius: 100px;
-  &:hover
+  &:hover,&:focus
   {
     box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
   }
@@ -155,7 +155,7 @@ header
   justify-content: center;
   height: 48px;
   width: 48px;
-  &:hover
+  &:hover,&:focus
   {
     box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
   }
@@ -261,7 +261,7 @@ header
 .header__menu-links-link
 {
   position: relative;
-  &:hover
+  &:hover,&:focus
   {
     text-decoration: dotted underline white 3px;
     text-underline-offset: 5px;
@@ -281,7 +281,7 @@ header
   display: none;
   position: absolute;
   top: 16px;
-  &:hover
+  &:hover,&:focus
   {
     display: block;
   }

@@ -1,0 +1,23 @@
+.home-parnters
+{
+
+}
+.home-parnters__wrapper
+{
+  transition-timing-function:linear; 
+}
+.home-parnters__slide
+{
+  width: auto;
+}
+.home-partner__card
+{
+  width: 310px;
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 8px;
+  background-color: var(--color-white)
+}
