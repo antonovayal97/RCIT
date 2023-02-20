@@ -1,27 +1,6 @@
 .main-banner-swiper
 {
   margin-top: 50px;
-  .swiper-pagination
-  {
-    bottom: 0;
-    height: 16px;
-    .swiper-pagination-bullet
-    {
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      background-color: var(--color-white);
-      opacity: 1;
-    }
-    .swiper-pagination-bullet-active
-    {
-      background-color: var(--color-blue2);
-    }
-    @include l
-    {
-      height:22px;
-    }
-  }
   .swiper-button-next
   {
     top: auto;

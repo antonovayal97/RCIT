@@ -348,7 +348,7 @@ header
 .header__burger-inside
 {
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -100vw;
   z-index: 10;

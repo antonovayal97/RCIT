@@ -1,0 +1,14 @@
+.paggination
+  .paggination__wrap
+    a(href="#").paggination__arrow.paggination__arrow_left
+      +icon('uslugi-left-arrow')
+    .paggination__items
+      each i, index in [1,2,3,4,'...',25]
+        if index == 0
+          a(href="#").paggination__item.paggination__item_active
+            span=i
+        else
+          a(href="#").paggination__item
+            span=i
+    a(href="#").paggination__arrow.paggination__arrow_right
+      +icon('uslugi-right-arrow')

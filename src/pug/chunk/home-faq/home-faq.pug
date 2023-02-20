@@ -11,11 +11,12 @@ section
       h2 Часто задаваемые вопросы
     .section__cards.section__cards_xl
       .home-faq
-        +faqCard('Где можно узнать номера IP телефонов ОГВ И ОМСУ?')
-        +faqCard('Где можно просмотреть информацию о предоставляемых Учреждением услугах?')
-        +faqCard('Почему не работает Skype? Почему не открываются некоторые развлекательные и информационные страницы.')
-      .dotted.section__dotted-1
-      .dotted.section__dotted-2
+        .home-faq__wrap
+          +faqCard('Где можно узнать номера IP телефонов ОГВ И ОМСУ?')
+          +faqCard('Где можно просмотреть информацию о предоставляемых Учреждением услугах?')
+          +faqCard('Почему не работает Skype? Почему не открываются некоторые развлекательные и информационные страницы.')
+        .dotted.home-faq__dotted-1
+        .dotted.home-faq__dotted-2
     .section__btn
       +button("В раздел","a","button_white")
   .section__angle

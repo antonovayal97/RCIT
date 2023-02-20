@@ -4,7 +4,7 @@
 }
 .home-parnters__wrapper
 {
-  transition-timing-function:linear; 
+  transition-timing-function:linear;
 }
 .home-parnters__slide
 {
@@ -19,5 +19,22 @@
   align-items: center;
   border: 1px solid var(--color-blue-light2);
   border-radius: 8px;
-  background-color: var(--color-white)
+  background-color: var(--color-white);
+  img
+  {
+    height: 50px;
+  }
+  @include l
+  {
+    width: 285px;
+  }
+  @include xm
+  {
+    width: 184px;
+    height: 80px;
+    img
+    {
+      height: 30px;
+    }
+  }
 }

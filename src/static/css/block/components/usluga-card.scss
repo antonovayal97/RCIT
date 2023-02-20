@@ -6,6 +6,11 @@
   background: var(--color-white);
   border-radius: 8px;
   border: 1px solid var(--color-blue-light2);
+  @include xm
+  {
+    width: 158px;
+    height: 310px;
+  }
 }
 .usluga-card__top
 {
@@ -13,7 +18,11 @@
   height: 140px;
   background: var(--color-blue2);
   background-color: var(--color-blue2);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 0 100%)
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 0 100%);
+  @include xm
+  {
+    height: 121px;
+  }
 }
 .usluga-card__main
 {
@@ -22,16 +31,33 @@
   height: 240px;
   padding: 20px;
   padding-top: 13px;
+  @include xm
+  {
+    padding: 15px 13px;
+    height: 189px;
+  }
 }
 .usluga-card__head
 {
   text-align: center;
   height: 66px;
   margin-bottom: 7px;
+  @include xm
+  {
+    height: 53px;
+  }
   h3
   {
     color: var(--color-blue-dark);
-    @include font-d-4
+    @include font-d-4;
+    @include l
+    {
+      @include font-t-2;
+    }
+    @include xm
+    {
+      @include font-m-2;
+    }
   }
 }
 .usluga-card__bottom
@@ -40,6 +66,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 134px;
+  @include xm
+  {
+    height: 106px;
+  }
 }
 .usluga-card__text
 {
@@ -48,7 +78,11 @@
   p
   {
     color: var(--color-grey);
-    @include font-d-7
+    @include font-d-7;
+    @include xm
+    {
+      @include font-m-5;
+    }
   }
 }
 .usluga-card__btn
@@ -60,5 +94,16 @@
   {
     width: 6.8px;
     height: 6.8px;
+  }
+  @include xm
+  {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    .icon
+    {
+      width: 6.3px;
+      height: 6.3px;
+    }
   }
 }

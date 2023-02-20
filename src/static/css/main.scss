@@ -112,10 +112,18 @@ section
   width: 980px;
   margin: 0 auto;
   z-index: 1;
+  @include l
+  {
+    width: 100%;
+  }
 }
 .section__cards_xl
 {
   width: 1080px;
+  @include l
+  {
+    width: 100%;
+  }
 }
 .section__btn
 {
@@ -149,6 +157,24 @@ section
   {
     padding-left: 14px;
     padding-right: 14px;
+  }
+}
+.page-wrap
+{
+  width: 1080px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  @include l
+  {
+    width: 100%;
+    padding: 0 40px;
+    padding-bottom: 80px;
+  }
+  @include xm
+  {
+    width: 100%;
+    padding: 0 20px;
+    padding-bottom: 60px;
   }
 }
 @font-face {
@@ -186,6 +212,8 @@ section
 @import "./block/components/button.scss";
 @import "./block/components/news-card.scss";
 @import "./block/components/usluga-card.scss";
+@import "./block/components/page-header.scss";
+@import "./block/components/paggination.scss";
 @import "./block/header-dropdown/header-dropdown.scss";
 @import "./block/main-banner/main-banner.scss";
 @import "./block/home-uslugi/home-uslugi.scss";
@@ -194,6 +222,8 @@ section
 @import "./block/home-faq/home-faq.scss";
 @import "./block/home-partners/home-partners.scss";
 @import "./block/home-uslugi/home-uslugi.scss";
+@import "./block/pages/news.scss";
+@import "./block/pages/news-inside.scss";
 *
 {
   font-family: "Golos", sans-serif;
@@ -276,18 +306,56 @@ section
   background-image: url("../img/dotted.svg");
   background-size:100% 100%;
   background-size:cover;
-}
-.section__dotted-1
-{
-    left: -50px;
-    top: -50px;
-    z-index: -1;
-}
-.section__dotted-2
-{
-  left: auto;
-  top: auto;
-  bottom: -50px;
-  right: -50px;
   z-index: -1;
+  @include l
+  {
+    background-image: url("../img/dotted-t.svg");
+    height: 100px;
+    width: 160px;
+  }
+  @include xm
+  {
+    background-image: url("../img/dotted-m.svg");
+    height: 70px;
+    width: 109px;
+  }
+}
+// .section__dotted-1
+// {
+//     left: -50px;
+//     top: -50px;
+//     z-index: -1;
+// }
+// .section__dotted-2
+// {
+//   left: auto;
+//   top: auto;
+//   bottom: -50px;
+//   right: -50px;
+//   z-index: -1;
+// }
+.swiper
+{
+  .swiper-pagination
+  {
+    bottom: 0;
+    height: 16px;
+    .swiper-pagination-bullet
+    {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: var(--color-white);
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active
+    {
+      background-color: var(--color-blue2);
+    }
+    @include l
+    {
+      height:22px;
+    }
+  }
+
 }

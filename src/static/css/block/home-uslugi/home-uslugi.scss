@@ -1,15 +1,35 @@
+.home-uslugi
+{
+  @include l
+  {
+    padding-bottom: 30px;
+    width: 640px;
+  }
+  @include xm
+  {
+    width: 332px;
+  }
+  .swiper-pagination
+  {
+    display: none;
+    @include l
+    {
+      display: block;
+    }
+  }
+}
 .home-uslugi__slide
 {
   width: auto;
-}
-.home-uslugi-swiper__btns
-{
-
 }
 .home-uslugi__slide-btn
 {
   width: 40px;
   height: 40px;
+  @include l
+  {
+    display: none;
+  }
   .icon
   {
     width: 40px;

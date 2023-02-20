@@ -74,21 +74,54 @@ let mainBanner = new Swiper(".main-banner-swiper", {
     });
 let homePartners = new Swiper(".home-parnters", {
   slidesPerView: "auto",
-  spaceBetween: 20,
+  spaceBetween: 16,
   loop: true,
   speed: 10000,
   autoplay:{
     delay: 0
+  },
+  breakpoints:{
+    744:
+    {
+      spaceBetween: 20,
+    }
   }
     });
 let homeUslugi = new Swiper(".home-uslugi", {
   slidesPerView: "auto",
-  spaceBetween: 20,
+  spaceBetween: 16,
   loop: true,
+  pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
   navigation: {
     nextEl: ".home-uslugi__slide-btn-next",
     prevEl: ".home-uslugi__slide-btn-prev",
   },
+  breakpoints:{
+    744:
+    {
+      spaceBetween: 20,
+    }
+  }
+    });
+let pageHeader = new Swiper(".page-header__btns-swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  allowTouchMove: true,
+  breakpoints:{
+    1220:
+    {
+      allowTouchMove: false,
+      spaceBetween: 20,
+    },
+    744:
+    {
+      allowTouchMove: true,
+      spaceBetween: 20,
+    }
+  }
     });
 // МОДАЛКИ НАЧАЛО
 const myModal = new HystModal({

@@ -1,5 +1,72 @@
 .home-news
 {
+  position: relative;
+  @include l
+  {
+    width: 640px;
+    margin: 0 auto;
+  }
+  @include xm
+  {
+    width: 330px;
+  }
+}
+.home-news__wrap
+{
   display: flex;
   gap: 20px;
+  @include xm
+  {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+  a
+  {
+    @include l
+    {
+      &:last-child
+      {
+        display: none;
+      }
+    }
+    @include xm
+    {
+      &:last-child
+      {
+        display: block;
+      }
+    }
+  }
+}
+.home-news__dotted-1
+{
+  left: -50px;
+  top: -50px;
+  @include l
+  {
+    left: -30px;
+    top: -30px;
+  }
+  @include xm
+  {
+    left: -20px;
+    top: -20px;
+  }
+}
+.home-news__dotted-2
+{
+  left: auto;
+  top: auto;
+  bottom: -50px;
+  right: -50px;
+  @include l
+  {
+    bottom: -30px;
+    right: -30px;
+  }
+  @include xm
+  {
+    bottom: -20px;
+    right: -20px;
+  }
 }

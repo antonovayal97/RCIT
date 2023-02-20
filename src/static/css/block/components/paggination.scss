@@ -1,0 +1,64 @@
+.paggination
+{
+  width: 100%;
+}
+.paggination__wrap
+{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.paggination__arrow
+{
+  .icon
+  {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: var(--color-grey);
+    color: var(--color-grey);
+    stroke-width:1.5px;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    @include xm
+    {
+      width: 32px;
+      height: 32px;
+    }
+    &:hover,&:focus
+    {
+      fill: var(--color-blue2);
+      stroke: var(--color-white);
+      color: var(--color-blue2);
+    }
+  }
+}
+.paggination__items
+{
+  display: flex;
+
+}
+.paggination__item
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-blue-dark);
+  @include xm
+  {
+    width: 32px;
+    height: 32px;
+    @include font-t-6;
+  }
+  @include font-d-7;
+  &:hover
+  {
+    color: var(--color-blue2);
+  }
+}
+.paggination__item_active
+{
+  color: var(--color-blue2);
+}
