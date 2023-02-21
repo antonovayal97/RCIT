@@ -1,0 +1,72 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap.page-wrap_fixed
+        +pageHeader("О РЦИТ",["Главная","О нас"],[{name: 'О РЦИТ',url: '#', active: true},{name: 'История РЦИТ',url: '#', active: false},{name: 'Политика РЦИТ',url: '#',active: false},{name: 'Достижения',url: '#',active: false},{name: 'Реализованные проекты',url: '#',active: false},{name: 'Вакансии',url: '#',active: false},{name: 'Штаб ЦТ',url: '#',active: false},{name: 'Контакты',url: '#',active: false},{name: 'Документы',url: '#',active: false}])
+    .about-orcit
+      section
+        .index-wrap
+          .page-wrap.page-wrap_fixed
+            .about-orcit__section
+              .section__head
+                h2 Чем мы занимаемся?
+              .about-orcit__double-img
+                .about-orcit__img
+                  img(src="./img/orcit2.png")
+                .about-orcit__img
+                  img(src="./img/orcit1.png")
+              .about-orcit__paragraph
+                p Как уже неоднократно упомянуто, непосредственные участники технического прогресса формируют глобальную экономическую сеть и при этом — объединены в целые кластеры себе подобных. Учитывая ключевые сценарии поведения, новая модель организационной деятельности позволяет выполнить важные задания по разработке экспериментов, поражающих по своей масштабности и грандиозности. Следует отметить, что новая модель организационной деятельности является качественно новой ступенью экспериментов, поражающих по своей масштабности и грандиозности. Принимая во внимание показатели успешности, сложившаяся структура организации однозначно фиксирует необходимость укрепления моральных ценностей. Ясность нашей позиции очевидна: сплочённость команды профессионалов обеспечивает актуальность своевременного выполнения сверхзадачи. Идейные соображения высшего порядка, а также укрепление и развитие внутренней структуры обеспечивает широкому кругу (специалистов) участие в формировании укрепления моральных ценностей!
+              .quote.about-orcit__quote
+                .quote__name
+                  h3 Цитата о ГБУ  РС(Я) “РЦИТ”
+                .quote__text.about-orcit__paragraph
+                  p “Одни не способны властвовать и умеют подчиняться только той власти, которая имеется у господ над рабами; другие же не способны подчиняться никакой власти, а властвовать умеют только так, как властвуют господа над рабами”
+                .quote__person-info
+                  .quote__person-post
+                    span Директор ГБУС РС(Я) “РЦИТ”
+                  .quote__person-name
+                    span Кривошапкин Иван Александрович
+                .quote__image
+              .dotted.about-orcit__dotted1_top
+              .dotted.about-orcit__dotted2_top
+      section.section_white-p
+        .index-wrap
+          .page-wrap.page-wrap_fixed
+            .about-orcit__section
+              .section__head
+                h2 Наши руководители
+              .about-orcit__managers
+                .about-orcit__managers-wrap
+                  each manager in [1,2,3]
+                    .manager-card.about-orcit__manager-card
+                      .manager-card__img
+                        img(src="./img/manager.png")
+                      .manager-card__info
+                        .manager-card__name
+                          span Кривошапкин Иван Александрович
+                        .manager-card__post
+                          span Генеральный Директор
+                .dotted.about-orcit__dotted1_mid
+              .about-orcit__join
+                .about-orcit__join-text
+                  span Стань частью нашей команды
+                .about-orcit__join-btn
+                  +button("Вакансии","a","button_active")
+      section
+        .index-wrap
+          .page-wrap.page-wrap_fixed
+            .about-orcit__section
+              .section__head
+                h2 Галерея
+              .about-orcit__video
+                .about-orcit__video-wrap
+                .dotted.about-orcit__dotted1_bottom
+                .dotted.about-orcit__dotted2_bottom
+              .about-orcit__galary
+                .about-orcit__galary-wrap
+                //
+                  include ../chunk/components/paggination
+  include ../chunk/footer

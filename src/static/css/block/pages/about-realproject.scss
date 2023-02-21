@@ -1,0 +1,49 @@
+.real-project
+{
+  position: relative;
+  margin-top: 80px;
+  @include l
+  {
+    margin-top: 60px;
+  }
+}
+.real-project__wrap
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  .project-card
+  {
+    margin: 10px;
+  }
+}
+.real-project__dotted1
+{
+  top: -27px;
+  left: -63px;
+  @include l
+  {
+    left: -30px;
+    top: -20px;
+  }
+  @include xm
+  {
+    left: -20px;
+    top: -10px;
+  }
+}
+.real-project__dotted2
+{
+  bottom: -36px;
+  right: -61px;
+  @include l
+  {
+    bottom: -20px;
+    right: -30px;
+  }
+  @include xm
+  {
+    bottom: -10px;
+    right: -20px;
+  }
+}

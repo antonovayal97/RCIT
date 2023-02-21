@@ -1,0 +1,19 @@
+extends ../layout/app
+include ../chunk/components/project-card
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Реализованные проекты",["Главная","О нас","Реализованные проекты"],[{name: 'История РЦИТ',url: '#', active: false},{name: 'Политика РЦИТ',url: '#',active: false},{name: 'Достижения',url: '#',active: false},{name: 'Реализованные проекты',url: '#',active: true},{name: 'Вакансии',url: '#',active: false},{name: 'Штаб ЦТ',url: '#',active: false},{name: 'Контакты',url: '#',active: false},{name: 'Документы',url: '#',active: false}])
+        .real-project
+          .real-project__wrap
+            - for (var i = 0; i < 10; ++i) {
+              if(i % 2 === 0)
+                +projectCard(true)
+              else
+                +projectCard()
+            - }
+          .dotted.real-project__dotted1
+          .dotted.real-project__dotted2
+  include ../chunk/footer

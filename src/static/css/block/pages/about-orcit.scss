@@ -1,0 +1,391 @@
+.about-orcit
+{
+  margin-top: 80px;
+  @include l
+  {
+    margin-top: 70px;
+  }
+  @include xm
+  {
+    margin-top: 60px;
+  }
+}
+.about-orcit__section
+{
+  position: relative;
+  .section__head
+  {
+    margin-bottom: 20px;
+  }
+}
+.about-orcit__double-img
+{
+  display: flex;
+  margin: -10px;
+  @include xm
+  {
+    flex-direction: column;
+  }
+}
+.about-orcit__img
+{
+  width: 530px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  background-color: var(--color-grey);
+  img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include l
+  {
+    width: 100%;
+    height: 175px;
+  }
+  @include xm
+  {
+    width: calc(100% - 20px);
+    height: 164px;
+  }
+}
+.about-orcit__paragraph
+{
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  p
+  {
+    color: var(--color-blue-dark);
+    letter-spacing: -0.2px;
+    @include font-d-3;
+    @include l
+    {
+      @include font-t-3
+    }
+    @include xm
+    {
+      @include font-m-3
+    }
+  }
+  @include l
+  {
+    margin-top: 30px
+  }
+}
+.about-orcit__quote
+{
+  position: relative;
+  margin-top: 80px;
+  width: 100%;
+  padding: 60px;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  background-color: var(--color-white);
+  @include l
+  {
+    margin-top: 40px;
+    padding: 40px 30px;
+  }
+  @include xm
+  {
+    margin-top: 30px;
+    padding: 30px 25px;
+  }
+}
+.quote__image
+{
+  position: absolute;
+  top: 94px;
+  left: 50%;
+  transform: translate(-50%,0);
+  height: 150px;
+  width: 88px;
+  background-size: 100% 100%;
+  background-size: cover;
+  background-image: url(../img/R-logo.svg);
+  @include l
+  {
+    top: 105px;
+  }
+  @include xm
+  {
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+.quote__name
+{
+  text-align: center;
+  margin-bottom: 40px;
+  h3
+  {
+    color: var(--color-blue-dark);
+    @include font-d-2;
+    @include l
+    {
+      @include font-t-2;
+    }
+    @include xm
+    {
+      @include font-m-2;
+    }
+  }
+  @include l
+  {
+    margin-bottom: 25px;
+    h3
+    {
+        @include font-t-2;
+    }
+  }
+}
+.quote__text
+{
+  margin-bottom: 40px;
+  @include l
+  {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
+.quote__person-info
+{
+  text-align: right;
+}
+.quote__person-post
+{
+  color: var(--color-grey);
+  letter-spacing: -0.2px;
+  margin-bottom: 6px;
+  @include font-d-6;
+  @include l
+  {
+    @include font-t-5;
+  }
+  @include xm
+  {
+    @include font-m-6
+  }
+}
+.quote__person-name
+{
+  color: var(--color-blue-dark);
+  @include font-d-5;
+  @include l
+  {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  @include xm
+  {
+    @include font-m-5;
+  }
+}
+.about-orcit__dotted1_top
+{
+  top: 40px;
+  left: -110px;
+  @include l
+  {
+    top: 31px;
+    left: auto;
+    right: -30px;
+  }
+}
+.about-orcit__dotted2_top
+{
+  bottom: -40px;
+  right: -71px;
+  @include l
+  {
+    right: auto;
+    left: -15px;
+    bottom: -30px;
+  }
+}
+.about-orcit__managers
+{
+  position: relative;
+  z-index: 1;
+  @include l
+  {
+    width: 640px;
+    margin: 0 auto;
+  }
+  @include xm
+  {
+    width: 290px;
+  }
+}
+.about-orcit__managers-wrap
+{
+  display: flex;
+  border-bottom: 1px solid var(--color-grey-light);
+  padding-bottom: 45px;
+  margin: 0 -10px;
+  @include l
+  {
+    padding-bottom: 30px;
+  }
+  @include xm
+  {
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+  }
+}
+.manager-card
+{
+  width: 365px;
+  margin: 0 10px;
+  @include l
+  {
+    width: 200px;
+  }
+  @include xm
+  {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+.manager-card__img
+{
+  width: 100%;
+  height: 283px;
+  overflow: hidden;
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 10px;
+  img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include l
+  {
+    width: 200px;
+    height: 200px;
+  }
+  @include xm
+  {
+    width: 100%;
+  }
+}
+.manager-card__info
+{
+  margin-top: 25px;
+  @include l
+  {
+    margin-top: 20px;
+  }
+}
+.manager-card__name
+{
+  color: var(--color-blue-dark);
+  margin-bottom: 16px;
+  @include font-d-4;
+  @include l
+  {
+    margin-bottom: 10px;
+    @include font-t-4;
+  }
+}
+.manager-card__post
+{
+  color: #7C7C7C;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  @include l
+  {
+    @include font-t-5
+  }
+}
+.about-orcit__dotted1_mid
+{
+  top: -50px;
+  left: -70px;
+  z-index: 1;
+  @include l
+  {
+    top: -40px;
+    left: auto;
+    right: -30px;
+  }
+}
+.about-orcit__join
+{
+  margin-top: 30px;
+  @include l
+  {
+    margin-top: 24px;
+  }
+  @include xm
+  {
+    margin-top: 40px;
+  }
+}
+.about-orcit__join-text
+{
+  text-align: center;
+  margin-bottom: 35px;
+  color: var(--color-blue-dark);
+  @include font-d-2;
+  @include l
+  {
+    margin-bottom: 26px;
+    color: var(--color-black);
+    @include font-t-2;
+  }
+  @include xm
+  {
+    margin-bottom: 24px;
+    color: var(--color-blue-dark);
+    @include font-m-2
+  }
+}
+.about-orcit__join-btn
+{
+  display: flex;
+  justify-content: center;
+}
+.about-orcit__video
+{
+  position: relative;
+  width: 100%;
+  height: 440px;
+  background-color: var(--color-blue-dark);
+  border-radius: 20px;
+  border: 1px solid var(--color-blue-light2);
+}
+.about-orcit__video-wrap
+{
+
+}
+.about-orcit__galary
+{
+
+}
+.about-orcit__galary-wrap
+{
+
+}
+.about-orcit__dotted1_bottom
+{
+  top: -54px;
+  left: -58px;
+}
+.about-orcit__dotted2_bottom
+{
+  bottom: -104px;
+  right: -68px;
+}

@@ -1,0 +1,21 @@
+.link-with-arrow
+{
+  color: var(--color-blue2);
+  @include font-d-7;
+  .icon
+  {
+    width: 6.8px;
+    height: 6.8px;
+  }
+  @include xm
+  {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    .icon
+    {
+      width: 6.3px;
+      height: 6.3px;
+    }
+  }
+}

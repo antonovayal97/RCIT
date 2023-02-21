@@ -1,13 +1,13 @@
-mixin uslugaCard(name,text)
+mixin uslugaCard(name,text,img)
   a(href="#")
     .usluga-card
       .usluga-card__top
+        .usluga-card__img
+          img(src="./img/" + img + ".png")
       .usluga-card__main
         .usluga-card__head
           h3=name
         .usluga-card__bottom
           .usluga-card__text
             p=text
-          .usluga-card__btn
-            span Подробнее
-            +icon('usluga-arrow')
+          +linkWithArrow("Подробнее")
