@@ -169,6 +169,20 @@ section
   width: 1080px;
   margin: 0 auto;
   padding-bottom: 100px;
+  p
+  {
+    @include font-d-3;
+    color: var(--color-blue-dark);
+    letter-spacing: -0.2px;
+    @include l
+    {
+      @include font-t-3;
+    }
+    @include xm
+    {
+      @include font-m-3;
+    }
+  }
   @include l
   {
     width: 100%;
@@ -185,6 +199,48 @@ section
 .page-wrap_fixed
 {
   padding-bottom: 0;
+}
+.page__slide-btn
+{
+  width: 40px;
+  height: 40px ;
+  .icon
+  {
+    width: 40px;
+    height: 40px;
+    use
+    {
+      fill: none;
+       stroke:var(--color-blue2);
+       stroke-width:1.5px;
+       stroke-miterlimit:10;
+       stroke-linecap:round;
+       stroke-linejoin:round;
+       transition: all .2s ease;
+    }
+    &:hover,&:focus
+    {
+      use
+      {
+        fill: var(--color-blue2);
+         stroke:var(--color-white);
+         stroke-width:1.5px;
+         stroke-miterlimit:10;
+         stroke-linecap:round;
+         stroke-linejoin:round;
+      }
+    }
+  }
+  @include xm
+  {
+    width: 32px;
+    height: 32px ;
+    .icon
+    {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 @font-face {
   font-family: "Golos";
@@ -233,10 +289,12 @@ section
 @import "./block/home-faq/home-faq.scss";
 @import "./block/home-partners/home-partners.scss";
 @import "./block/home-uslugi/home-uslugi.scss";
+@import "./block/about-stage/about-stage.scss";
 @import "./block/pages/news.scss";
 @import "./block/pages/news-inside.scss";
 @import "./block/pages/about-realproject.scss";
 @import "./block/pages/about-orcit.scss";
+@import "./block/pages/about-history.scss";
 *
 {
   font-family: "Golos", sans-serif;

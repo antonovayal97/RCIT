@@ -1,0 +1,327 @@
+.stage-card
+{
+  width: 220px;
+  height: 472px;
+}
+.stage-card__circle
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  border-radius: 200px;
+  background-color: var(--color-white);
+  margin: 0 auto;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.17);
+  @include l
+  {
+    width: 84px;
+    height: 84px;
+    img
+    {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  img
+  {
+    width: 48px;
+    height: 48px;
+  }
+}
+.stage-card__line
+{
+  position: relative;
+  z-index: 1;
+  width: 3px;
+  height: 188px;
+  background-color: var(--color-blue-dark);
+  margin: 0 auto;
+  @include l
+  {
+    height: 127px;
+  }
+}
+.stage-card__rect
+{
+  width: 150px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-green);
+  background-color: #30E132;
+  margin: 0 auto;
+  margin-top: -5px;
+  margin-bottom: 60px;
+  @include l
+  {
+    width: 134px;
+    margin-bottom: 30px;
+  }
+}
+.stage-card__rect-circle
+{
+  width: 11px;
+  height: 11px;
+  border-radius: 20px;
+  border: 2px solid var(--color-blue-dark);
+}
+.stage-card__info
+{
+  text-align: center;
+  @include l
+  {
+    width: 170px;
+    margin: 0 auto;
+  }
+}
+.stage-card__year
+{
+  @include font-d-1-5;
+  @include l
+  {
+    @include font-t-1-5;
+    margin-bottom: 8px;
+  }
+  color: #30E132;
+  margin-bottom: 5px;
+}
+.stage-card__text
+{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-grey);
+  @include l
+  {
+    @include font-t-5
+  }
+}
+.about-stage
+{
+  @media (max-width: 9999px) and (min-width: 744px) {
+      height: auto !important;
+  }
+      @include xm
+      {
+        margin-top: -185px;
+        margin-bottom: 110px;
+        .about-stage__swiper
+        {
+          width: 290px;
+          rotate: 90deg;
+          overflow: unset;
+        }
+        .about-stage__swiper-wrapper
+        {
+          transform: none !important;
+          overflow: unset;
+          width: fit-content;
+          padding: 0;
+        }
+      }
+}
+.about-stage__swiper
+{
+  margin-top: -20px;
+}
+.about-stage__swiper-wrapper
+{
+  height: 590px;
+  padding: 30px 50px;
+  @include l
+  {
+    width: 100%;
+  }
+  @include xm
+  {
+    margin: 0 -30px;
+  }
+  .about-stage__swiper-slide
+  {
+    &:nth-child(odd)
+    {
+      @include xm
+      {
+        translate: 0 152px;
+      }
+    }
+    &:nth-child(even)
+    {
+      rotate: 180deg;
+      translate: 0 -4px;
+      // transform: translateZ(200px) rotateZ(180deg) ;
+      .stage-card__info
+      {
+        transform: rotateZ(180deg);
+        @include xm
+        {
+          padding-left: 86px;
+        }
+      }
+      .stage-card__rect
+      {
+        margin-bottom: 108px;
+        background: var(--color-blue);
+        background-color: var(--color-blue2);
+        @include l
+        {
+          margin-bottom: 30px;
+        }
+      }
+      .stage-card__year
+      {
+        color: var(--color-blue2);
+      }
+      .stage-card__circle
+      {
+        transform: rotateZ(180deg);
+      }
+      @include l
+      {
+        translate: 0 -158px;
+      }
+      @include xm
+      {
+        translate: 0 -154px;
+      }
+    }
+    @include l
+    {
+      margin: 0 -43px;
+    }
+    @include xm
+    {
+      margin: 0 -63px;
+      .stage-card__circle
+      {
+        width: 54px;
+        height: 54px;
+        img
+        {
+          width: 25px;
+          height: 25px;
+          rotate: -90deg
+        }
+      }
+      .stage-card__rect
+      {
+        width: 94px;
+        height: 10px;
+        margin-top: -2px;
+        margin-bottom: 15px;
+      }
+      .stage-card__rect-circle
+      {
+        width: 8px;
+        height: 8px;
+        border-radius: 20px;
+        border: 1.5px solid var(--color-blue-dark);
+      }
+      .stage-card__info
+      {
+        width: auto;
+        margin-top: -25px;
+        rotate: -90deg
+      }
+      .stage-card__year
+      {
+        width: 125px;
+        @include font-m-1-5;
+      }
+      .stage-card__text
+      {
+        width: 125px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+      }
+      .stage-card__line
+      {
+        width: 2px;
+        height: 85px;
+      }
+      &:first-child
+      {
+        margin-left: 0;
+        .stage-card__rect
+        {
+          border-top-left-radius: 100px;
+          border-bottom-left-radius: 100px;
+        }
+      }
+      &:last-child
+      {
+        margin-right: 0;
+        .stage-card__rect
+        {
+          border-top-left-radius: 100px;
+          border-bottom-left-radius: 100px;
+        }
+      }
+    }
+    &:last-child
+    {
+      margin-right: 70px;
+      @include xm
+      {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.about-stage__swiper-slide
+{
+  width: auto;
+  margin: 0 -35px;
+}
+.about-stage__swiper-control
+{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 640px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 40px;
+  @include xm
+  {
+    display: none;
+  }
+}
+.about-stage__swiper-left
+{
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+.about-stage__swiper-right
+{
+  position: relative;
+  cursor: pointer;
+}
+.about-stage__swiper-paggination-wrap
+{
+  position: relative;
+  width: 500px;
+  margin: 0 30px;
+  height: 3px;
+}
+.about-stage__swiper-paggination
+{
+  height: 2px !important;
+  background-color: var(--color-blue-dark);
+  span
+  {
+    background-color: var(--color-blue2) !important;
+    top: -2px !important;
+      height: 6px !important;
+      border-radius: 100px;
+  }
+}

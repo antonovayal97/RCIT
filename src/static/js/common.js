@@ -123,6 +123,24 @@ let pageHeader = new Swiper(".page-header__btns-swiper", {
     }
   }
     });
+let aboutStage = new Swiper(".about-stage__swiper", {
+  slidesPerView: "auto",
+  pagination: {
+  el: ".about-stage__swiper-paggination",
+  type: "progressbar",
+},
+navigation: {
+        nextEl: ".about-stage__swiper-right",
+        prevEl: ".about-stage__swiper-left",
+      },
+    });
+let aboutStageWrap = document.querySelector('.about-stage')
+let aboutWrapper = document.querySelector('.about-stage__swiper-wrapper')
+
+aboutStageWrap.style.height = aboutWrapper.scrollWidth + 'px'
+
+
+console.log(aboutWrapper.offsetWidth)
 // МОДАЛКИ НАЧАЛО
 const myModal = new HystModal({
     linkAttributeName: "data-hystmodal",

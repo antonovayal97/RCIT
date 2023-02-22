@@ -1,0 +1,28 @@
+mixin stageCard(year)
+  .stage-card
+    .stage-card__circle
+      img(src="./img/lamp-on.png")
+    .stage-card__line
+    .stage-card__rect
+      .stage-card__rect-circle
+    .stage-card__info
+      .stage-card__year
+        span="20" + year
+      .stage-card__text
+        span «29» октября 2010 года приказом президента РС(Я) был создан РЦИТ
+section.about-history__section
+  .section__head
+    h2 Этапы жизни РЦИТ
+  .about-stage
+    .swiper.about-stage__swiper
+      .swiper-wrapper.about-stage__swiper-wrapper
+        each jj in [10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+          .swiper-slide.about-stage__swiper-slide
+            +stageCard(jj)
+      .about-stage__swiper-control
+        .swiper-button-next.about-stage__swiper-left.page__slide-btn
+          +icon('banner-btn-right')
+        .about-stage__swiper-paggination-wrap
+          .about-stage__swiper-paggination
+        swiper-button-prev.about-stage__swiper-right.page__slide-btn
+          +icon('banner-btn-left')
