@@ -180,8 +180,13 @@ section
     }
     @include xm
     {
+      word-break: break-word;
       @include font-m-3;
     }
+  }
+  a
+  {
+    color: var(--color-blue2);
   }
   @include l
   {
@@ -295,6 +300,7 @@ section
 @import "./block/pages/about-realproject.scss";
 @import "./block/pages/about-orcit.scss";
 @import "./block/pages/about-history.scss";
+@import "./block/pages/faq.scss";
 *
 {
   font-family: "Golos", sans-serif;

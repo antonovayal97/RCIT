@@ -25,6 +25,7 @@ accords.forEach(item => {
   let outside = item.querySelector('.accord-outside')
   let arrow = item.querySelector('.accord-arrow')
   outside.addEventListener('click',() => {
+    item.classList.toggle('accord-active')
     inside.classList.toggle('accord-inside-active')
     arrow.classList.toggle('accord-arrow-active')
   })

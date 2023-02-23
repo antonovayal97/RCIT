@@ -136,10 +136,12 @@
   @include l
   {
     width: 100%;
+    height: 430px;
   }
   @include xm
   {
     margin: 0 -30px;
+    height: 590px;
   }
   .about-stage__swiper-slide
   {
@@ -183,16 +185,17 @@
       }
       @include l
       {
-        translate: 0 -158px;
+        translate: 0 -38px;
       }
       @include xm
       {
-        translate: 0 -154px;
+        translate: 0 -34px;
       }
     }
     @include l
     {
       margin: 0 -43px;
+      height: 470px;
     }
     @include xm
     {

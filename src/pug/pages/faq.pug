@@ -1,0 +1,30 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Часто задаваемые вопросы",["Главная","Техническая поддержка","FAQ"],[{name: 'Порядок и способ обращения в тех.поддержку',url: '#', active: false},{name: 'FAQ',url: '#', active: true},{name: 'Регламенты и инструкции',url: '#',active: false},{name: 'Портал тех.поддержки',url: '#',active: false}])
+        .faq
+          section
+            .section__head
+              h2 Часто задаваемые вопросы
+            .faq__section
+              .faq__wrap
+                each faq in ['Где можно узнать номера IP телефонов ОГВ И ОМСУ?','Где можно просмотреть информацию о предоставляемых Учреждением услугах?','Как скачать то или иное приложение (например, cure it) с нашего сайта?','Как можно оставить заявку по возникшей проблеме?','Почему не работает Skype? Почему не открываются некоторые развлекательные и информационные страницы.','По каким услугам можно обратиться в Единую службу технической поддержки?','По какому номеру можно позвонить в Единую службу технической поддержки?','Какой адрес портала самообслуживания Единой службы технической поддержки?','Как получить авторизационные данные для доступа к порталу самообслуживания Единой службы технической поддержки?']
+                  .faq__accord.accord
+                    a(href="javascript:void(0);").accord-outside
+                      .faq__accord-head
+                        h3=faq
+                      .faq__accord-arrow.accord-arrow
+                        +icon('accord')
+                    .accord-inside
+                      p Предоставляемые Учреждениям услуги можно просмотреть по следующим ссылкам:
+                      p Частным клиентам:
+                        a(href="http://www.rcitsakha.ru/ru/client/service/") http://www.rcitsakha.ru/ru/client/service/
+                      p Бизнесу и госсектору:
+                        a(href="http://www.rcitsakha.ru/ru/business/service/") http://www.rcitsakha.ru/ru/business/service/
+                    .accord__logo
+              .dotted.faq__dotted1
+              .dotted.faq__dotted2
+  include ../chunk/footer
