@@ -1,0 +1,15 @@
+extends ../layout/app
+include ../chunk/components/doc-download
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Нормативно-правовые акты",["Главная","О нас","Документы","Нормативно-правовые акты"],[{name: 'О РЦИТ',url: '#', active: false},{name: 'История РЦИТ',url: '#', active: false},{name: 'Политика РЦИТ',url: '#',active: false},{name: 'Достижения',url: '#',active: false},{name: 'Реализованные проекты',url: '#',active: false},{name: 'Вакансии',url: '#',active: false},{name: 'Штаб ЦТ',url: '#',active: false},{name: 'Контакты',url: '#',active: false},{name: 'Документы',url: '#',active: true}])
+        .documents-list
+          ul
+            each doc in [1,2,3,4,5,6,7,8,9,10]
+              li
+              - var docName = 'Указ Главы Республики Саха (Якутия) "О государственной информационно-телекоммуникационной сети Республики Саха (Якутия) «СахаИнформ-Сеть»" от 11 октября 2019 г. № 778'
+                +docDownload(docName)
+  include ../chunk/footer

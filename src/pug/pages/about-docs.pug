@@ -1,0 +1,25 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("История РЦИТ",["Главная","О нас","История РЦИТ"],[{name: 'О РЦИТ',url: '#', active: false},{name: 'История РЦИТ',url: '#', active: false},{name: 'Политика РЦИТ',url: '#',active: false},{name: 'Достижения',url: '#',active: false},{name: 'Реализованные проекты',url: '#',active: false},{name: 'Вакансии',url: '#',active: false},{name: 'Штаб ЦТ',url: '#',active: false},{name: 'Контакты',url: '#',active: false},{name: 'Документы',url: '#',active: true}])
+        .docs
+          .docs__wrap
+            each docs in [['Нормативно-правовые акты','Государственное задание Государственного бюджетного учреждения Республики Саха (Якутия) "Республиканского центра инфокоммуникационных технологий"','Соглашения об информационно-техническом обслуживании исполнительных органов государственной власти Республики Саха (Якутия)','Закупки'],['Формы документов'],['Цифровая трансформация'],['Отчет о деятельности']]
+              .docs__ul
+                ul
+                  each doc in docs
+                    li
+                      a(href="#").doc-link
+                        .doc-link__name
+                          span=doc
+                        .doc-link__arrow.hidden-xm
+                          +icon('arrow-down')
+                        .doc-link__link-with-arrow.visible-xm
+                          +linkWithArrow('Перейти')
+                        .doc-link__img
+          .dotted.hidden-l.about-docs__dotted1
+          .dotted.hidden-l.about-docs__dotted2
+  include ../chunk/footer

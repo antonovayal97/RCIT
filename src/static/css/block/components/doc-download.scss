@@ -1,0 +1,54 @@
+.document
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  @include l
+  {
+    margin-bottom: 25px;
+  }
+  @include xm
+  {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+}
+.document__icon
+{
+  margin-right: 20px;
+  .icon
+  {
+    width: 48px;
+    height: 48px;
+  }
+  @include l
+  {
+    .icon
+    {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @include xm
+  {
+    margin-right: 15px;
+    .icon
+    {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+.document__name
+{
+  @include font-d-3;
+  color: var(--color-blue-dark);
+  @include l
+  {
+    @include font-t-3
+  }
+  @include xm
+  {
+    @include font-m-3
+  }
+}

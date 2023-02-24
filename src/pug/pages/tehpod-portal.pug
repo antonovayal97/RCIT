@@ -1,0 +1,15 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Портал технической поддержки",["Главная","Техническая поддержка","Портал технической поддержки"],[{name: 'Порядок и способ обращения в тех.поддержку',url: '#', active: false},{name: 'Регламенты и инструкции',url: '#', active: false},{name: 'Портал тех.поддержки',url: '#',active: true},{name: 'FAQ',url: '#',active: false}])
+        .tehpod-portal
+          .tehpod-portal__head
+            h2 Единая система технической подержки
+          .tehpod-portal__text
+            p Программный продукт Naumen Service Desk предназначен для автоматизации процессов управления ИТ и сервисным обслуживанием на предприятиях. С помощью Naumen Service Desk вы сможете реализовать сервисную модель управления в ИТ-подразделениях и других внутренних службах, а также использовать все преимущества сервисного подхода при оказании услуг клиентам компании.
+          .tehpod-portal__btn
+            +button("Войти в портал тех.поддержки","a","button_blue")
+  include ../chunk/footer

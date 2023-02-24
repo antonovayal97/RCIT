@@ -1,0 +1,14 @@
+mixin accord(name="Название аккордиона")
+  .page__accord.accord
+    a(href="javascript:void(0);").accord-outside
+      .faq__accord-head
+        h3=name
+      .page__accord-arrow.accord-arrow
+        +icon('accord')
+    .accord-inside
+      p Предоставляемые Учреждениям услуги можно просмотреть по следующим ссылкам:
+      p Частным клиентам:
+        a(href="http://www.rcitsakha.ru/ru/client/service/") http://www.rcitsakha.ru/ru/client/service/
+      p Бизнесу и госсектору:
+        a(href="http://www.rcitsakha.ru/ru/business/service/") http://www.rcitsakha.ru/ru/business/service/
+    .accord__logo

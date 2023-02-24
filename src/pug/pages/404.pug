@@ -1,0 +1,14 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        .not-found
+          .not-found__name
+            span 404
+          .not-found__text
+            h1 Страница не найдена
+          .not-found__btn
+            +button("Вернуться назад","a","button_blue")
+  include ../chunk/footer

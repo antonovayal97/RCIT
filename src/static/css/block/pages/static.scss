@@ -1,0 +1,163 @@
+.static
+{
+  margin-top: 80px;
+  color: var(--color-blue-dark);
+  @include l
+  {
+    margin-top: 60px;
+  }
+}
+.static__block
+{
+  margin-bottom: 70px;
+  &:last-child
+  {
+    margin-bottom: 0;
+  }
+  @include l
+  {
+    margin-bottom: 60px;
+  }
+  @include xm
+  {
+    margin-bottom: 50px;
+  }
+}
+.static__header
+{
+  margin-bottom: 40px;
+  text-align: center;
+  h2
+  {
+    @include font-d-1-5
+  }
+  @include l
+  {
+    margin-bottom: 30px;
+    h2
+    {
+      @include font-t-1-5
+    }
+  }
+  @include xm
+  {
+    margin-bottom: 25px;
+    h2
+    {
+      @include font-m-1-5
+    }
+  }
+}
+.static__img
+{
+  margin-bottom: 40px;
+  border-radius: 20px;
+  height: 400px;
+  overflow: hidden;
+  img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include l
+  {
+    margin-bottom: 30px;
+    height: 300px;
+  }
+  @include xm
+  {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 140px;
+  }
+}
+.static__text
+{
+  p
+  {
+    letter-spacing: -0.2px;
+    @include font-d-3;
+  }
+  @include l
+  {
+    p
+    {
+      @include font-t-3;
+    }
+  }
+  @include xm
+  {
+    p
+    {
+      @include font-m-3;
+    }
+  }
+}
+.static__accords
+{
+  margin-top: 40px;
+  @include l
+  {
+    margin-top: 30px;
+  }
+  @include xm
+  {
+    margin-top: 25px;
+  }
+}
+.static__card
+{
+  position: relative;
+}
+.static__docs
+{
+  margin-top: 40px;
+  @include l
+  {
+    margin-top: 30px;
+  }
+  @include xm
+  {
+    margin-top: 25px;
+  }
+}
+.static__galary
+{
+  margin: -10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 40px;
+  @include l
+  {
+    margin-bottom: 30px;
+  }
+  @include xm
+  {
+    display: block;
+    margin: -7.5px -10px;
+    margin-bottom: 20px;
+  }
+}
+.static__galary-img
+{
+  height: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include l
+  {
+    height: 200px;
+  }
+  @include xm
+  {
+    margin: 7.5px 10px;
+    height: 150px;
+  }
+}

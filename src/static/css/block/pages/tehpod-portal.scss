@@ -1,0 +1,54 @@
+.tehpod-portal
+{
+  margin-top: 80px;
+  text-align: center;
+  @include l
+  {
+    margin-top: 60px;
+  }
+}
+.tehpod-portal__head
+{
+  margin-bottom: 30px;
+  color: var(--color-blue-dark);
+  h2
+  {
+    @include font-d-1-5
+  }
+  @include l
+  {
+    h2
+    {
+      @include font-t-1-5
+    }
+  }
+  @include xm
+  {
+    margin-bottom: 20px;
+    h2
+    {
+      @include font-m-1-5
+    }
+  }
+}
+.tehpod-portal__text
+{
+  p
+  {
+    color: var(--color-black)
+  }
+  margin-bottom: 40px;
+  @include l
+  {
+
+  }
+  @include xm
+  {
+    margin-bottom: 30px;
+  }
+}
+.tehpod-portal__btn
+{
+  display: flex;
+  justify-content: center;
+}

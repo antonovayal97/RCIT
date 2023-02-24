@@ -1,0 +1,18 @@
+.documents-list
+{
+  margin-top: 80px;
+  @include l
+  {
+    margin-top: 60px;
+  }
+  li
+  {
+    &:last-child
+    {
+      .document
+      {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

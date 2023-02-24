@@ -20,7 +20,7 @@ mixin pageHeader(name="Заголовок страницы",breadcrumbs=['Гла
           each btn in btns
             if btn.active == true
               .swiper-slide.page-header__btns-swiper-slide
-                +button(btn.name,"div","button_active")
+                +button(btn.name,"a","button_blue")
             if btn.active == false
               .swiper-slide.page-header__btns-swiper-slide
                 +button(btn.name)
