@@ -1,0 +1,24 @@
+extends ../layout/app
+include ../chunk/components/project-card
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Календарь видеоконфренцсвязи с районными студиями",["Главная","Сервисы","Календарь видеоконфренцсвязи с районными студиями"],[{name: 'Календарь видеоконфренцсвязи с районными студиями',url: '#', active: true},{name: 'Сервисы электронной почты',url: '#',active: false},{name: 'Реестер ГИС',url: '#',active: false}])
+        div(id="calendar").calendar
+          div(@click="changeMonth()") dasdasd
+          v-calendar(class="custom-calendar max-w-full" :masks="masks" :attributes="attributes" ref="calendar" disable-page-swipe is-expanded trim-weeks)
+            template(v-slot:day-content="{ day, attributes}")
+              div(class="flex flex-col h-full z-10 overflow-hidden")
+                span(class="day-label text-sm text-gray-900") {{ day.day }}
+                div(class="flex-grow overflow-y-auto overflow-x-auto")
+                  div(v-for="attr in attributes" :key="attr.time" class="calendar__event")
+                    .calendar__event-time
+                      span {{attr.customData.time}} {{ day.week }}
+                    .calendar__event-text
+                      a(href="#") {{ attr.customData.title }}
+  include ../chunk/footer
+block script
+  script(src='https://cdn.jsdelivr.net/npm/vue@2.7.14')
+  script(src='https://unpkg.com/v-calendar')

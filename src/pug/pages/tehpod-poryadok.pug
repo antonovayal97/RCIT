@@ -1,0 +1,70 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Порядок и способ обращения в техническую поддержку",["Главная","Техническая поддержка","Порядок и способ обращения в техническую поддержку"],[{name: 'Порядок и способ обращения в тех.поддержку',url: '#', active: true},{name: 'Регламенты и инструкции',url: '#', active: false},{name: 'Портал тех.поддержки',url: '#',active: false},{name: 'FAQ',url: '#',active: false}])
+        .tehpod-poryadok
+          .tehpod-poryadok__top
+            .tehpod-poryadok__top-info
+              .tehpod-poryadok__tel-email
+                .tehpod-poryadok__tel
+                  .tehpod-poryadok__tel-default
+                    span
+                      b Телефон:
+                      a(href="tel:4112398000")  (4112) 39-80-00
+                  .tehpod-poryadok__tel-ip
+                    span
+                      b IP-телефон:
+                      |  69800
+                .tehpod-poryadok__email
+                  span
+                    b E-Mail:
+                    a(href="email:support@rcitsakha.ru")  support@rcitsakha.ru
+              .tehpod-poryadok__rezhim
+                span
+                  b Режим работы:
+                  |  круглосуточно, без выходных и праздничных дней.
+            .tehpod-poryadok__bottom-info
+              .tehpod-poryadok__text
+                p Все заявки предварительно регистрируются операторами. Свое обращение Вы можете подать по контактному номеру, посредством электронной почты или воспользоваться порталом самообслуживания
+                  a(href="https://sd.rcitsakha.ru/sd/")  https://sd.rcitsakha.ru/sd/
+              .tehpod-poryadok__bottom-text
+                .tehpod-poryadok__bottom-text-name
+                  span Авторизационные данные для входа на портал можно получить по номеру:
+                .tehpod-poryadok__tel
+                  .tehpod-poryadok__tel-default
+                    span
+                      b Телефон:
+                      a(href="tel:4112398000")  (4112) 39-80-00
+                  .tehpod-poryadok__tel-ip
+                    span
+                      b IP-телефон:
+                      |  69800
+          .tehpod-poryadok__bottom
+            .tehpod-poryadok__list
+              ul
+                li
+                  p При составлении инцидента необходимо четко и в полном объеме описать содержание вопроса или проблемы, порядок действий, который привел к возникновению ошибки, приложить
+                    a(href="#")  скриншоты экрана.
+                li
+                  p Обязательно укажите тему обращения. Тема должна отражать суть вопроса.
+                li
+                  p Перечень информации, которая может потребоваться сотрудникам службы сопровождения:
+                li
+                  p Контактные данные (ФИО сотрудника, телефон с кодом города)
+                li
+                  p Последовательность действий, которая предшествовала появлению ошибки;
+                li
+                  p Время и дата возникновения ошибки;
+                li
+                  p Текст ошибки;
+                li
+                  p Скриншот ошибки.
+                li
+                  p Каждому запросу присваивается ID отслеживания (уникальный идентификатор), по которому вы можете проверить статус вашего обращения и историю переписки со службой сопровождения.
+            .tehpod-poryadok__link
+              p
+                a(href="#") Инструкция по работе с порталом самообслуживания
+  include ../chunk/footer

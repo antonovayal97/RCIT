@@ -11,6 +11,12 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-grey: #636363;
+  --day-border: 1px solid var(--color-grey);
+  --day-border-highlight: 1px solid #b8c2cc;
+  --day-width: 90px;
+  --day-height: 90px;
+  --weekday-bg: #f8fafc;
+  --weekday-border: 1px solid #eaeaea;
 }
 // font-d-1
 // font-t-1
@@ -300,13 +306,16 @@ section
 @import "./block/pages/news.scss";
 @import "./block/pages/news-inside.scss";
 @import "./block/pages/about-realproject.scss";
+@import "./block/pages/about-realproject-inside.scss";
 @import "./block/pages/about-orcit.scss";
 @import "./block/pages/about-history.scss";
 @import "./block/pages/faq.scss";
 @import "./block/pages/tehpod-portal.scss";
+@import "./block/pages/tehpod-poryadok.scss";
 @import "./block/pages/about-docs.scss";
 @import "./block/pages/about-docs-inside.scss";
 @import "./block/pages/404.scss";
+@import "./block/pages/calendar.scss";
 @import "./block/pages/static.scss";
 *
 {

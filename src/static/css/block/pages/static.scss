@@ -161,3 +161,138 @@
     height: 150px;
   }
 }
+.static__chain
+{
+  display: flex;
+  margin-top: 60px;
+  @include l
+  {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.static__chain-item
+{
+  margin-right: 48px;
+  position: relative;
+  flex: 1;
+  &:hover
+  {
+    .static__chain-circle
+    {
+      background: var(--color-green);
+    }
+  }
+  &:last-child
+  {
+    margin-right: 0;
+    &::after
+    {
+      display: none;
+    }
+  }
+  &::after
+  {
+    position: absolute;
+    top: 46px;
+    right: -48px;
+    content: "";
+    width: 48px;
+    height: 2px;
+    background-color: #d9d9d9;
+    @include xm
+    {
+      width: 20px;
+      right: -20px;
+    }
+  }
+  @include l
+  {
+    flex: 0 0 calc(33% - 30px);
+    &:nth-child(3n)
+    {
+      margin-right: 0;
+      margin-bottom: 30px;
+      &::after
+      {
+        display: none;
+      }
+    }
+  }
+  @include xm
+  {
+    flex: 0 0 calc(50% - 10px);
+    margin-right: 20px;
+    &:nth-child(3n)
+    {
+      margin-right: 20px;
+      margin-bottom: 0px;
+      &::after
+      {
+        display: block;
+      }
+    }
+    &:nth-child(2n)
+    {
+      margin-right: 0px;
+      margin-bottom: 30px;
+      &::after
+      {
+        display: none;
+      }
+    }
+  }
+}
+.static__chain-circle
+{
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-blue2);
+  border-radius: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img
+  {
+    width: 56px;
+    height: 56px;
+  }
+  @include l
+  {
+    width: 104px;
+    height: 104px;
+    img
+    {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  @include xm
+  {
+    width: 80px;
+    height: 80px;
+    img
+    {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+.static__chain-name
+{
+  text-align: center;
+  color: var(--color-blue-dark);
+  @include font-d-2;
+  @include l
+  {
+    width: 177px;
+    margin: 0 auto;
+    @include font-t-2;
+  }
+  @include xm
+  {
+    width: 116px;
+  }
+}

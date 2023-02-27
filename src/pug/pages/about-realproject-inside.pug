@@ -1,0 +1,35 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Система видеонаблюдения на выборах Главы РС (Я)",["Главная","О нас","Реализованные проекты"],[{name: 'История РЦИТ',url: '#', active: false},{name: 'Политика РЦИТ',url: '#',active: false},{name: 'Достижения',url: '#',active: false},{name: 'Реализованные проекты',url: '#',active: true},{name: 'Вакансии',url: '#',active: false},{name: 'Штаб ЦТ',url: '#',active: false},{name: 'Контакты',url: '#',active: false},{name: 'Документы',url: '#',active: false}])
+        .about-realproject-inside
+          .about-realproject-inside__img
+            img(src="./img/orcit1.png")
+            .dotted.about-realproject-inside__dotted-1
+            .dotted.about-realproject-inside__dotted-2
+          .about-realproject-inside__text
+            p ГБУ РС (Я) «РЦИТ» успешно провел видеотрансляцию в сети Интернет процесса голосования и видеонаблюдение подсчета голосов избирателей с избирательных участков 14 сентября 2014 года на выборах Главы Республики Саха (Якутия). <br> Услуги по видеотрансляции в информационно-телекоммуникационной сети Интернет изображения процесса голосования и видеонаблюдения подсчета голосов избирателей с избирательных участков на территории Республики Саха (Якутия) 14 сентября 2014 года, включали:
+          .about-realproject-inside__list
+            ul
+              li
+                p Видеотрансляцию на каждом избирательном участке
+              li
+                p Хранение полученных данных
+          .about-realproject-inside__text
+            p Система видеонаблюдения и трансляции изображения состояла из веб-камер (камер видеонаблюдения), устанавливаемых в помещениях для голосования, а также средств записи и хранения видеоинформации и средств обработки данных видеотрансляций, устанавливаемых в центре обработки данных для дальнейшей передачи изображения на сайт видеотрансляции выборов. <br> Средства видеонаблюдения были установлены таким образом, чтобы не нарушалась тайна голосования и отсутствовала возможность контроля за волеизъявлением избирателей, а также контроля за участием гражданина Российской Федерации в выборах.
+          .about-realproject-inside__team
+            .about-realproject-inside__team-head
+              h2 Команда проекта
+            .about-realproject-inside__team-wrap
+              each person in [1,2,3]
+                .about-realproject-inside__team-person
+                  .about-realproject-inside__team-person-photo
+                    img(src="./img/manager.png")
+                  .about-realproject-inside__team-person-name
+                    span Кривошапкин Иван Александрович
+                  .about-realproject-inside__team-person-post
+                    span Проект менеджер
+  include ../chunk/footer
