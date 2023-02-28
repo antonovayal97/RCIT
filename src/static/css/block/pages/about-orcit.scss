@@ -15,7 +15,15 @@
   position: relative;
   .section__head
   {
-    margin-bottom: 20px;
+    margin-bottom: 45px;
+    @include l
+    {
+      margin-bottom: 30px
+    }
+    @include xm
+    {
+      margin-bottom: 20px;
+    }
   }
 }
 .about-orcit__double-img

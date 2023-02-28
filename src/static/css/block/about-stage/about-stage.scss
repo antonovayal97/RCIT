@@ -106,6 +106,7 @@
   @media (max-width: 9999px) and (min-width: 744px) {
       height: auto !important;
   }
+  cursor: pointer;
       @include xm
       {
         margin-top: -185px;
@@ -127,6 +128,15 @@
 }
 .about-stage__swiper
 {
+  margin: 0 calc((1080px - 100vw)/2);
+  @include l
+  {
+    margin: 0 -64px;
+  }
+  @include xm
+  {
+    margin: auto;
+  }
   margin-top: -20px;
 }
 .about-stage__swiper-wrapper

@@ -1,5 +1,6 @@
 extends ../layout/app
 include ../chunk/components/project-card
+include ../chunk/components/select
 block page
   include ../chunk/header
   main
@@ -7,17 +8,49 @@ block page
       .page-wrap
         +pageHeader("Календарь видеоконфренцсвязи с районными студиями",["Главная","Сервисы","Календарь видеоконфренцсвязи с районными студиями"],[{name: 'Календарь видеоконфренцсвязи с районными студиями',url: '#', active: true},{name: 'Сервисы электронной почты',url: '#',active: false},{name: 'Реестер ГИС',url: '#',active: false}])
         div(id="calendar").calendar
-          div(@click="changeMonth()") dasdasd
-          v-calendar(class="custom-calendar max-w-full" :masks="masks" :attributes="attributes" ref="calendar" disable-page-swipe is-expanded trim-weeks)
-            template(v-slot:day-content="{ day, attributes}")
-              div(class="flex flex-col h-full z-10 overflow-hidden")
-                span(class="day-label text-sm text-gray-900") {{ day.day }}
-                div(class="flex-grow overflow-y-auto overflow-x-auto")
-                  div(v-for="attr in attributes" :key="attr.time" class="calendar__event")
-                    .calendar__event-time
-                      span {{attr.customData.time}} {{ day.week }}
-                    .calendar__event-text
-                      a(href="#") {{ attr.customData.title }}
+          .calendar__top-text
+            p По вопросам проведения ВКС обращаться по телефону:
+              a(href="tel:4112398063")  (4112) 398-063
+            p Заявка на включение сеанса в План-график проведения ВКС оформляется официальным письмом и направляется в ГБУ РС(Я) "РЦИТ" не позднее, чем за 3 рабочих дня до планируемой даты проведения сеанса
+          .calendar__header
+            div(class="calendar__month" :class="{calendar__month_active: isMounted}")
+              span {{thisMonth}}
+            .calendar__next-month
+              div(class="calendar__next-month-text calendar__btn-text")
+                span Следующий месяц
+              div(@click="nextMonth()" class="calendar__next-month-btn paggination__arrow")
+                +icon('uslugi-right-arrow')
+            .calendar__prev-month
+              div(@click="nextMonth()" class="calendar__prev-month-btn paggination__arrow")
+                +icon('uslugi-left-arrow')
+              div(class="calendar__prev-month-text calendar__btn-text")
+                span Следующий месяц
+            .calendar__year-select
+              +select('thisYear',[{value: 2023,name: '2023'},{value: 2024,name: '2024'},{value: 2025,name: '2025'},{value: 2026,name: '2026'},{value: 2027,name: '2027'}],'changeYear')
+            .calendar__month-select
+              +select('thisMonth',[{value: 1,name: 'Январь'},{value: 2,name: 'Февраль'},{value: 3,name: 'Март'},{value: 4,name: 'Апрель'},{value: 5,name: 'Май'},{value: 6,name: 'Июнь'},{value: 7,name: 'Июль'},{value: 8,name: 'Август'},{value: 9,name: 'Сентябрь'},{value: 10,name: 'Октябрь'},{value: 11,name: 'Ноябрь'},{value: 12,name: 'Декабрь'}],'changeMonth')
+          .swiper.calendar__swiper
+            .calendar__swiper-paggination-wrap
+              .calendar__swiper-paggination
+            .swiper-wrapper.calendar__swiper-wrapper
+              .swiper-slide.calendar__swiper-slide
+                v-calendar(class="custom-calendar max-w-full" :masks="masks" :attributes="attributes" ref="calendar" disable-page-swipe is-expanded trim-weeks)
+                  template(v-slot:day-content="{ day, attributes}")
+                    div(class="flex flex-col h-full z-10 overflow-hidden")
+                      span(class="day-label text-sm text-gray-900") {{ day.day }}
+                      div(class="flex-grow overflow-y-auto overflow-x-auto")
+                        div(v-for="attr in attributes" :key="attr.time" class="calendar__event")
+                          .calendar__event-time
+                            span {{attr.customData.time}} {{ day.week }}
+                          .calendar__event-text
+                            a(href="#") {{ attr.customData.title }}
+              .swiper-slide.calendar__swiper-slide
+              .swiper-slide.calendar__swiper-slide
+          .calendar__download
+            .calendar__download-text
+              h2 Скачать приложение для видеоконфренцсвязи
+            .calendar__download-btn
+              +button("Скачать Vinteo","a","button_blue")
   include ../chunk/footer
 block script
   script(src='https://cdn.jsdelivr.net/npm/vue@2.7.14')

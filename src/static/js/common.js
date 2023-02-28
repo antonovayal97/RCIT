@@ -107,25 +107,32 @@ let homeUslugi = new Swiper(".home-uslugi", {
     }
   }
     });
-let pageHeader = new Swiper(".page-header__btns-swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  allowTouchMove: true,
-  breakpoints:{
-    1220:
-    {
-      allowTouchMove: false,
-      spaceBetween: 20,
-    },
-    744:
-    {
-      allowTouchMove: true,
-      spaceBetween: 20,
-    }
-  }
-    });
+    setTimeout(() => {
+      let pageHeader = new Swiper(".page-header__btns-swiper", {
+        slidesPerView: "auto",
+        // allowTouchMove: true,
+        // freeMode: true,
+        pagination: {
+        el: ".page-header__swiper-paggination",
+        type: "progressbar",
+      },
+        breakpoints:{
+          1220:
+          {
+            allowTouchMove: false,
+            // spaceBetween: 20,
+          },
+          744:
+          {
+            allowTouchMove: true,
+            // spaceBetween: 20,
+          }
+        }
+          });
+}, 1)
 let aboutStage = new Swiper(".about-stage__swiper", {
   slidesPerView: "auto",
+  allowTouchMove: true,
   pagination: {
   el: ".about-stage__swiper-paggination",
   type: "progressbar",
@@ -155,6 +162,9 @@ let calendar = new Vue({
     const month = new Date().getMonth();
     const year = new Date().getFullYear();
     return {
+      isMounted: false,
+      selectMonth: 1,
+      selectYear: 2023,
       masks: {
         weekdays: 'WWWW',
         title: "MMMM"
@@ -264,10 +274,79 @@ let calendar = new Vue({
   },
   methods:
   {
-    changeMonth()
+    nextMonth()
     {
-      this.$refs.calendar.move(5)
+      this.$refs.calendar.move(1)
+      this.selectMonth = this.$refs.calendar.pages[0].month
+    },
+    prevMonth()
+    {
+      this.$refs.calendar.move(-1)
+      this.selectMonth = this.$refs.calendar.pages[0].month
+    },
+    changeYear(year)
+    {
+      this.selectYear = year
+      this.$refs.calendar.move({month: parseInt(this.selectMonth),year: parseInt(year)})
+    },
+    changeMonth(month)
+    {
+      this.selectMonth = month
+      this.$refs.calendar.move({month: parseInt(month),year: parseInt(this.selectYear)})
     }
+  },
+  computed: {
+    // геттер вычисляемого значения
+    thisMonth: function () {
+      // `this` указывает на экземпляр vm
+      if(this.isMounted)
+      {
+        return this.$refs.calendar.pages[0].monthLabel
+      }
+      return
+    },
+    thisYear: function () {
+      // `this` указывает на экземпляр vm
+      if(this.isMounted)
+      {
+        return this.$refs.calendar.pages[0].yearLabel
+      }
+      return
+    },
+  },
+  mounted(){
+    this.isMounted = true
+    this.selectMonth = this.$refs.calendar.pages[0].month
+    this.selectYear = this.$refs.calendar.pages[0].year
+    console.log(this.$refs.calendar)
   }
+
       })
+
+
+      let calendarSwiper = new Swiper(".calendar__swiper", {
+        freeMode: true,
+        slidesPerView: "auto",
+        pagination: {
+        el: ".calendar__swiper-paggination",
+        type: "progressbar",
+      },
+          });
+
+          let select = document.querySelectorAll('.page__select')
+          select.forEach(item => {
+            let inside = item.querySelector('.page__select-inside')
+            let outside = item.querySelector('.page__select-outside')
+            let arrow = item.querySelector('.page__select-arrow')
+            outside.addEventListener('click',() => {
+              item.classList.toggle('page__select_active')
+              inside.classList.toggle('page__select-inside_active')
+              arrow.classList.toggle('page__select-arrow_active')
+            })
+            inside.addEventListener('click',() => {
+              item.classList.toggle('page__select_active')
+              inside.classList.toggle('page__select-inside_active')
+              arrow.classList.toggle('page__select-arrow_active')
+            })
+          })
 })

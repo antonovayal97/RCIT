@@ -1,6 +1,6 @@
 .home-parnters
 {
-
+  margin-bottom: -20px;
 }
 .home-parnters__wrapper
 {
@@ -9,6 +9,7 @@
 .home-parnters__slide
 {
   width: auto;
+  padding-bottom: 20px;
 }
 .home-partner__card
 {
@@ -20,6 +21,10 @@
   border: 1px solid var(--color-blue-light2);
   border-radius: 8px;
   background-color: var(--color-white);
+  &:hover
+  {
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  }
   img
   {
     height: 50px;

@@ -1,0 +1,11 @@
+mixin select(selectedLabel,items,method)
+  .page__select
+    .page__select-outside
+      .page__select-text
+        span='{{' + selectedLabel + '}}'
+      .page__select-arrow
+        +icon("arrow-down")
+    .page__select-inside
+      each i in items
+        div(class="page__select-item" @click=method + '(' + i.value + ')')
+          span=i.name

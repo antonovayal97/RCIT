@@ -5,6 +5,7 @@
   @include l
   {
     margin-top: 50px;
+    border-bottom: none;
   }
   @include xm
   {
@@ -78,11 +79,13 @@
   margin-bottom: 7px;
   @include l
   {
+    // width: calc(100vw + 128px);
+    margin: 0 -64px;
     margin-top: 30px;
-    margin-bottom: 6px;
   }
   @include xm
   {
+    margin: 0 -34px;
     margin-top: 24px;
   }
 }
@@ -93,6 +96,9 @@
 .page-header__btns-swiper-wrapper
 {
   flex-wrap: wrap;
+  @media (max-width: 9999px) and (min-width: 1220px) {
+      transform: translate3d(0px, 0px, 0px) !important;
+  }
   @include l
   {
     flex-wrap: nowrap;
@@ -101,6 +107,66 @@
 .page-header__btns-swiper-slide
 {
   display: flex;
-  width: auto;
+  width: fit-content;
   margin-bottom: 20px;
+  margin-right: 20px;
+  @include l
+  {
+    margin-left: 65px;
+    margin-right: -45px;
+    &:first-child
+    {
+      margin-left: 65px;
+    }
+    &:last-child
+    {
+      margin-right: 65px;
+    }
+  }
+  @include xm
+  {
+    margin-left: 35px;
+    margin-right: -15px;
+    &:first-child
+    {
+      margin-left: 35px;
+    }
+    &:last-child
+    {
+      margin-right: 35px;
+    }
+  }
+}
+.page-header__swiper-paggination-wrap
+{
+  position: relative;
+  width: 100%;
+  height: 6px;
+  overflow: auto;
+  display: none;
+  @include l
+  {
+    display: block;
+    width: calc(100% - 128px);
+    margin: 0 64px;
+    margin-top: 6px;
+  }
+  @include xm
+  {
+    width: calc(100% - 68px);
+    margin: 0 34px;
+  }
+}
+.page-header__swiper-paggination
+{
+  height: 1px !important;
+  top: 3px !important;
+  span
+  {
+    background-color: var(--color-blue2) !important;
+    height: 3px !important;
+    top: -1px !important;
+    z-index: 2;
+    border-radius: 2px;
+  }
 }
