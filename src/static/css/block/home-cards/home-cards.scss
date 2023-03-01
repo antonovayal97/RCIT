@@ -90,6 +90,7 @@
   @include xm
   {
     flex: 0 calc(50% - 10px);
+    padding: 15px 13px;
   }
   &:hover,&:focus
   {
@@ -170,6 +171,15 @@
     line-height: 14px;
   }
 }
+
+.home-mini-card__hidden
+{
+  display: none;
+}
+
+
+
+
 .home-card__dotted-1
 {
   left: -50px;

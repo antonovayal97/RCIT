@@ -7,6 +7,22 @@ block page
       .page-wrap
         +pageHeader("Новости",["Главная","Пресс-центр","Новости"],[{name: 'Новости',url: '#',active: true},{name: 'Объявление',url: '#',active: false}])
         .hews
+          .news__sort
+            .news__sort-text
+              span Сортировать:
+            .news__sort-select
+              .news__select-outside
+                .news__select-outside-text
+                  span Актуальное
+                .news__select-outside-arrow
+                  +icon("arrow-down")
+              .news__select-inside
+                a(href="#" class="news__select-option")
+                  span Актуальное
+                a(href="#" class="news__select-option")
+                  span Популярное
+                a(href="#" class="news__select-option")
+                  span Новое
           .hews__wrap
             +newsCard("news.png")
             +newsCard()

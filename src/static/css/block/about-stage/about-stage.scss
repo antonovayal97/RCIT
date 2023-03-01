@@ -109,8 +109,12 @@
   cursor: pointer;
       @include xm
       {
+        margin: 0 -34px;
         margin-top: -185px;
-        margin-bottom: 110px;
+        padding-bottom: 15px;
+        overflow: hidden;
+        // margin-bottom: 110px;
+        // padding-bottom: 60px;
         .about-stage__swiper
         {
           width: 290px;

@@ -1,25 +1,27 @@
 - var linksArr = [{name: 'О нас',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекты',url: '#'}]},{name: 'Услуги',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Справочник',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'О РЦИТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'},{name: 'Вакансии',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Реализованные проекы',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
 
-header
+header(class="header-main")
   .header__top
     .index-wrap
       .header__wrap
         a(href="#").header__logo
           +icon('logo','header__logo-image')
         .header__options
+          a(href="#" class="header__btn hidden-l")
+            span Для физических лиц
+          a(href="#" class="header__btn hidden-l")
+            span Для юридических лиц
           .header__search.hidden-l
             input(type="text" placeholder="Поиск").header__search-input
             .header__search-btn
               +icon('search-normal','header__search-btn-icon')
           a(href="#").header__a11y.hidden-l
-            .header__a11y-text
+            .header__a11y-text.visible-l
               span Версия для слабовидящих
             .header__a11y-icon
               +icon('akar-icons_glasses')
           .header__btn-user
             +icon('profile')
-          .header__dd.hidden-l
-            include ./header-dropdown/header-dropdown.pug
           .header__menu-btn.visible-l
             +icon('menu-header')
   .header__mid
@@ -39,7 +41,6 @@ header
                           each ll in link.links
                             li
                               a(href="ll.url" aria-role="menuitem")
-                                .header__menu-links-link-second-icon
                                 .header__menu-links-link-second-name=ll.name
             else
               li
@@ -52,21 +53,23 @@ header
   .header__bottom
     .index-wrap
       .header__notifications
-        //
-          .swiper.header__notifications-swiper
-            .swiper-wrapper
-              .swiper-slide
-        span Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной без...
+        .swiper.header__notifications-swiper
+          .swiper-wrapper.header__notifications-swiper-wrapper
+            .swiper-slide.header__notifications-swiper-slide
+              p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной безопасности
+            .swiper-slide.header__notifications-swiper-slide
+              p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной безопасности
   .header__burger-inside
     .header__burger-inside-head.index-wrap
       .header__burger-inside-head-left
-        include ./header-dropdown/header-dropdown.pug
-        a(href="#").header__a11y.hidden-xm
-          .header__a11y-text
-            span Версия для слабовидящих
+        a(href="#" class="header__btn")
+          span Для физических лиц
+        a(href="#" class="header__btn")
+          span Для юридических лиц
+      .header__burger-inside-head-right
+        a(href="#").header__a11y
           .header__a11y-icon
             +icon('akar-icons_glasses')
-      .header__burger-inside-head-right
         .header__btn-user
           +icon('profile')
         .header__burger-inside-close
@@ -93,10 +96,3 @@ header
                 .header__burger-inside-main-menu-first-name
                   a(href="#")
                     span=tt.name
-    .header__burger-inside-bot.index-wrap.visible-xm
-      .header__burger-inside-bot-wrap
-        a(href="#").header__a11y.visible-xm-flex
-          .header__a11y-text
-            span Версия для слабовидящих
-          .header__a11y-icon
-            +icon('akar-icons_glasses')

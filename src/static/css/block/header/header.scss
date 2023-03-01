@@ -1,7 +1,14 @@
 header
 {
   width: 100vw;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  transition: top .8s ease
+}
+.header-main-hidden
+{
+  top: -300px;
 }
 .header__wrap
 {
@@ -40,8 +47,11 @@ header
 }
 .header__logo
 {
+  display: block;
+  margin-right: 30px;
   @include xm
   {
+    margin-right: 0;
     height: 35px;
     width: 207px;
     margin-top: 24px;
@@ -100,14 +110,50 @@ header
 {
 
 }
+.header__btn
+{
+  height: 48px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 100px;
+  &:hover,&:focus
+  {
+    box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  }
+  @include xm
+  {
+    padding: 0 15px;
+    height: 42px;
+  }
+  span
+  {
+    @include font-d-5
+    {
+      color: var(--color-blue2)
+    }
+    @include xm
+    {
+      @include font-m-5
+    }
+  }
+  // @include l
+  // {
+  //   padding: 0 20px;
+  //   height: 42px;
+  //   width: 266px;
+  //   gap: 14px;
+  // }
+}
 .header__a11y
 {
   height: 48px;
   // width: 282px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  gap: 12px;
+  justify-content: center;
+  width: 48px;
   border: 1px solid var(--color-blue-light2);
   border-radius: 100px;
   &:hover,&:focus
@@ -116,9 +162,14 @@ header
   }
   @include l
   {
-    height: 42px;
-    width: 266px;
-    gap: 14px;
+    height: 48px;
+    width: 48px;
+    margin-right: 20px;
+  }
+  @include xm
+  {
+    width: 32px;
+    height: 32px;
   }
 }
 .header__a11y-text
@@ -143,6 +194,11 @@ header
   {
     width: 100%;
     height: 100%;
+  }
+  @include xm
+  {
+    width: 16px;
+    height: 16px;
   }
 }
 .header__btn-user
@@ -310,12 +366,6 @@ header
     }
   }
 }
-.header__menu-links-link-second-icon
-{
-  width: 24px;
-  height: 24px;
-  background-color: gray;
-}
 .header__menu-links-link-second-name
 {
   @include font-d-6
@@ -337,13 +387,37 @@ header
 {
   padding-top: 10px;
   padding-bottom: 13px;
-  span
+  margin: 0 calc((1080px - 100vw)/2);
+  @include l
   {
-    @include font-d-7
-    {
-      color: var(--color-grey)
-    }
+    margin: 0 -24px;
   }
+  @include xm
+  {
+    margin: 0 -14px;
+  }
+  cursor: pointer;
+}
+.header__notifications-swiper-wrapper
+{
+  transition-timing-function:linear;
+}
+.header__notifications-swiper-slide
+{
+  margin-right: 25px;
+  width: fit-content;
+    white-space: nowrap;
+    color: var(--color-grey);
+    @include font-d-7;
+    @include l
+    {
+      @include font-t-6;
+    }
+    @include xm
+    {
+      @include font-m-6;
+    }
+
 }
 .header__burger-inside
 {
@@ -355,12 +429,14 @@ header
   width: 100vw;
   height: 100vh;
   background-color: var(--color-blue-light);
-  transition: all .2s ease
+  transition: all .2s ease;
+  padding-bottom: 30px;
 }
 .header__burger-active
 {
   opacity: 1;
   right: 0;
+  overflow: scroll;
 }
 .header__burger-inside-head
 {
@@ -370,6 +446,7 @@ header
   padding-bottom: 33px;
   @include xm
   {
+    flex-direction: column-reverse;
     padding-top: 18px;
     padding-bottom: 19px;
   }
@@ -377,23 +454,44 @@ header
 .header__burger-inside-head-left
 {
   display: flex;
-  gap: 40px;
+  .header__btn
+  {
+    &:first-child
+    {
+      margin-right: 20px;
+      @include xm
+      {
+        margin-right: 17px;
+      }
+    }
+  }
+  @include xm
+  {
+    padding-top: 24px;
+  }
 }
 .header__burger-inside-head-right
 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 30px;
   @include xm
   {
-    gap: 21px;
+    margin: 0 -19px;
+    padding: 0 19px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--color-blue2)
   }
 }
 .header__burger-inside-close
 {
   width: 32px;
   height: 32px;
+  margin-left: 30px;
+  @include xm
+  {
+    margin-left: 20px;
+  }
   .icon
   {
     width: 32px;
@@ -448,7 +546,7 @@ header
       @include xm
       {
         transform: rotateZ(90deg);
-        stroke: #37C239;
+        color: #37C239;
       }
     }
   }

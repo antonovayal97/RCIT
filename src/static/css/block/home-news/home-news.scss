@@ -8,7 +8,7 @@
   }
   @include xm
   {
-    width: 330px;
+    width: 290px;
   }
 }
 .home-news__wrap
@@ -17,7 +17,7 @@
   gap: 20px;
   @include xm
   {
-    padding: 0 20px;
+    // padding: 0 20px;
     flex-direction: column;
   }
   a

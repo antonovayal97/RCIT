@@ -1,11 +1,10 @@
 .page-header
 {
   margin-top: 60px;
-  border-bottom: 1px solid var(--color-grey-light);
   @include l
   {
     margin-top: 50px;
-    border-bottom: none;
+    // border-bottom: none;
   }
   @include xm
   {
@@ -76,7 +75,6 @@
 .page-header__btns
 {
   margin-top: 40px;
-  margin-bottom: 7px;
   @include l
   {
     // width: calc(100vw + 128px);
@@ -103,6 +101,10 @@
   {
     flex-wrap: nowrap;
   }
+  @include xm
+  {
+    // padding-left: 35px;
+  }
 }
 .page-header__btns-swiper-slide
 {
@@ -112,28 +114,34 @@
   margin-right: 20px;
   @include l
   {
-    margin-left: 65px;
+    margin-left: 0;
     margin-right: -45px;
+    padding-left: 65px;
     &:first-child
     {
-      margin-left: 65px;
+      padding-left: 65px;
+      margin-left: 0;
     }
     &:last-child
     {
-      margin-right: 65px;
+      margin-right: 0;
+      padding-right: 65px;
     }
   }
   @include xm
   {
-    margin-left: 35px;
+    margin-left: 0;
     margin-right: -15px;
+    padding-left: 35px;
     &:first-child
     {
-      margin-left: 35px;
+      padding-left: 35px;
+      margin-left: 0;
     }
     &:last-child
     {
-      margin-right: 35px;
+      margin-right: 0;
+      padding-right: 35px;
     }
   }
 }
@@ -143,13 +151,29 @@
   width: 100%;
   height: 6px;
   overflow: auto;
-  display: none;
+  margin-top: 8px;
+  .swiper-pagination-lock
+  {
+    display: block !important;
+    span
+    {
+      display: none;
+    }
+  }
+  span
+  {
+    display: none;
+  }
   @include l
   {
     display: block;
     width: calc(100% - 128px);
     margin: 0 64px;
     margin-top: 6px;
+    span
+    {
+      display: block;
+    }
   }
   @include xm
   {
