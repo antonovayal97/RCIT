@@ -344,10 +344,10 @@ header
 }
 .header__menu-links-link-second-wrap
 {
+  width: 283px;
   margin-top: 14px;
   padding: 30px;
   background-color: var(--color-white);
-  min-height: 200px;
   display: flex;
   border-radius: 8px;
   box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
@@ -362,7 +362,6 @@ header
       gap: 20px;
       padding: 10px 0;
       align-items: center;
-      white-space: nowrap;
     }
   }
 }
@@ -546,7 +545,7 @@ header
       @include xm
       {
         transform: rotateZ(90deg);
-        color: #37C239;
+        color: var(--color-blue2);
       }
     }
   }

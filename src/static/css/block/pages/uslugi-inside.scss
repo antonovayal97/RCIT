@@ -1,0 +1,475 @@
+.uslugi-inside
+{
+
+}
+.uslugi-inside__section
+{
+  margin-top: 70px;
+  @include xm
+  {
+    margin-top: 60px;
+  }
+}
+.uslugi-inside__advantages
+{
+
+}
+.advantages
+{
+  position: relative;
+  @include l
+  {
+    width: 520px;
+    margin: 0 auto;
+  }
+  @include xm
+  {
+    width: 290px;
+  }
+}
+.advantages__wrap
+{
+  display: flex;
+  @include l
+  {
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+  @include xm
+  {
+    margin: -5px;
+  }
+}
+.advantages__btn
+{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  @include l
+  {
+    margin-top: 40px;
+  }
+}
+.advantages__dotted1
+{
+  top: -40px;
+  left: -40px;
+  @include l
+  {
+    top: -10px;
+    left: -20px;
+  }
+  @include xm
+  {
+    top: -15px;
+    left: -15px;
+  }
+}
+.advantages__dotted2
+{
+  bottom: -40px;
+  right: -40px;
+  @include l
+  {
+    bottom: -20px;
+    right: -20px;
+  }
+  @include xm
+  {
+    bottom: -15px;
+    right: -15px;
+  }
+}
+.advantage__card
+{
+  position: relative;
+  flex: 1;
+  padding: 20px;
+  min-height: 176px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  border: 1px solid var(--color-blue-light2);
+  margin-right: 20px;
+  &:last-child
+  {
+    margin-right: 0;
+  }
+  @include l
+  {
+    width: 250px;
+    margin-right: 0;
+    margin: 10px;
+    &:last-child
+    {
+      margin-right: 10px;
+    }
+  }
+  @include xm
+  {
+    width: 100%;
+    margin-right: 0;
+    margin: 5px;
+    padding: 15px;
+    min-height: 125px;
+    &:last-child
+    {
+      margin-right: 0;
+    }
+  }
+}
+.advantage__name
+{
+  h3
+  {
+    color: var(--color-blue-dark);
+    @include font-d-4;
+    @include l
+    {
+      @include font-t-2;
+    }
+    @include xm
+    {
+      @include font-m-2;
+    }
+  }
+}
+.advantage__num
+{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: var(--color-blue2);
+  @include font-d-4;
+  @include xm
+  {
+    @include font-m-4;
+  }
+}
+.advantage__logo
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 85px;
+  width: 50px;
+  background-size: 100% 100%;
+  background-size: cover;
+  background-image: url(../img/R-logo.svg);
+  @include xm
+  {
+    height: 61px;
+    width: 36px;
+  }
+}
+.uslugi-inside__types
+{
+
+}
+.uslugi-types
+{
+
+}
+.uslugi-type
+{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid var(--color-grey-light);
+  b
+  {
+    font-weight: 500;
+  }
+  &:first-child
+  {
+    padding-top: 0;
+    border-top: none;
+  }
+  @include l
+  {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+.uslugi-inside__tarifs-wrap
+{
+  position: relative;
+}
+.uslugi-inside__reglaments
+{
+
+}
+.uslugi-inside__section-wrap
+{
+  display: flex;
+  align-items: flex-start;
+  @include l
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.uslugi-inside__card
+{
+  flex: 1;
+  padding: 35px 40px;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  border: 1px solid var(--color-blue-light2);
+  &:first-child
+  {
+    margin-right: 20px;
+  }
+  @include l
+  {
+    width: 100%;
+    &:first-child
+    {
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+  }
+  @include xm
+  {
+    padding: 25px 30px;
+  }
+}
+.reglament
+{
+
+}
+.reglament__head
+{
+
+}
+.uslugi-inside__card-head
+{
+  text-align: center;
+  margin-bottom: 25px;
+  h3
+  {
+    color: var(--color-blue-dark);
+    @include font-d-2;
+  }
+  @include l
+  {
+    margin-bottom: 30px;
+    h3
+    {
+      @include font-t-2;
+    }
+  }
+  @include xm
+  {
+    margin-bottom: 20px;
+    h3
+    {
+      @include font-m-2;
+    }
+  }
+}
+.reglament__wrap
+{
+  .document
+  {
+    margin-bottom: 35px;
+    .document__name
+    {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &:last-child
+    {
+      margin-bottom: 0;
+    }
+    @include l
+    {
+      width: 440px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      .document__name
+      {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    @include xm
+    {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+
+
+.uslugi-inside__distributions
+{
+
+}
+.distribution
+{
+  @include l
+  {
+    text-align: center;
+  }
+}
+.distribution__astra
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  @include l
+  {
+    margin-bottom: 20px;
+  }
+  @include xm
+  {
+    justify-content: center;
+  }
+}
+.distribution__astra-logo
+{
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  img
+  {
+    width: 100%;
+    height: 100%;
+  }
+  @include l
+  {
+    width: 50px;
+    height: 50px;
+  }
+}
+.distribution__astra-name
+{
+  color: var(--color-blue2);
+  @include font-d-4;
+  @include xm
+  {
+    @include font-m-4;
+  }
+}
+.distribution__text
+{
+  p
+  {
+    color: var(--color-blue-dark);
+    @include font-d-3;
+  }
+  @include xm
+  {
+    text-align: left;
+  }
+}
+.distribution__wrap
+{
+  @include l
+  {
+    width: 450px;
+    margin: 0 auto;
+  }
+  @include xm
+  {
+    width: 100%;
+  }
+}
+.distribution__sect
+{
+  margin-bottom: 25px;
+  &:last-child
+  {
+    margin-bottom: 0;
+  }
+  p
+  {
+    margin-bottom: 10px;
+    color: var(--color-blue-dark);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  @include l
+  {
+    margin-bottom: 20px;
+    p
+    {
+      margin-bottom: 15px;
+    }
+  }
+  @include xm
+  {
+    p
+    {
+      @include font-m-3
+    }
+  }
+}
+.distribution__link
+{
+  display: inline-block;
+  color: var(--color-blue2);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  @include l
+  {
+    display: block;
+    margin-bottom: 10px;
+    &:last-child
+    {
+      margin-bottom: 0;
+    }
+  }
+  @include xm
+  {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: -0.2px;
+  }
+}
+.distribution__btn
+{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  @include xm
+  {
+    margin-top: 40px;
+  }
+}
+.uslugi-inside__tehpod
+{
+
+}
+.tehpod__wrap
+{
+  display: flex;
+  justify-content: center;
+  b
+  {
+    font-weight: 500;
+  }
+  @include l
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.tehpod__tel
+{
+  .tehpod-poryadok__tel-default
+  {
+    margin-right: 0;
+  }
+}
+.tehpod__email
+{
+
+}

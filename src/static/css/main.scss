@@ -125,17 +125,18 @@ section
 .section__cards
 {
   position: relative;
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
   z-index: 1;
   @include l
   {
     width: 100%;
+    max-width: auto;
   }
 }
 .section__cards_xl
 {
-  width: 1080px;
+  max-width: 1080px;
   @include l
   {
     width: 100%;
@@ -162,6 +163,12 @@ section
   padding-left: 70px;
   padding-right: 70px;
   margin: 0 auto;
+  @include xl-1250
+  {
+    // width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   @include l
   {
     // width: 100%;
@@ -177,7 +184,7 @@ section
 }
 .page-wrap
 {
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
   padding-bottom: 100px;
   p
@@ -323,6 +330,7 @@ section
 @import "./block/pages/404.scss";
 @import "./block/pages/calendar.scss";
 @import "./block/pages/static.scss";
+@import "./block/pages/uslugi-inside.scss";
 *
 {
   font-family: "Golos", sans-serif;

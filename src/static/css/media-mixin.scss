@@ -8,6 +8,11 @@
     @content;
   }
 }
+@mixin xl-1250 {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
 @mixin xl {
   @media (max-width: 1200px) {
     @content;
@@ -23,16 +28,16 @@
     @content;
   }
 }
-@mixin l {
-  @media (max-width: 1220px) {
-    @content;
-  }
-}
 // @mixin l {
-//   @media (max-width: 1080px) {
+//   @media (max-width: 1220px) {
 //     @content;
 //   }
 // }
+@mixin l {
+  @media (max-width: 1080px) {
+    @content;
+  }
+}
 // TYT XXM font size menyaetsya ochti u vsex!
 @mixin xxm {
   @media (max-width: 960px) {

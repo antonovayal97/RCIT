@@ -14,15 +14,18 @@ mixin pageHeader(name="Заголовок страницы",breadcrumbs=['Гла
                 span(itemprop=name)=name
     .page-header__head
       h1=name
-    .page-header__btns
-      .swiper.page-header__btns-swiper
-        .swiper-wrapper.page-header__btns-swiper-wrapper
-          each btn in btns
-            if btn.active == true
-              .swiper-slide.page-header__btns-swiper-slide
-                +button(btn.name,"a","button_blue")
-            if btn.active == false
-              .swiper-slide.page-header__btns-swiper-slide
-                +button(btn.name)
-        .page-header__swiper-paggination-wrap
-          .page-header__swiper-paggination
+    if btns.length == 0
+      .page-header__without-btns
+    else
+      .page-header__btns
+        .swiper.page-header__btns-swiper
+          .swiper-wrapper.page-header__btns-swiper-wrapper
+            each btn in btns
+              if btn.active == true
+                .swiper-slide.page-header__btns-swiper-slide
+                  +button(btn.name,"a","button_blue")
+              if btn.active == false
+                .swiper-slide.page-header__btns-swiper-slide
+                  +button(btn.name)
+          .page-header__swiper-paggination-wrap
+            .page-header__swiper-paggination

@@ -1,5 +1,5 @@
 mixin uslugaCard(name,text,img)
-  a(href="#")
+  a(href="#").usluga-card__link
     .usluga-card
       .usluga-card__top
         .usluga-card__img
@@ -10,4 +10,7 @@ mixin uslugaCard(name,text,img)
         .usluga-card__bottom
           .usluga-card__text
             p=text
-          +linkWithArrow("Подробнее")
+          .usluga-card__price
+            span от 700 руб/мес
+          .usluga-card__btn
+            span Подключить

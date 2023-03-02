@@ -1,9 +1,20 @@
 .home-uslugi
 {
+  padding-bottom: 15px;
+  margin-bottom: -15px;
+  width: fit-content;
+  max-width: 100%;
+  @include xl-1250
+  {
+    width: fit-content;
+    max-width: 860px;
+  }
   @include l
   {
     padding-bottom: 30px;
-    width: 640px;
+    margin-bottom: 0;
+    width: fit-content;
+    max-width: 640px;
   }
   @include xm
   {
@@ -21,6 +32,10 @@
 .home-uslugi__slide
 {
   width: auto;
+  &:last-child
+  {
+    margin-right: 0 !important;
+  }
 }
 .home-uslugi__slide-btn
 {
@@ -51,8 +66,16 @@
 .home-uslugi__slide-btn-next
 {
   right: -85px;
+  @include xl-1250
+  {
+    right: 0px;
+  }
 }
 .home-uslugi__slide-btn-prev
 {
   left: -85px;
+  @include xl-1250
+  {
+    left: 0px;
+  }
 }

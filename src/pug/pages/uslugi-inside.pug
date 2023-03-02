@@ -1,0 +1,115 @@
+extends ../layout/app
+include ../chunk/components/usluga-card
+include ../chunk/components/doc-download
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Аренда каналов связи",["Главная","Услуги","Аренда каналов связи"],[])
+        .uslugi-inside
+          .uslugi-inside__advantages.uslugi-inside__section
+            .section__head
+              h2 Преимущества аренды каналов
+            .advantages
+              .advantages__wrap
+                each ad, index in ["Заказчик не тратится на каналообразующее оборудование","Заказчик не продумывает топологию сети","Заказчик не тратится на содержание специализированого персонала","Есть возможность выбора типа канала связи в зависимости от географии услуги, стоимости и т.д."]
+                  .advantage__card
+                    .advantage__name
+                      h3=ad
+                    .advantage__num
+                      span=index + 1
+                    .advantage__logo
+              .dotted.advantages__dotted1
+              .dotted.advantages__dotted2
+            .advantages__btn
+              +button("Подключить услугу","a","button_blue")
+          .uslugi-inside__types.uslugi-inside__section
+            .section__head
+              h2 Типы каналов связи ГБУ РС(Я) "РЦИТ"
+            .uslugi-types
+              .uslugi-type
+                p <b>Каналы ВОЛС</b> - волоконно оптические каналы связи в г. Якутск. <br> Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет подключить объекты Заказчика со скоростью передачи данных до 1Тбит/с. Аренда ВОЛС подразумевает предоставление оптического волокна или нескольких волокон в волоконно-оптическом кабеле от точки А до точки Б. Скорость передачи информации зависит от оборудования заказчика возможно использовать до 1Тбит/с. <br> Преимущества данного типа каналов связи: <br> Высокая скорость устойчивая к любым электромагинтным помехам, возможность передачи сигнала на большие расстояния
+              .uslugi-type
+                p <b>Спутниковые каналы связи</b> по Республике Саха (Якутия), охватывающие не только районные центры Республики, но и наслега. Скорость передачи данных до 1 Мбит/с. обеспечивающие передачу данных, голоса и видео <br> (видеоконференцсвязь) по всему региону для нужд органов государственной власти и местного самоуправления РС(Я). Мы предлагаем высокоскоростные и надежные в эксплуатации спутниковые VSAT-терминалы SkyEdge I-II производства израильской компании GilatSatelliteNetworks – мирового лидера в сфере производства спутникового оборудования. <br> Преимущества данного типа каналов связи: <br> Покрытие труднодоступных участков без развитой инфраструктуры, Передача сигнала осуществляется через геостационарный спутник, Мобильность абонентского оборудования
+              .uslugi-type
+                p <b>Каналы беспроводного широкополосного доступа</b> развернутые в 32 районных центрах РС (Я). Скорость передачи данных до 10 Мбит/с. БШД – оптимальное решение по обеспечению недорогой, надёжной и высокоскоростной связи в целях создания единого информационно-телекоммуникационного пространства в районном центре. Подключение учреждений производится посредством абонентских модулей БШД, которые связывают цифровым беспроводным каналом ПК или компьютерную сеть клиента с базовой станцией БШД районного узла доступа сети спутниковой связи ГБУ РС (Я) "РЦИТ". <br> Преимущества данного типа каналов связи: <br> Высокая скорость организации подключения, Высокая передача данных, Мобильность, Передача сигнала до 5 км.
+              .uslugi-types__bot
+                p Услуга предоставляется абонентам сети ГБУ РС (Я) "РЦИТ"
+          .uslugi-inside__tarifs.uslugi-inside__section
+            .section__head
+              h2 Тарифы
+            .uslugi-inside__tarifs-wrap
+              .swiper.home-uslugi
+                .swiper-wrapper.home-uslugi__wrapper
+                  each j in [{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"},{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"}]
+                    .swiper-slide.home-uslugi__slide
+                      +uslugaCard(j.name,j.text,j.img)
+                .swiper-pagination
+              .swiper-button-next.home-uslugi__slide-btn.home-uslugi__slide-btn-next
+                +icon('uslugi-right-arrow')
+              .swiper-button-prev.home-uslugi__slide-btn.home-uslugi__slide-btn-prev
+                +icon('uslugi-left-arrow')
+          .uslugi-inside__reglaments.uslugi-inside__section
+            .section__head
+              h2 Регламенты
+            .uslugi-inside__section-wrap
+              .reglament.uslugi-inside__card
+                .reglament__head.uslugi-inside__card-head
+                  h3 Регламент
+                .reglament__wrap
+                  +docDownload("Регламент защищенной виртуальной ViPNet Республики Саха (Якутия) №1112")
+              .reglament.uslugi-inside__card
+                .reglament__head.uslugi-inside__card-head
+                  h3 Формы заявок
+                .reglament__wrap
+                  +docDownload("Форма заявки на выделение новой лицензии в виртуальной ViPNet сети №1112.docx")
+                  +docDownload("Форма заявки на установлении связи между абонентскими пунктами.docx")
+                  +docDownload("Форма протокола установлении межсетевого взаимодействия.docx")
+          .uslugi-inside__distributions.uslugi-inside__section
+            .section__head
+              h2 Дистрибутивы
+            .uslugi-inside__section-wrap
+              .distribution.uslugi-inside__card
+                a(href="#" class="distribution__astra")
+                  .distribution__astra-logo
+                    img(src="./img/astra_linux.png")
+                  .distribution__astra-name
+                    span Astra Linux Special Edition
+                .distribution__text
+                  p Операционная система специального назначения со встроенными средствами защиты информации (СЗИ) для стабильных и безопасных ИТ-инфраструктур любого масштаба и бесперебойной работы с данными любой степени конфиденциальности.
+              .distribution.uslugi-inside__card
+                .distribution__head.uslugi-inside__card-head
+                  h3 Учебные материалы
+                .distribution__wrap
+                  .distribution__sect
+                    a(href="#" class="distribution__link")
+                      span Вебинар по использованию отечественного ПО Астра Линукс и офисного пакета Мой Офис
+                  .distribution__sect
+                    p Полезные материалы Мой Офис:
+                    a(href="#" class="distribution__link")
+                      span Ссылка на видеоуроки
+                  .distribution__sect
+                    p Учебные пособия Мой Офис:
+                    a(href="#" class="distribution__link")
+                      span Работа с табличным редактором
+                    a(href="#" class="distribution__link")
+                      span Работа с табличным редактором
+            .distribution__btn
+              +button("Подключить услугу","a","button_blue")
+          .uslugi-inside__tehpod.uslugi-inside__section
+            .section__head
+              h2 Техническая поддержка
+            .tehpod__wrap
+              .tehpod__tel
+                .tehpod-poryadok__tel
+                  .tehpod-poryadok__tel-default
+                    span
+                      b Техническая поддержка
+                      a(href="tel:4112398000")  (4112) 39-80-00, IP-т. 69800
+              .tehpod__email
+                .tehpod-poryadok__email
+                  span
+                    b Электронная почта:
+                    a(href="email:support@rcitsakha.ru")  support@rcitsakha.ru
+  include ../chunk/footer

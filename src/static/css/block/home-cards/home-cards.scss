@@ -64,13 +64,14 @@
 .home-mini-cards
 {
   display: flex;
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
   margin-top: 20px;
   gap: 20px;
   @include l
   {
     width: 100%;
+    max-width: auto;
   }
   @include xm
   {

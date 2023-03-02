@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded",(event) => {
     });
   });
 
-  // АККАРДИОН НАЧАЛО
   let accords = document.querySelectorAll('.accord')
   accords.forEach(item => {
     let inside = item.querySelector('.accord-inside')
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded",(event) => {
       arrow.classList.toggle('accord-arrow-active')
     })
   })
-  // АККАРДИОН КОНЕЦ
+
   let menuFirst = document.querySelectorAll('.header__burger-inside-main-menu-first')
   let menuSecondAll = document.querySelectorAll('.header__burger-inside-main-menu-second')
   menuFirst.forEach(item => {
@@ -144,41 +143,43 @@ document.addEventListener("DOMContentLoaded",(event) => {
         delay: 0
       },
     });
-
-    let pageHeader = new Swiper(".page-header__btns-swiper", {
-      slidesPerView: "auto",
-      cssMode: true,
-      pagination: {
-        el: ".page-header__swiper-paggination",
-        type: "progressbar",
-      },
-      breakpoints:{
-        744:
-        {
-          cssMode: false,
+    if(document.querySelector('.page-header__btns-swiper'))
+    {
+      let pageHeader = new Swiper(".page-header__btns-swiper", {
+        slidesPerView: "auto",
+        cssMode: true,
+        pagination: {
+          el: ".page-header__swiper-paggination",
+          type: "progressbar",
+        },
+        breakpoints:{
+          744:
+          {
+            cssMode: false,
+          }
         }
-      }
-    });
+      });
 
-    window.addEventListener('resize', () => {
-      setTimeout(() => {
-            pageHeader.destroy();
-            pageHeader = new Swiper(".page-header__btns-swiper", {
-              slidesPerView: "auto",
-              cssMode: true,
-              pagination: {
-              el: ".page-header__swiper-paggination",
-              type: "progressbar",
-            },
-              breakpoints:{
-                744:
-                {
-                  cssMode: false,
+      window.addEventListener('resize', () => {
+        setTimeout(() => {
+              pageHeader.destroy();
+              pageHeader = new Swiper(".page-header__btns-swiper", {
+                slidesPerView: "auto",
+                cssMode: true,
+                pagination: {
+                el: ".page-header__swiper-paggination",
+                type: "progressbar",
+              },
+                breakpoints:{
+                  744:
+                  {
+                    cssMode: false,
+                  }
                 }
-              }
-            });
-      },10)
-    });
+              });
+        },10)
+      });
+    }
 
     let select = document.querySelectorAll('.page__select')
     select.forEach(item => {
