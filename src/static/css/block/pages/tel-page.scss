@@ -1,0 +1,204 @@
+.tel-page
+{
+  margin-top: 60px;
+}
+.tel-page__section-head
+{
+  margin-bottom: 30px;
+  h2
+  {
+    color: var(--color-blue-dark);
+    @include font-d-1-5
+  }
+  @include l
+  {
+    margin-bottom: 20px;
+    h2
+    {
+      @include font-t-1-5
+    }
+  }
+}
+.tel-page__search-input
+{
+  background-color: var(--color-white);
+  padding-left: 30px;
+  &:hover,&:focus
+  {
+    box-shadow: none;
+  }
+}
+.tel-page__section
+{
+  margin-bottom: 60px;
+  &:last-child
+  {
+    margin-bottom: 0;
+  }
+}
+.full-search__wrap
+{
+  display: flex;
+  @include l
+  {
+    flex-direction: column;
+  }
+}
+.full-search__form
+{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end
+}
+.full-search__item
+{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  &:nth-child(2n)
+  {
+    margin-right: 0;
+  }
+  @include l
+  {
+    width: calc(50% - 10px);
+  }
+}
+.full-search__input-name
+{
+  margin-bottom: 5px;
+  color: var(--color-blue-dark);
+  @include font-d-6
+}
+.full-search__input-wrap
+{
+  width: 335px;
+  height: 55px;
+  display: flex;
+  input
+  {
+    width: 100%;
+    height: 100%;
+    border-radius: 150px;
+    padding: 0 30px;
+    border: 1px solid var(--color-blue-light2);
+    outline: none;
+  }
+  a, input[type="submit"]
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    &:first-child
+    {
+      margin-right: 20px;
+    }
+  }
+  @include l
+  {
+    width: 100%
+  }
+}
+.full-search__zaya
+{
+  width: 320px;
+  padding: 30px 24px;
+  background-color: var(--color-blue-light3);
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include l
+  {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+.full-search__zaya-top
+{
+
+}
+.full-search__zaya-top-text
+{
+  text-align: center;
+  color: var(--color-blue-dark);
+  @include font-d-2;
+  margin-bottom: 40px;
+  @include l
+  {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 35px;
+  }
+}
+.full-search__zaya-top-btn
+{
+  display: flex;
+  justify-content: center;
+  @include l
+  {
+    margin-bottom: 40px;
+  }
+}
+.full-search__zaya-bottom
+{
+  text-align: center;
+  @include font-d-6;
+  color: var(--color-blue-dark);
+}
+.docs__uls
+{
+  margin-bottom: 20px;
+  padding: 0;
+  border: none;
+}
+.tel-page__lists
+{
+  margin-bottom: 70px;
+  @include l
+  {
+    margin-bottom: 50px;
+  }
+}
+.tel-page__excel-wrap
+{
+  width: 100%;
+  padding: 30px;
+  background-color: var(--color-blue-light3);
+  border: 1px solid var(--color-blue-light2);
+  border-radius: 10px;
+}
+.tel-page__excel-head
+{
+  margin-bottom: 34px;
+  text-align: center;
+  h2
+  {
+    color: var(--color-blue-dark);
+    @include font-d-1-5;
+  }
+  @include l
+  {
+    margin-bottom: 40px;
+    h2
+    {
+      @include font-t-1-5;
+    }
+  }
+}
+.tel-page__excel-btn
+{
+  display: flex;
+  justify-content: center;
+}
+.tel-page__downloads
+{
+  margin-top: 70px;
+  @include l
+  {
+    margin-top: 50px;
+  }
+}

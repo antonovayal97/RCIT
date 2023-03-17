@@ -1,0 +1,97 @@
+extends ../layout/app
+include ../chunk/components/accord
+include ../chunk/components/usluga-card
+include ../chunk/components/doc-download
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Телефонный справочник",["Главная","Телефонный справочник"],[])
+        .tel-page
+          .tel-page__search.tel-page__section
+            .tel-page__section-head
+              h2 Поиск
+            .header__search
+              input(type="text" placeholder="Поиск").header__search-input.tel-page__search-input
+              .header__search-btn
+                +icon('search-normal','header__search-btn-icon')
+          .tel-page__full-search.tel-page__section
+            .tel-page__section-head
+              h2 Расширенный поиск
+            .full-search__wrap
+              .full-search__form
+                .full-search__item
+                  .full-search__input-name
+                    span Район
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: ")
+                .full-search__item
+                  .full-search__input-name
+                    span Наименование организации
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: Управление")
+                .full-search__item
+                  .full-search__input-name
+                    span Адрес организации
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: ул. Ленина, 31")
+                .full-search__item
+                  .full-search__input-name
+                    span ФИО
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: Иванов")
+                .full-search__item
+                  .full-search__input-name
+                    span Отдел
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: Финансовый отдел")
+                .full-search__item
+                  .full-search__input-name
+                    span Должность
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: Руководитель")
+                .full-search__item
+                  .full-search__input-name
+                    span Контактный номер
+                  .full-search__input-wrap
+                    input(type="text" placeholder="например: 8-24-080")
+                .full-search__item
+                  .full-search__input-wrap
+                    +button("Найти","a","button_blue")
+                    +button("Сбросить","a")
+              .full-search__zaya
+                .full-search__zaya-top
+                  .full-search__zaya-top-text
+                    span Для изменения текущих  справочных данных необходимо заполнить форму заявки.
+                  .full-search__zaya-top-btn
+                    +button("Оставить заявку","a","button_blue")
+                .full-search__zaya-bottom
+                  span По всем возникшим вопросам обращаться по телефону
+                  br
+                  a(href="tel:84112398000") +7 (4112) 398-000
+                  span  IP 69800
+          .tel-page__hdfjs.tel-page__section
+            .tel-page__lists
+              .docs__ul.docs__uls
+                ul
+                  each doc in ["Администрация Главы Республики Саха (Якутия) и Правительства Республики Саха (Якутия)","Центральная избирательная комиссия Республики Саха (Якутия)","ГУ МЧС России по Республике Саха (Якутия)","Государственное Собрание (Ил Тумэн) Республики Саха (Якутия)"]
+                    li
+                      a(href="#").doc-link
+                        .doc-link__name
+                          span=doc
+                        .doc-link__arrow
+                          +icon('arrow-down')
+              each faq in ['Постоянные представительства','Министерства','Государственные комитеты','Департаменты и управления','Государственные учреждения','Инспекции и надзорные органы','Иные','Федеральные органы исполнительной власти']
+                +accord(faq,"tel")
+            .tel-page__excel-wrap
+              .tel-page__excel-head
+                h2 Выгрузить телефонную книгу в формате Excel
+              .tel-page__excel-btn
+                +button("Экспорт","a","button_blue")
+            .tel-page__downloads
+              ul
+                each doc in ["Регламент по ведению и администрированию информационно-справочной системы «Телефонный справочник органов государственной власти Республики Саха (Якутия) и органов местного самоуправления Республики Саха (Якутия)»","Соглашение на обработку, хранение и публикацию персональных данных","Типовой образец согласия работника на обработку персональных данных"]
+                  li
+                    +docDownload(doc)
+  include ../chunk/footer

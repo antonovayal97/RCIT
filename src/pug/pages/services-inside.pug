@@ -1,0 +1,90 @@
+extends ../layout/app
+include ../chunk/components/usluga-card
+include ../chunk/components/doc-download
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("ЕСЭД",["Главная","Сервисы","Список сервисов","Есэд"],[{name: 'Список сервисов',url: '#',active: true}])
+        .services-inside
+          .services-inside__desc.services-inside__section
+            .section__head
+              h2 Описание
+            .services-inside__text
+              p Единая система электронного документооборота Республики Саха (Якутия) является информационной системой электронного документооборота.
+              p Система обеспечивает решение следующих задач:
+              p 1) Обеспечение юридически значимого электронного документооборота.
+              p 2) Обеспечение электронного делопроизводства.
+              p 3) Обеспечение согласования проектов правовых актов.
+              p 4) Обеспечение подписания документов с помощью электронной подписи.
+              p 5) Обеспечение контроля за исполнением поручений и работой с обращениями граждан
+              p Единая точка входа
+                | a(href="#") https://esed.sakha.gov.ru
+          .services-inside__npa.services-inside__section
+            .section__head
+              h2 НПА
+            .services-inside__text
+              p
+                a(href="#") Положение о системе утверждено Указом Главы Республики Саха (Якутия) от 30.12.2018 г. № 312 "О Единой системе электронного документооборота" (ссылка)
+              p
+                a(href="#") Требования работы в ЕСЭД и порядок подключения утверждены приказом Миниинноваций от 14.02.2020 г. № П-01-24 (ссылка)
+          .services-inside__method.services-inside__section
+            .section__head
+              h2 Методические материалы
+            .services-inside__text
+              p
+                a(href="#") Новое в системе, версия 22.2 (ссылка)
+              p
+                a(href="#") Методические рекомендации по работе в ЕСЭД (ссылка)
+              p
+                a(href="#") Руководство пользователя (ссылка)
+              p
+                a(href="#") Руководство пользователя по работе с «Модулем взаимодействия с РРО ССТУ» (ссылка)
+              p
+                a(href="#") Руководство пользователя по работе с «Модулем «Управление совещаниями» и «План-календарь» (ссылка)
+              p
+                a(href="#") Руководство пользователя по работе с «Модулем интеграции с ПОС» (ссылка)
+            .services-inside__video
+              .video__head
+                h3 Видеоматериалы:
+              .video__sec
+                .video__name
+                  p Вебинар «Базовые навыки работы в ЕСЭД» от 28.09.2022 г.
+                .video__btns
+                  +button("Скачать вебинар","a","button_blue")
+                  +button("Смотреть на Youtube","a",)
+              .video__sec
+                .video__name
+                  p Вебинар «Работа в ЗК ЕСЭД» от 20.05.2022 г.
+                .video__btns
+                  +button("Скачать вебинар","a","button_blue")
+                  +button("Смотреть на Youtube","a",)
+              .video__sec
+                .video__name
+                  p Вебинар «Работа с обращения граждан в ЕСЭД и интеграция с ССТУ» от 17.11.2021 г.
+                .video__btns
+                  +button("Скачать вебинар","a","button_blue")
+                  +button("Смотреть на Youtube","a",)
+          .services-inside__distributions.services-inside__section
+            .section__head
+              h2 Дистрибутивы
+            .distributions-item
+              .distributions-item__name
+                h3 ПО «Карма»
+              .distributions-item__btns
+                +button("Скачать для Windows 10","a",)
+                +button("Скачать для Windows 7","a",)
+                +button("Скачать для Astra Linux","a",)
+            .distributions-item
+              .distributions-item__name
+                h3
+                  a(href="#") Клиентская часть версии 22.2 («толстый клиент») (ссылка)
+              .distributions-item__btns
+                +button("Версия 22.2","a",)
+            .distributions-item
+              .distributions-item__name
+                h3 Программа для удаления ПО «Карма»
+              .distributions-item__btns
+                +button("Скачать","a",)
+  include ../chunk/footer

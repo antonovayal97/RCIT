@@ -1,0 +1,15 @@
+extends ../layout/app
+include ../chunk/components/service-card
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Список сервисов",["Главная","Сервисы","Список сервисов"],[{name: 'Список сервисов',url: '#',active: true}])
+        .hews
+          .hews__wrap
+            each services in [1,2,3]
+              +serviceCard()
+              +serviceCard()
+              +serviceCard()
+  include ../chunk/footer
