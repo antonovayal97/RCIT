@@ -304,6 +304,7 @@ header
   {
     display: flex;
     gap: 60px;
+    position: relative;
   }
   @include xl
   {
@@ -476,7 +477,7 @@ header
   justify-content: flex-end;
   @include xm
   {
-    margin: 0 -19px;
+    margin: 0 -14px;
     padding: 0 19px;
     padding-bottom: 28px;
     border-bottom: 1px solid var(--color-blue2)
@@ -521,14 +522,24 @@ header
 }
 .header__burger-inside-main-menu-ul
 {
+  width: 100%;
   position: relative;
   padding-left: 30px;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  li
+  {
+    width: 300px;
+  }
   @include xm
   {
     max-width: none;
+    padding-left: 0px;
+    li
+    {
+      width: 100%;
+    }
   }
 }
 .header__burger-inside-main-menu-first-active
@@ -583,9 +594,9 @@ header
   display: none;
   position: absolute;
   margin-top: -5px;
-  width: 400px;
+  width: calc(100% - 300px);
   top: 15px;
-  left: -400px;
+  right: 300px;
   border-right: 1px solid var(--color-grey-light);
   @include font-d-7
   {
@@ -601,6 +612,7 @@ header
     {
       display: flex;
       justify-content: flex-end;
+      width: 100%;
     }
   }
   a
@@ -647,4 +659,115 @@ header
     display: flex;
     justify-content: flex-end;
     border-top: 1px solid var(--color-grey-light);
+}
+
+
+
+
+
+// uslugi fix
+.uslg__unrelative
+{
+  position: static;
+}
+.uslg
+{
+  left: 50%;
+    transform: translate(-50%, 0);
+  width: 1210px;
+  color: var(--color-blue-dark);
+  @include xl
+  {
+    width: 1080px;
+  }
+}
+.uslg__head2
+{
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  padding: 10px;
+  @include xl
+  {
+    font-size: 16px;
+  }
+}
+.uslg__wrap
+{
+  width: auto;
+  padding: 20px;
+  ul
+  {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    li
+    {
+      width: 20%;
+    }
+    .uslg_items
+    {
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 5px;
+      li
+      {
+        width: 100%;
+      }
+      .uslg__item
+      {
+        padding: 10px;
+        @include font-d-7
+      }
+    }
+  }
+}
+
+
+.uslg-l
+{
+  & > ul
+  {
+    flex-direction: row;
+    flex-wrap: wrap;
+    & > li
+    {
+      text-align: left;
+      width: calc(50% - 10px);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      flex-direction: column;
+      align-self: flex-start;
+      .uslg-l__name
+      {
+        padding: 10px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+      }
+      & > ul
+      {
+        margin-right: 0;
+        & > li
+        {
+          justify-content: flex-start;
+          a
+          {
+            padding: 10px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  @include xm
+  {
+    border-bottom: 1px solid var(--color-grey-light);
+  }
+}
+.uslg-xm
+{
+  padding-bottom: 0;
 }

@@ -1,0 +1,14 @@
+extends ../layout/app
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Результат поиска",["Главная","Поиск"],[])
+        .search-result
+          ul
+            each dd in [1,2,3,4,5]
+              li
+                a(href="#").search-result__item
+                  span Заместитель генерального директора
+  include ../chunk/footer

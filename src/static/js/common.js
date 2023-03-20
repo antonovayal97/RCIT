@@ -1,5 +1,10 @@
 // ЕСЛИ ДОКУМЕНТ ПОЛНОСТЬЮ ЗАГРУЖЕН АНАЛОГ $(document).ready
 document.addEventListener("DOMContentLoaded",(event) => {
+  const uslugiModal = new HystModal({
+      linkAttributeName: "data-hystmodal",
+      // настройки (не обязательно), см. API
+  });
+
 
   let header = document.querySelector('.header-main')
   let now = window.scrollY
@@ -25,6 +30,10 @@ document.addEventListener("DOMContentLoaded",(event) => {
     let miniCards = item.querySelectorAll('.home-mini-card')
     miniCards.forEach(item2 => {
       item2.addEventListener("click",() => {
+        miniCards.forEach(item2 => {
+          item2.classList.remove("home-mini-card__active")
+        })
+        item2.classList.toggle("home-mini-card__active")
         let miniCardName = item2.querySelector('.home-mini-card__text')
         let miniCardText = item2.querySelector('.home-mini-card__hidden')
         homeObyavlName.innerHTML = "<span>" + miniCardName.innerText + "</span>"
@@ -42,6 +51,18 @@ document.addEventListener("DOMContentLoaded",(event) => {
       item.classList.toggle('accord-active')
       inside.classList.toggle('accord-inside-active')
       arrow.classList.toggle('accord-arrow-active')
+    })
+  })
+
+
+  let small_accords = document.querySelectorAll('.small-accord')
+  small_accords.forEach(item => {
+    let small_outside = item.querySelector('.small-accord__outside')
+    small_outside.addEventListener('click',() => {
+      small_accords.forEach(item => {
+        item.classList.remove('small-accord__active')
+      })
+      item.classList.toggle('small-accord__active')
     })
   })
 
@@ -257,6 +278,12 @@ document.addEventListener("DOMContentLoaded",(event) => {
   });
 
 
+
+
+
+
+
+
   let calendar = new Vue({
     el: '#calendar',
     data() {
@@ -419,3 +446,181 @@ document.addEventListener("DOMContentLoaded",(event) => {
     }
   })
 })
+
+
+if(document.getElementById('pagination'))
+{
+  let pages = document.getElementById('pagination').dataset.pages;
+  document.getElementById('pagination').innerHTML = createPagination(pages, 1);
+  function createPagination(pages, page) {
+    let gal_items = document.querySelectorAll('.about-orcit__galary-item')
+    gal_items.forEach(item => {
+      item.classList.remove('about-orcit__galary-item__active')
+    });
+    let active_gal = document.getElementById('gal-' + page)
+    active_gal.classList.add('about-orcit__galary-item__active')
+    let str = '<ul>';
+    let active;
+    let pageCutLow = page - 1;
+    let pageCutHigh = page + 1;
+    // Show the Previous button only if you are on a page other than the first
+    if (page > 1) {
+      str += '<li class="page-item previous no"><a onclick="createPagination(pages, '+(page-1)+')" class="paggination__arrow"><svg class="icon icon-uslugi-left-arrow "><use href="./img/svg/sprite.svg#uslugi-left-arrow" xlink:href="./img/svg/sprite.svg#uslugi-left-arrow"></use></svg></a></li>';
+    }
+    else
+      {
+        str += '<li class="page-item previous no"><a class="paggination__arrow"><svg class="icon icon-uslugi-left-arrow "><use href="./img/svg/sprite.svg#uslugi-left-arrow" xlink:href="./img/svg/sprite.svg#uslugi-left-arrow"></use></svg></a></li>';
+      }
+    // Show all the pagination elements if there are less than 6 pages total
+    if (pages < 6) {
+      for (let p = 1; p <= pages; p++) {
+        active = page == p ? "active" : "no";
+        str += '<li class="'+active+'"><a onclick="createPagination(pages, '+p+')">'+ p +'</a></li>';
+      }
+    }
+    // Use "..." to collapse pages outside of a certain range
+    else {
+      // Show the very first page followed by a "..." at the beginning of the
+      // pagination section (after the Previous button)
+      if (page > 2) {
+        str += '<li class="no page-item "><a onclick="createPagination(pages, 1)">1</a></li>';
+        if (page > 3) {
+            str += '<li class="out-of-range"><a onclick="createPagination(pages,'+(page-2)+')">...</a></li>';
+        }
+      }
+      // Determine how many pages to show after the current page index
+      if (page === 1) {
+        pageCutHigh += 2;
+      } else if (page === 2) {
+        pageCutHigh += 1;
+      }
+      // Determine how many pages to show before the current page index
+      if (page === pages) {
+        pageCutLow -= 2;
+      } else if (page === pages-1) {
+        pageCutLow -= 1;
+      }
+      // Output the indexes for pages that fall inside the range of pageCutLow
+      // and pageCutHigh
+      for (let p = pageCutLow; p <= pageCutHigh; p++) {
+        if (p === 0) {
+          p += 1;
+        }
+        if (p > pages) {
+          continue
+        }
+        active = page == p ? "active" : "no";
+        str += '<li class="page-item '+active+'"><a onclick="createPagination(pages, '+p+')">'+ p +'</a></li>';
+      }
+      // Show the very last page preceded by a "..." at the end of the pagination
+      // section (before the Next button)
+      if (page < pages-1) {
+        if (page < pages-2) {
+          str += '<li class="out-of-range"><a onclick="createPagination(pages,'+(page+2)+')">...</a></li>';
+        }
+        str += '<li class="page-item no"><a onclick="createPagination(pages, pages)">'+pages+'</a></li>';
+      }
+    }
+    // Show the Next button only if you are on a page other than the last
+    if (page < pages) {
+      str += '<li class="page-item next no"><a onclick="createPagination(pages, '+(page+1)+')" class="paggination__arrow"><svg class="icon icon-uslugi-right-arrow "><use href="./img/svg/sprite.svg#uslugi-right-arrow" xlink:href="./img/svg/sprite.svg#uslugi-right-arrow"></use></svg></a></li>';
+    }
+    else
+    {
+      str += '<li class="page-item next no"><a class="paggination__arrow"><svg class="icon icon-uslugi-right-arrow "><use href="./img/svg/sprite.svg#uslugi-right-arrow" xlink:href="./img/svg/sprite.svg#uslugi-right-arrow"></use></svg></a></li>';
+    }
+    str += '</ul>';
+    // Return the pagination string to be outputted in the pug templates
+    document.getElementById('pagination').innerHTML = str;
+    return str;
+  }
+
+}
+
+
+
+
+
+
+
+
+var x, i, j, l, ll, selElmnt, a, b, c;
+/* Look for any elements with the class "custom-select": */
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /* For each element, create a new DIV that will act as the selected item: */
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML + '<div class="custom-select__arrow"><svg class="icon"><use href="./img/svg/sprite.svg#accord" xlink:href="./img/svg/sprite.svg#accord"></use></svg></div>';
+  x[i].appendChild(a);
+  /* For each element, create a new DIV that will contain the option list: */
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /* For each option in the original select element,
+    create a new DIV that will act as an option item: */
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML + '<div class="custom-select__arrow"><svg class="icon"><use href="./img/svg/sprite.svg#accord" xlink:href="./img/svg/sprite.svg#accord"></use></svg></div>';
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+    /* When the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document,
+  except the current select box: */
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+
+/* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+document.addEventListener("click", closeAllSelect);

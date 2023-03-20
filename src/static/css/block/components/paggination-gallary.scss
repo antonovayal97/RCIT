@@ -1,0 +1,66 @@
+#pagination {
+  user-select: none;
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      color: #fff;
+      display: flex;
+      a {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        color: var(--color-blue-dark);
+        @include xm
+        {
+          width: 32px;
+          height: 32px;
+          @include font-t-6;
+        }
+        @include font-d-7;
+        &:hover
+        {
+          color: var(--color-blue2);
+        }
+      }
+    }
+    .previous
+    {
+      margin-right: 20px;
+    }
+    .next
+    {
+      margin-left: 20px;
+    }
+    // li.previous,
+    // li.next {
+    //   animation: fadein .5s;
+    // }
+    li.active a {
+      color: var(--color-blue2);
+    }
+    li:first-child a {
+    }
+    li:last-child a {
+    }
+  }
+}
+
+
+
+
+// When I feel motivated to get this working
+// @keyframes fadein {
+//   from {opacity: 0;}
+//   to {opacity: 1;}
+// }

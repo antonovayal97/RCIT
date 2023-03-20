@@ -1,5 +1,5 @@
-- var linksArr = [{name: 'О нас',links:[{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'}]},{name: 'Услуги',links:[]},{name: 'Сервисы',links:[{name: 'Календарь видеоконференции связи с районами',url: '#'},{name: 'Реестр ГИС',url: '#'},{name: 'Сервис электронной почты',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: '#'},{name: 'Объявления',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: '#'},{name: 'FAQ',url: '#'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
-
+- var linksArr = [{name: 'О нас',links:[{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'}]},{name: 'Услуги',links:[],multy_links:[{name: "Связь",links:[{name: "IP - Телефония"},{name: "МТС"},{name: "VPN"},{name: "ПД"},{name: "Интернет и Wi-Fi"},{name: "Аренда сетевого оборудования"},]},{name: "Инфобезопастность",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Облачные решения",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Дата-центр",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "IT-Администрирование",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]}]},{name: 'Сервисы',links:[{name: 'Календарь видеоконференции связи с районами',url: '#'},{name: 'Реестр ГИС',url: '#'},{name: 'Сервис электронной почты',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: '#'},{name: 'Объявления',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: '#'},{name: 'FAQ',url: '#'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
+include ../chunk/components/xm-header-accord
 header(class="header-main")
   .header__top
     .index-wrap
@@ -43,9 +43,25 @@ header(class="header-main")
                               a(href="ll.url" aria-role="menuitem")
                                 .header__menu-links-link-second-name=ll.name
             else
-              li
-                a(href="#").header__menu-links-link
-                  span.header__links-text=link.name
+              if link.name == "Услуги"
+                li
+                  div(tabindex=0).header__menu-links-link.uslg__unrelative
+                    .header__menu-links-link-first
+                      a(href="#" aria-role="menuitem" aria-haspopup="true").header__links-text=link.name
+                      .header__menu-links-link-second.uslg
+                        .header__menu-links-link-second-wrap.uslg__wrap
+                          ul
+                            each ll in link.multy_links
+                              li
+                                .uslg__head2=ll.name
+                                ul.uslg_items
+                                  each ff in ll.links
+                                    li
+                                      a(href="#").uslg__item=ff.name
+              else
+                li
+                  a(href="#").header__menu-links-link
+                    span.header__links-text=link.name
       .header__search.visible-l-flex
         input(type="text" placeholder="Поиск").header__search-input
         .header__search-btn
@@ -55,6 +71,8 @@ header(class="header-main")
       .header__notifications
         .swiper.header__notifications-swiper
           .swiper-wrapper.header__notifications-swiper-wrapper
+            .swiper-slide.header__notifications-swiper-slide
+              p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной безопасности
             .swiper-slide.header__notifications-swiper-slide
               p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00 запланировано проведение регламентных работ программно-аппаратного комплекса обеспечения информационной безопасности
             .swiper-slide.header__notifications-swiper-slide
@@ -92,7 +110,27 @@ header(class="header-main")
                           a(href="link.url")
                             span=link.name
             else
-              li
-                .header__burger-inside-main-menu-first-name
-                  a(href="#")
-                    span=tt.name
+              if tt.name == "Услуги"
+                li
+                  .header__burger-inside-main-menu-first
+                    .header__burger-inside-main-menu-first-name
+                      +icon('arrow-down')
+                      span=tt.name
+                    .header__burger-inside-main-menu-second.uslg-l
+                      ul.hidden-xm
+                        each link in tt.multy_links
+                          li
+                            span.uslg-l__name=link.name
+                            ul
+                              each bb in link.links
+                                li
+                                  a(href="#")
+                                    span=bb.name
+                      .header__burger-inside-main-menu-second.uslg-xm.visible-xm
+                        each link in tt.multy_links
+                          +smallAccord(link.name,link.links)
+              else
+                li
+                  .header__burger-inside-main-menu-first-name
+                    a(href="#")
+                      span=tt.name

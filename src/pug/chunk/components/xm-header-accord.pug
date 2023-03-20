@@ -1,0 +1,13 @@
+mixin smallAccord(name="Имя",links=[{name: "link1"},{name: "link2"}])
+  .small-accord
+    .small-accord__outside
+      .small-accord__name
+        span=name
+      .small-accord__arrow
+        +icon("accord")
+    .small-accord__inside
+      ul
+        each dd in links
+          li
+            a(href="#")
+              span=dd.name

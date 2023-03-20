@@ -112,4 +112,46 @@ block page
                   span
                     b Электронная почта:
                     a(href="email:support@rcitsakha.ru")  support@rcitsakha.ru
+  div(class="hystmodal" id="uslugiModal" aria-hidden="true")
+    .hystmodal__wrap
+        div(class="hystmodal__window zayavka__modal" role="dialog" aria-modal="true")
+          .zayavka__header
+            h3 Заявка на подключение услуги
+          .zayavka__item
+            .zayavka__item-name
+              span Наименование организации
+            .zayavka__item-input
+              input(type="text" placeholder="Пример")
+          .zayavka__item
+            .zayavka__item-name
+              span Услуга
+            .zayavka__item-input
+              input(type="text" placeholder="Пример")
+          .zayavka__item
+            .zayavka__item-name
+              span Контактное лицо
+            .zayavka__item-input
+              input(type="text" placeholder="Пример")
+          .zayavka__item
+            .zayavka__item-name
+              span Телефон
+            .zayavka__item-input
+              input(type="text" placeholder="Пример")
+          .zayavka__item
+            .zayavka__item-name
+              span Электронная почта
+            .zayavka__item-input
+              input(type="text" placeholder="E-mail")
+          .zayavka__item
+            .zayavka__item-name
+              span Примечание
+            .zayavka__item-input
+              textarea(rows="5" cols="33" placeholder="E-mail")
+          .zayavka__item-check
+            .zayavka__item-checkbox
+              input(type="checkbox")
+            .zayavka__item-ckeck-text
+              span Нажимая на кнопку, я принимаю пользовательского соглашения и даю согласие на обработку моих перссональный данных.
+          .zayavka__btn
+            +button("Отправить","a","button_blue")
   include ../chunk/footer

@@ -1,6 +1,10 @@
 .tel-page
 {
   margin-top: 60px;
+  @include xm
+  {
+    margin-top: 10px;
+  }
 }
 .tel-page__section-head
 {
@@ -18,6 +22,13 @@
       @include font-t-1-5
     }
   }
+  @include xm
+  {
+    h2
+    {
+      @include font-m-1-5
+    }
+  }
 }
 .tel-page__search-input
 {
@@ -27,6 +38,14 @@
   {
     box-shadow: none;
   }
+  @include xm
+  {
+    padding-left: 20px;
+    height: 42px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 .tel-page__section
 {
@@ -34,6 +53,10 @@
   &:last-child
   {
     margin-bottom: 0;
+  }
+  @include xm
+  {
+    margin-bottom: 40px;
   }
 }
 .full-search__wrap
@@ -63,12 +86,26 @@
   {
     width: calc(50% - 10px);
   }
+  @include xm
+  {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    &:last-child
+    {
+      margin-bottom: 0;
+    }
+  }
 }
 .full-search__input-name
 {
   margin-bottom: 5px;
   color: var(--color-blue-dark);
-  @include font-d-6
+  @include font-d-6;
+  @include xm
+  {
+    @include font-m-6;
+  }
 }
 .full-search__input-wrap
 {
@@ -83,6 +120,8 @@
     padding: 0 30px;
     border: 1px solid var(--color-blue-light2);
     outline: none;
+    @include font-d-6;
+    color: var(--color-blue-dark)
   }
   a, input[type="submit"]
   {
@@ -97,7 +136,24 @@
   }
   @include l
   {
-    width: 100%
+    width: 100%;
+    input
+    {
+      @include font-t-5;
+    }
+  }
+  @include xm
+  {
+    height: 42px;
+    input
+    {
+      @include font-m-5;
+      padding: 0 20px;
+    }
+    &:last-child
+    {
+      padding-top: 5px;
+    }
   }
 }
 .full-search__zaya
@@ -114,6 +170,10 @@
   {
     width: 100%;
     margin-top: 40px;
+  }
+  @include xm
+  {
+    padding: 30px;
   }
 }
 .full-search__zaya-top
@@ -133,6 +193,10 @@
     line-height: 22px;
     margin-bottom: 35px;
   }
+  @include xm
+  {
+    @include font-m-2;
+  }
 }
 .full-search__zaya-top-btn
 {
@@ -142,12 +206,20 @@
   {
     margin-bottom: 40px;
   }
+  @include xm
+  {
+    margin-bottom: 35px;
+  }
 }
 .full-search__zaya-bottom
 {
   text-align: center;
   @include font-d-6;
   color: var(--color-blue-dark);
+  @include xm
+  {
+    @include font-m-6
+  }
 }
 .docs__uls
 {
@@ -162,6 +234,10 @@
   {
     margin-bottom: 50px;
   }
+  @include xm
+  {
+    margin-bottom: 40px;
+  }
 }
 .tel-page__excel-wrap
 {
@@ -170,6 +246,12 @@
   background-color: var(--color-blue-light3);
   border: 1px solid var(--color-blue-light2);
   border-radius: 10px;
+  @include xm
+  {
+    padding: 0 22px;
+    padding-top: 35px;
+    padding-bottom: 25px;
+  }
 }
 .tel-page__excel-head
 {
@@ -188,6 +270,14 @@
       @include font-t-1-5;
     }
   }
+  @include xm
+  {
+    margin-bottom: 20px;
+    h2
+    {
+      @include font-m-1-5;
+    }
+  }
 }
 .tel-page__excel-btn
 {
@@ -200,5 +290,110 @@
   @include l
   {
     margin-top: 50px;
+  }
+  @include xm
+  {
+    margin-top: 40px;
+  }
+}
+.tel-page__result
+{
+  color: var(--color-blue-dark);
+}
+.tel-page__result-head
+{
+  border-bottom: 1px solid var(--color-blue-light2);
+}
+.tel-page__result-org
+{
+  display: flex;
+  margin-bottom: 25px;
+}
+.tel-page__result-org-text
+{
+  margin-right: 10px;
+  @include font-d-4;
+}
+.tel-page__result-org-name
+{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+.tel-page__result-list
+{
+  margin-top: 25px;
+  ul
+  {
+    li
+    {
+      margin-bottom: 40px;
+      &:last-child
+      {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.tel-page__result-item
+{
+  display: flex;
+  @include font-d-6
+}
+.tel-page__item-a
+{
+  flex: 4
+}
+.tel-page__item-b
+{
+  flex: 3;
+  text-align: center;
+}
+.tel-page__item-c
+{
+  flex: 2;
+  text-align: center;
+}
+.tel-page__item-d
+{
+  flex: 2;
+  text-align: right;
+}
+
+
+
+
+
+.tel-page__hdfjs
+{
+  @include xm
+  {
+    .doc-link
+    {
+      flex-flow: row;
+      padding: 20px;
+      .doc-link__name
+      {
+        @include font-m-4;
+        text-align: left;
+        margin-bottom: 0;
+        margin-right: 26px;
+      }
+      .doc-link__arrow
+      {
+        width: 16px;
+        height: 16px;
+        svg
+        {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    .icon-accord
+    {
+      width: 16px;
+      height: 16px;
+    }
   }
 }

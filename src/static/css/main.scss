@@ -307,6 +307,9 @@ section
 @import "./block/components/accord.scss";
 @import "./block/components/doc-download.scss";
 @import "./block/components/select.scss";
+@import "./block/components/xm-header-accord.scss";
+@import "./block/components/paggination-gallary.scss";
+@import "./block/components/custom-select.scss";
 @import "./block/header-dropdown/header-dropdown.scss";
 @import "./block/main-banner/main-banner.scss";
 @import "./block/home-uslugi/home-uslugi.scss";
@@ -334,6 +337,7 @@ section
 @import "./block/pages/services.scss";
 @import "./block/pages/services-inside.scss";
 @import "./block/pages/tel-page.scss";
+@import "./block/pages/search.scss";
 *
 {
   font-family: "Golos", sans-serif;
@@ -373,7 +377,7 @@ section
 {
   @include xm
   {
-    display: none;
+    display: none !important;
   }
 }
 .visible-l
@@ -394,10 +398,10 @@ section
 }
 .visible-xm
 {
-  display: none;
+  display: none !important;
   @include xm
   {
-    display: block;
+    display: block !important;
   }
 }
 .visible-xm-flex

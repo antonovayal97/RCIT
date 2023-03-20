@@ -1,0 +1,9 @@
+extends ../layout/app
+include ../chunk/components/custom-select
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +customSelect()
+  include ../chunk/footer

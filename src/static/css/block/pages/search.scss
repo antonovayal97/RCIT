@@ -1,0 +1,19 @@
+.search-result
+{
+  margin-top: 60px;
+  ul
+  {
+    li
+    {
+      margin-bottom: 30px;
+      &:last-child
+      {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.search-result__item
+{
+  @include font-d-6;
+}

@@ -473,3 +473,78 @@
 {
 
 }
+
+
+
+
+.zayavka__modal
+{
+  color: var(--color-blue-dark);
+  width: 990px;
+  padding: 100px 75px;
+  padding-bottom: 75px;
+}
+.zayavka__header
+{
+  text-align: center;
+  margin-bottom: 40px;
+  h3
+  {
+    @include font-d-1-5
+  }
+}
+.zayavka__item
+{
+  margin-bottom: 30px;
+}
+.zayavka__item-name
+{
+  margin-bottom: 10px;
+  @include font-d-6;
+}
+.zayavka__item-input
+{
+  input
+  {
+    width: 100%;
+    height: 55px;
+    padding: 0 30px;
+    border: 1px solid var(--color-grey-light);
+    border-radius: 100px;
+    outline: none;
+    @include font-d-6;
+  }
+  textarea
+  {
+    border: 1px solid var(--color-grey-light);
+    padding: 18px 30px;
+    border-radius: 20px;
+    width: 100%;
+    height: 140px;
+    resize: none;
+  }
+}
+.zayavka__item-check
+{
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+.zayavka__item-checkbox
+{
+  input
+  {
+    width: 32px;
+    height: 32px;
+  }
+  margin-right: 20px;
+}
+.zayavka__item-ckeck-text
+{
+  @include font-d-6;
+}
+.zayavka__btn
+{
+  display: flex;
+  justify-content: center;
+}

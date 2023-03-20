@@ -1,7 +1,4 @@
 extends ../layout/app
-include ../chunk/components/accord
-include ../chunk/components/usluga-card
-include ../chunk/components/doc-download
 include ../chunk/components/custom-select
 block page
   include ../chunk/header
@@ -72,28 +69,31 @@ block page
                   br
                   a(href="tel:84112398000") +7 (4112) 398-000
                   span  IP 69800
-          .tel-page__hdfjs.tel-page__section
-            .tel-page__lists
-              .docs__ul.docs__uls
-                ul
-                  each doc in ["Администрация Главы Республики Саха (Якутия) и Правительства Республики Саха (Якутия)","Центральная избирательная комиссия Республики Саха (Якутия)","ГУ МЧС России по Республике Саха (Якутия)","Государственное Собрание (Ил Тумэн) Республики Саха (Якутия)"]
-                    li
-                      a(href="#").doc-link
-                        .doc-link__name
-                          span=doc
-                        .doc-link__arrow
-                          +icon('arrow-down')
-                        .accord__logo.hidden-l
-              each faq in ['Постоянные представительства','Министерства','Государственные комитеты','Департаменты и управления','Государственные учреждения','Инспекции и надзорные органы','Иные','Федеральные органы исполнительной власти']
-                +accord(faq,"tel")
-            .tel-page__excel-wrap
-              .tel-page__excel-head
-                h2 Выгрузить телефонную книгу в формате Excel
-              .tel-page__excel-btn
-                +button("Экспорт","a","button_blue")
-            .tel-page__downloads
+          .tel-page__result.tel-page__section
+            .tel-page__result-head
+              .tel-page__section-head
+                h2 Результат поиска
+              .tel-page__result-org
+                .tel-page__result-org-text
+                  span Организация:
+                .tel-page__result-org-name
+                  span Государственное Собрание (Ил Тумэн) Республики Саха (Якутия)
+              .tel-page__result-org
+                .tel-page__result-org-text
+                  span Отдел:
+                .tel-page__result-org-name
+                  span Юридический отдел
+            .tel-page__result-list
               ul
-                each doc in ["Регламент по ведению и администрированию информационно-справочной системы «Телефонный справочник органов государственной власти Республики Саха (Якутия) и органов местного самоуправления Республики Саха (Якутия)»","Соглашение на обработку, хранение и публикацию персональных данных","Типовой образец согласия работника на обработку персональных данных"]
+                each dd in [1,2,3,4,5,6]
                   li
-                    +docDownload(doc)
+                    .tel-page__result-item
+                      .tel-page__item-a
+                        span Заместитель генерального директора
+                      .tel-page__item-b
+                        span Захарова Марина Викторовна
+                      .tel-page__item-c
+                        span 6-71-56
+                      .tel-page__item-d
+                        span (495) 624-32-35
   include ../chunk/footer
