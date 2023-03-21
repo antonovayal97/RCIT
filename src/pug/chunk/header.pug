@@ -1,10 +1,10 @@
-- var linksArr = [{name: 'О нас',links:[{name: 'История РЦИТ',url: '#'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: '#'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: '#'}]},{name: 'Услуги',links:[],multy_links:[{name: "Связь",links:[{name: "IP - Телефония"},{name: "МТС"},{name: "VPN"},{name: "ПД"},{name: "Интернет и Wi-Fi"},{name: "Аренда сетевого оборудования"},]},{name: "Инфобезопастность",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Облачные решения",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Дата-центр",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "IT-Администрирование",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]}]},{name: 'Сервисы',links:[{name: 'Календарь видеоконференции связи с районами',url: '#'},{name: 'Реестр ГИС',url: '#'},{name: 'Сервис электронной почты',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: '#'},{name: 'Объявления',url: '#'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: '#'},{name: 'FAQ',url: '#'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: '#'}]},{name: 'Телефонный справочник',links:[]}]
+- var linksArr = [{name: 'О нас',links:[{name: 'О РЦИТ',url: './about-orcit.html'},{name: 'История РЦИТ',url: './about-history.html'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: './about-realproject-inside.html'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: './about-docs.html'}]},{name: 'Услуги',links:[],multy_links:[{name: "Связь",links:[{name: "IP - Телефония"},{name: "МТС"},{name: "VPN"},{name: "ПД"},{name: "Интернет и Wi-Fi"},{name: "Аренда сетевого оборудования"},]},{name: "Инфобезопастность",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Облачные решения",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Дата-центр",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "IT-Администрирование",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]}]},{name: 'Сервисы',links:[{name: 'Список сервисов',url: './services.html'},{name: 'Календарь видеоконференции связи с районами',url: './calendar.html'},{name: 'Реестер ГИС',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: './news.html'},{name: 'Объявления',url: './news.html'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: './tehpod-poryadok.html'},{name: 'FAQ',url: './faq.html'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: './tehpod-portal.html'}]},{name: 'Телефонный справочник',links:[]}]
 include ../chunk/components/xm-header-accord
 header(class="header-main")
   .header__top
     .index-wrap
       .header__wrap
-        a(href="#").header__logo
+        a(href="./").header__logo
           +icon('logo','header__logo-image')
         .header__options
           a(href="#" class="header__btn hidden-l")
@@ -40,14 +40,14 @@ header(class="header-main")
                         ul
                           each ll in link.links
                             li
-                              a(href="ll.url" aria-role="menuitem")
+                              a(href=ll.url aria-role="menuitem")
                                 .header__menu-links-link-second-name=ll.name
             else
               if link.name == "Услуги"
                 li
                   div(tabindex=0).header__menu-links-link.uslg__unrelative
                     .header__menu-links-link-first
-                      a(href="#" aria-role="menuitem" aria-haspopup="true").header__links-text=link.name
+                      a(href="./uslugi-inside.html" aria-role="menuitem" aria-haspopup="true").header__links-text=link.name
                       .header__menu-links-link-second.uslg
                         .header__menu-links-link-second-wrap.uslg__wrap
                           ul
@@ -57,11 +57,16 @@ header(class="header-main")
                                 ul.uslg_items
                                   each ff in ll.links
                                     li
-                                      a(href="#").uslg__item=ff.name
+                                      a(href="./uslugi-inside.html").uslg__item=ff.name
               else
-                li
-                  a(href="#").header__menu-links-link
-                    span.header__links-text=link.name
+                if link.name == "Телефонный справочник"
+                  li
+                    a(href="./tel-page.html").header__menu-links-link
+                      span.header__links-text=link.name
+                else
+                  li
+                    a(href="#").header__menu-links-link
+                      span.header__links-text=link.name
       .header__search.visible-l-flex
         input(type="text" placeholder="Поиск").header__search-input
         .header__search-btn

@@ -1,0 +1,17 @@
+extends ../layout/app
+include ../chunk/components/news-card
+block page
+  include ../chunk/header
+  main
+    .index-wrap
+      .page-wrap
+        +pageHeader("Объявления",["Главная","Пресс-центр","Объявления"],[{name: 'Новости',url: './news.html',active: false},{name: 'Объявление',url: './obyavl.html',active: true}])
+        .hews
+          .hews__wrap
+            +newsCard("news.png",true)
+            +newsCard('',true)
+            +newsCard("news.png",true)
+            each news in [1,2,3,4,5,6,7,8,9]
+              +newsCard('',true)
+          include ../chunk/components/paggination
+  include ../chunk/footer

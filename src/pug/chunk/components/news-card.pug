@@ -1,23 +1,47 @@
-mixin newsCard(img="")
-  a(href="#").news-card
-    .news-card__head
-      .news-card__head-text
-        h3 Проверка систем оповещения населения 02 ноября в 10:40
-      if img != ""
-        .news-card__head-img
-          .news-card__head-ton
-          img(src="./img/" + img)
-    .news-card__main
-      .news-card__text
-        p Во исполнение распоряжения Главы Республики Саха (Якутия) от 25 августа
-      .news-card__bottom
-        .news-card__location.news-card__icon-text
-          .news-card__location-icon.news-card__icon
-            +icon('location')
-          .news-card__location-place
-            span Якутск
-        .news-card__date.news-card__icon-text
-          .news-card__date-icon.news-card__icon
-            +icon('calendar')
-          .news-card__date-value
-            span 30.11.2022
+mixin newsCard(img="",obyavl=false)
+  if obyavl == false
+    a(href="./news-inside.html").news-card
+      .news-card__head
+        .news-card__head-text
+          h3 Проверка систем оповещения населения 02 ноября в 10:40
+        if img != ""
+          .news-card__head-img
+            .news-card__head-ton
+            img(src="./img/" + img)
+      .news-card__main
+        .news-card__text
+          p Во исполнение распоряжения Главы Республики Саха (Якутия) от 25 августа
+        .news-card__bottom
+          .news-card__location.news-card__icon-text
+            .news-card__location-icon.news-card__icon
+              +icon('location')
+            .news-card__location-place
+              span Якутск
+          .news-card__date.news-card__icon-text
+            .news-card__date-icon.news-card__icon
+              +icon('calendar')
+            .news-card__date-value
+              span 30.11.2022
+  else
+    a(href="./obyavl-inside.html").news-card
+      .news-card__head
+        .news-card__head-text
+          h3 Проверка систем оповещения населения 02 ноября в 10:40
+        if img != ""
+          .news-card__head-img
+            .news-card__head-ton
+            img(src="./img/" + img)
+      .news-card__main
+        .news-card__text
+          p Во исполнение распоряжения Главы Республики Саха (Якутия) от 25 августа
+        .news-card__bottom
+          .news-card__location.news-card__icon-text
+            .news-card__location-icon.news-card__icon
+              +icon('location')
+            .news-card__location-place
+              span Якутск
+          .news-card__date.news-card__icon-text
+            .news-card__date-icon.news-card__icon
+              +icon('calendar')
+            .news-card__date-value
+              span 30.11.2022

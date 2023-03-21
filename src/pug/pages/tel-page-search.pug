@@ -62,7 +62,7 @@ block page
                 .full-search__zaya-top
                   .full-search__zaya-top-text
                     span Для изменения текущих  справочных данных необходимо заполнить форму заявки.
-                  .full-search__zaya-top-btn
+                  div(class="full-search__zaya-top-btn" data-hystmodal="#telPageModal")
                     +button("Оставить заявку","a","button_blue")
                 .full-search__zaya-bottom
                   span По всем возникшим вопросам обращаться по телефону
@@ -96,4 +96,37 @@ block page
                         span 6-71-56
                       .tel-page__item-d
                         span (495) 624-32-35
+  div(class="hystmodal" id="telPageModal" aria-hidden="true")
+    .hystmodal__wrap
+        div(class="hystmodal__window zayavka__modal" role="dialog" aria-modal="true")
+          div(data-hystclose class="hystmodal__close zayavka__exs")
+            +icon("exs")
+          .zayavka__header
+            h3 Заявка на изменение справочника
+          .zayavka__item
+            .zayavka__item-name
+              span Комментарий
+            .zayavka__item-input
+              textarea(rows="5" cols="33" placeholder="Намский улус")
+          .zayavka__bottom
+            .zayavka__bottom-left
+              +button("Отправить","a","button_blue")
+            .zayavka__bottom-right
+              .zayavka__bottom-right-top
+                .zayavka__download
+                  .zayavka__download-name
+                    span Загрузить спроводительное письмо
+                  .zayavka__download-icon
+                    +icon("upload-sqr")
+              .zayavka__bottom-right-bottom
+                .zayavka__download
+                  .zayavka__download-name
+                    span Скачать форму заявки
+                  .zayavka__download-icon
+                    +icon("dowload-sqr")
+                .zayavka__download
+                  .zayavka__download-name
+                    span Загрузить форму заявки
+                  .zayavka__download-icon
+                    +icon("upload-sqr")
   include ../chunk/footer

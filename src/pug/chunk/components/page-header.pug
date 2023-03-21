@@ -23,9 +23,9 @@ mixin pageHeader(name="Заголовок страницы",breadcrumbs=['Гла
             each btn in btns
               if btn.active == true
                 .swiper-slide.page-header__btns-swiper-slide
-                  +button(btn.name,"a","button_blue")
+                  +button(btn.name,"a","button_blue",btn.url)
               if btn.active == false
                 .swiper-slide.page-header__btns-swiper-slide
-                  +button(btn.name)
+                  +button(btn.name,"a","",btn.url)
           .page-header__swiper-paggination-wrap
             .page-header__swiper-paggination

@@ -483,6 +483,7 @@
   width: 990px;
   padding: 100px 75px;
   padding-bottom: 75px;
+  border-radius: 20px;
 }
 .zayavka__header
 {
@@ -513,6 +514,10 @@
     border-radius: 100px;
     outline: none;
     @include font-d-6;
+  }
+  .custom-select
+  {
+    height: 55px;
   }
   textarea
   {
@@ -547,4 +552,70 @@
 {
   display: flex;
   justify-content: center;
+}
+.zayavka__exs
+{
+  width: 32px;
+  height: 32px;
+  right: 50px;
+  top: 50px;
+  .icon
+  {
+    width: 100%;
+    height: 100%
+  }
+}
+
+.zayavka__bottom
+{
+  display: flex;
+  justify-content: space-between;
+}
+.zayavka__bottom-left
+{
+
+}
+.zayavka__bottom-right
+{
+
+}
+.zayavka__bottom-right-top
+{
+  margin-bottom: 30px;
+}
+.zayavka__bottom-right-bottom
+{
+  display: flex;
+}
+.zayavka__download
+{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  &:last-child
+  {
+    margin-left: 30px;
+  }
+}
+.zayavka__download-name
+{
+  margin-right: 8px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+}
+.zayavka__download-icon
+{
+  width: 24px;
+  height: 24px;
+  .icon
+  {
+    width: 100%;
+    height: 100%;
+  }
+}
+.zayavka__download-icon
+{
+
 }

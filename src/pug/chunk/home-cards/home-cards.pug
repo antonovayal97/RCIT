@@ -13,7 +13,7 @@ mixin homeCard(variant="orcit")
             .dotted.home-card__dotted-1
             .dotted.home-card__dotted-2
         .section__btn
-            +button("Подробнее")
+            +button("Подробнее","a","","./about-orcit.html")
       if variant == "obyavl"
         .section__head
             h2 Объявления
@@ -49,4 +49,4 @@ mixin homeCard(variant="orcit")
                   .home-mini-card__hidden
                     p='Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00запланировано проведение регламентных работ программно-аппаратногокомплекса обеспечения информационной безопасности на узлах «СахаИнформ-Сеть».Во время проведения регламентных работ будут кратковременные перебои телефонной связи.Работы будут выполнены по следующим адресам:' + jj
         .section__btn
-            +button("Все объявления")
+            +button("Все объявления","a","","./obyavl.html")

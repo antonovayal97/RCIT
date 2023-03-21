@@ -1,6 +1,6 @@
-mixin button(name="Кнопка",tag="a",mod=" ")
+mixin button(name="Кнопка",tag="a",mod=" ",link = "#")
   if tag == "a"
-    a(href="#")(class="button" + " "  + mod)
+    a(href=link)(class="button" + " "  + mod)
       span=name
   if tag == "div"
     div(class="button" + " "  + mod)

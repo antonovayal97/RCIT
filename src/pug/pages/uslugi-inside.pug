@@ -1,6 +1,7 @@
 extends ../layout/app
 include ../chunk/components/usluga-card
 include ../chunk/components/doc-download
+include ../chunk/components/custom-select
 block page
   include ../chunk/header
   main
@@ -115,6 +116,8 @@ block page
   div(class="hystmodal" id="uslugiModal" aria-hidden="true")
     .hystmodal__wrap
         div(class="hystmodal__window zayavka__modal" role="dialog" aria-modal="true")
+          div(data-hystclose class="hystmodal__close zayavka__exs")
+            +icon("exs")
           .zayavka__header
             h3 Заявка на подключение услуги
           .zayavka__item
@@ -126,7 +129,7 @@ block page
             .zayavka__item-name
               span Услуга
             .zayavka__item-input
-              input(type="text" placeholder="Пример")
+              +customSelect(true)
           .zayavka__item
             .zayavka__item-name
               span Контактное лицо

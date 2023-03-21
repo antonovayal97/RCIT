@@ -1,16 +1,33 @@
-mixin customSelect()
-  .custom-select
-    select
-      <option value="0">например Г.Якутск</option>
-      <option value="1">Г.Якутск</option>
-      <option value="2">Абыйский улус</option>
-      <option value="3">Горный улус</option>
-      <option value="4">Горный улус</option>
-      <option value="5">Горный улус</option>
-      <option value="6">Горный улус</option>
-      <option value="7">Горный улус</option>
-      <option value="8">Горный улус</option>
-      <option value="9">Горный улус</option>
-      <option value="10">Горный улус</option>
-      <option value="11">Горный улус</option>
-      <option value="12">Горный улус</option>
+mixin customSelect(dd=false)
+  if dd == false
+    .custom-select
+      select
+        <option value="0">например Г.Якутск</option>
+        <option value="1">Г.Якутск</option>
+        <option value="2">Абыйский улус</option>
+        <option value="3">Горный улус</option>
+        <option value="4">Горный улус</option>
+        <option value="5">Горный улус</option>
+        <option value="6">Горный улус</option>
+        <option value="7">Горный улус</option>
+        <option value="8">Горный улус</option>
+        <option value="9">Горный улус</option>
+        <option value="10">Горный улус</option>
+        <option value="11">Горный улус</option>
+        <option value="12">Горный улус</option>
+  else
+    .custom-select.custom-select__usl
+      select
+        <option value="0">например Услуга 1</option>
+        <option value="1">Услуга 1</option>
+        <option value="2">Услуга 2</option>
+        <option value="3">Услуга 3</option>
+        <option value="4">Услуга 4</option>
+        <option value="5">Услуга 5</option>
+        <option value="6">Услуга 6</option>
+        <option value="7">Услуга 7</option>
+        <option value="8">Услуга 8</option>
+        <option value="9">Услуга 9</option>
+        <option value="10">Услуга 10</option>
+        <option value="11">Услуга 11</option>
+        <option value="12">Услуга 12</option>

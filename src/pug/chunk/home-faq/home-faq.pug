@@ -1,4 +1,4 @@
-mixin faqCard(name="Имя FAQ",url="#")
+mixin faqCard(name="Имя FAQ",url="./faq.html")
   a(href=url).faq-card
     .faq-card__text
       h3=name
@@ -18,5 +18,5 @@ section
         .dotted.home-faq__dotted-1
         .dotted.home-faq__dotted-2
     .section__btn
-      +button("В раздел","a","button_white")
+      +button("В раздел","a","button_white",'./faq.html')
   .section__angle

@@ -5,7 +5,7 @@ block page
   main
     .index-wrap
       .page-wrap
-        +pageHeader("Список сервисов",["Главная","Сервисы","Список сервисов"],[{name: 'Список сервисов',url: '#',active: true}])
+        +pageHeader("Список сервисов",["Главная","Сервисы","Список сервисов"],[{name: 'Список сервисов',url: './services.html', active: true},{name: 'Календарь видеоконфренцсвязи с районными студиями',url: './calendar.html', active: false},{name: 'Реестер ГИС',url: '#',active: false}])
         .hews
           .hews__wrap
             each services in [1,2,3]
