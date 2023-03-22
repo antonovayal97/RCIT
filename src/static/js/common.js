@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded",(event) => {
     }
   })
 
+  let fileinput =  document.querySelectorAll('.inputfile')
+  fileinput.forEach(item => {
+    item.addEventListener("change",(e) =>{
+      item.nextElementSibling.innerText = item.files[0].name.substr(0, 30)
+    })
+  });
+
   let homeObyavl = document.querySelectorAll('.section__cards_reactive')
   homeObyavl.forEach(item => {
     let homeObyavlName = item.querySelector('.home-card__name_reactive')

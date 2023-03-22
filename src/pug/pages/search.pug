@@ -4,7 +4,7 @@ block page
   main
     .index-wrap
       .page-wrap
-        +pageHeader("Результат поиска",["Главная","Поиск"],[])
+        +pageHeader("Результат поиска",[{name: "Главная", url: "./"},{name: "Поиск", url: "./search.html"}],[])
         .search-result
           ul
             each dd in [1,2,3,4,5]

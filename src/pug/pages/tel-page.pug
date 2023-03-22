@@ -8,7 +8,7 @@ block page
   main
     .index-wrap
       .page-wrap
-        +pageHeader("Телефонный справочник",["Главная","Телефонный справочник"],[])
+        +pageHeader("Телефонный справочник",[{name: "Главная", url: "./"},{name: "Телефонный справочник", url: "./tel-page.html"}],[])
         .tel-page
           .tel-page__search.tel-page__section
             .tel-page__section-head
@@ -114,10 +114,14 @@ block page
             .zayavka__bottom-right
               .zayavka__bottom-right-top
                 .zayavka__download
-                  .zayavka__download-name
-                    span Загрузить спроводительное письмо
-                  .zayavka__download-icon
-                    +icon("upload-sqr")
+                  <label class="input-file">
+                    <input type="file" name="file" class="inputfile">
+                    <span class="zayavka__download-name">Загрузить форму заявки</span>
+                    <span class="input-file-btn">
+                      .zayavka__download-icon
+                        +icon("upload-sqr")
+                    </span>
+                  </label>
               .zayavka__bottom-right-bottom
                 .zayavka__download
                   .zayavka__download-name
@@ -125,8 +129,12 @@ block page
                   .zayavka__download-icon
                     +icon("dowload-sqr")
                 .zayavka__download
-                  .zayavka__download-name
-                    span Загрузить форму заявки
-                  .zayavka__download-icon
-                    +icon("upload-sqr")
+                  <label class="input-file">
+                    <input type="file" name="file" class="inputfile">
+                    <span class="zayavka__download-name">Загрузить форму заявки</span>
+                    <span class="input-file-btn">
+                      .zayavka__download-icon
+                        +icon("upload-sqr")
+                    </span>
+                  </label>
   include ../chunk/footer

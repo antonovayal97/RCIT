@@ -397,3 +397,51 @@
     }
   }
 }
+
+
+
+
+.input-file {
+	position: relative;
+	display: inline-block;
+  cursor: pointer;
+}
+.input-file-btn {
+  opacity: 1;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	vertical-align: middle;
+	text-align: center;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: opacity 0.2s;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Hover/active */
+.input-file:hover .input-file-btn {
+	opacity: 0.8
+}
+.input-file:active .input-file-btn {
+	opacity: 0.8
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
+}

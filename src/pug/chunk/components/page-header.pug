@@ -3,15 +3,15 @@ mixin pageHeader(name="Заголовок страницы",breadcrumbs=['Гла
     nav.page-header__breadcrumbs(aria-label="You are here:", itemprop="http://schema.org/breadcrumb", itemscope, itemtype="http://schema.org/BreadcrumbList")
       .page-header__breadcrumbs-wrapper
         ul
-          each name, index in breadcrumbs
+          each bc, index in breadcrumbs
             li.page-header__breadcrumbs-item(itemprop="itemListElement", itemscope, itemtype="http://schema.org/ListItem")
               if index < breadcrumbs.length - 1
-                a.page-header__breadcrumbs-link(href='#', title=name, itemprop="url")
-                  span(itemprop=name)= name
+                a.page-header__breadcrumbs-link(href=bc.url, title=name, itemprop="url")
+                  span(itemprop=bc.name)=bc.name
                 .page-header__breadcrumbs-slash
                   span /
               else
-                span(itemprop=name)=name
+                span(itemprop=bc.name)=bc.name
     .page-header__head
       h1=name
     if btns.length == 0

@@ -5,7 +5,7 @@ block page
   main
     .index-wrap
       .page-wrap
-        +pageHeader("Объявления",["Главная","Пресс-центр","Объявления"],[{name: 'Новости',url: './news.html',active: false},{name: 'Объявление',url: './obyavl.html',active: true}])
+        +pageHeader("Объявления",[{name: "Главная", url: "./"},{name: "Пресс-центр", url: "./news.html"},{name: "Объявления", url: "./obyavl.html"}],[{name: 'Новости',url: './news.html',active: false},{name: 'Объявление',url: './obyavl.html',active: true}])
         .hews
           .hews__wrap
             +newsCard("news.png",true)
