@@ -435,7 +435,11 @@ header
     }
     @include xm
     {
-      @include font-m-6;
+      p
+      {
+        @include font-m-6;
+        font-size: 8px;
+      }
     }
 
 }

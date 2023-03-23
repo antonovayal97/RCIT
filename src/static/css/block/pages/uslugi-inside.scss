@@ -484,6 +484,12 @@
   padding: 100px 75px;
   padding-bottom: 75px;
   border-radius: 20px;
+  @include l
+  {
+    padding: 70px 30px;
+    border-radius: 0px;
+    padding-bottom: 25px;
+  }
 }
 .zayavka__header
 {
@@ -492,6 +498,13 @@
   h3
   {
     @include font-d-1-5
+  }
+  @include xm
+  {
+    h3
+    {
+      @include font-m-1-5
+    }
   }
 }
 .zayavka__item
@@ -564,29 +577,53 @@
     width: 100%;
     height: 100%
   }
+  @include xm
+  {
+    right: 15px;
+    top: 15px;
+  }
 }
 
 .zayavka__bottom
 {
   display: flex;
   justify-content: space-between;
+  @include xm
+  {
+    flex-direction: column-reverse;
+  }
 }
 .zayavka__bottom-left
 {
-
+  @include xm
+  {
+    display: flex;
+    justify-content: center;
+  }
 }
 .zayavka__bottom-right
 {
-
+  @include xm
+  {
+    margin-bottom: 20px;
+  }
 }
 .zayavka__bottom-right-top
 {
   margin-bottom: 30px;
+  @include xm
+  {
+    margin-bottom: 20px;
+  }
 }
 .zayavka__bottom-right-bottom
 {
   display: flex;
   justify-content: flex-end;
+  @include xm
+  {
+    flex-direction: column-reverse;
+  }
 }
 .zayavka__download
 {
@@ -597,6 +634,13 @@
   &:last-child
   {
     margin-left: 30px;
+  }
+  @include xm
+  {
+    &:last-child
+    {
+      margin-bottom: 20px;
+    }
   }
 }
 .zayavka__download-name

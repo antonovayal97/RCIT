@@ -30,9 +30,12 @@
   ul
   {
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -10px;
     li
     {
       display: flex;
+      margin-bottom: 10px
     }
   }
 }
@@ -66,7 +69,11 @@
 
 
 
-
+.breadcrumb-slide
+{
+  width: fit-content;
+  display: flex;
+}
 
 
 
@@ -117,6 +124,10 @@
   width: fit-content;
   margin-bottom: 20px;
   margin-right: 20px;
+  span
+  {
+    white-space: nowrap;
+  }
   @include l
   {
     margin-left: 0;

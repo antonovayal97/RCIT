@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded",(event) => {
     })
   })
 
-
   let small_accords = document.querySelectorAll('.small-accord')
   small_accords.forEach(item => {
     let small_outside = item.querySelector('.small-accord__outside')
@@ -108,6 +107,8 @@ document.addEventListener("DOMContentLoaded",(event) => {
     menuWindow.classList.remove('header__burger-active')
   })
 
+
+
   let mainBanner = new Swiper(".main-banner-swiper", {
     loop: true,
     cssMode: true,
@@ -122,6 +123,18 @@ document.addEventListener("DOMContentLoaded",(event) => {
     breakpoints:{
       744:
       {
+        cssMode: false,
+      }
+    }
+  });
+
+  let breadSwiper = new Swiper(".bread-swiper", {
+    slidesPerView: "auto",
+    cssMode: true,
+    breakpoints:{
+      744:
+      {
+        slidesPerView: "auto",
         cssMode: false,
       }
     }
