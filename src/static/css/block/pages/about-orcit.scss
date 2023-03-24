@@ -22,17 +22,44 @@
     }
     @include xm
     {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
+  }
+}
+.about-orcit__section-galary
+{
+  @include l
+  {
+    padding-top: 10px;
+  }
+  @include xm
+  {
+    padding-top: 0;
+  }
+}
+.about-orcit__section-managers
+{
+  @include l
+  {
+    margin: 0 -10px;
   }
 }
 .about-orcit__double-img
 {
   display: flex;
   margin: -10px;
+  position: relative;
   @include xm
   {
     flex-direction: column;
+  }
+  .about-orcit__dotted2_top
+  {
+    @include xm
+    {
+      left: -10px;
+      bottom: -10px;
+    }
   }
 }
 .about-orcit__img
@@ -80,6 +107,7 @@
   padding-bottom: 40px;
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(150, 174, 198, 0.5);
+  border: 1px solid #CADCF2;
   background-color: var(--color-white);
   @include l
   {
@@ -90,6 +118,7 @@
   {
     margin-top: 30px;
     padding: 30px 25px;
+    border-radius: 8px;
   }
 }
 .quote__image
@@ -117,6 +146,10 @@
 {
   text-align: center;
   margin-bottom: 40px;
+  @include l
+  {
+    margin-bottom: 25px;
+  }
   h3
   {
     color: var(--color-blue-dark);
@@ -130,14 +163,6 @@
       @include font-m-2;
     }
   }
-  @include l
-  {
-    margin-bottom: 25px;
-    h3
-    {
-        @include font-t-2;
-    }
-  }
 }
 .quote__text
 {
@@ -146,6 +171,10 @@
   {
     text-align: center;
     margin-bottom: 25px;
+  }
+  @include xm
+  {
+    margin-top: 25px;
   }
 }
 .quote__person-info
@@ -192,6 +221,11 @@
     left: auto;
     right: -30px;
   }
+  @include xm
+  {
+    top: 25px;
+    right: -9px;
+  }
 }
 .about-orcit__dotted2_top
 {
@@ -202,6 +236,11 @@
     right: auto;
     left: -15px;
     bottom: -30px;
+  }
+  @include xm
+  {
+    left: -20px;
+    bottom: -20px;
   }
 }
 .about-orcit__managers
@@ -218,6 +257,13 @@
     width: 290px;
   }
 }
+.page-wrap__managers
+{
+  @include l
+  {
+      padding: 0;
+  }
+}
 .about-orcit__managers-wrap
 {
   display: flex;
@@ -232,6 +278,7 @@
   {
     flex-direction: column;
     margin: 0;
+    margin: 0 -10px;
     margin-bottom: -20px;
     padding-bottom: 20px;
   }
@@ -242,7 +289,8 @@
   margin: 0 10px;
   @include l
   {
-    width: 200px;
+    width: auto;
+    flex: 1;
   }
   @include xm
   {
@@ -315,6 +363,21 @@
     left: auto;
     right: -30px;
   }
+  @include xm
+  {
+    top: -20px;
+    right: -25px;
+  }
+}
+.about-orcit__dotted2_mid
+{
+
+  z-index: 1;
+  @include xm
+  {
+    bottom: 92px;
+    left: -25px;
+  }
 }
 .about-orcit__join
 {
@@ -370,6 +433,7 @@
 }
 .about-orcit__galary
 {
+  position: relative;
   margin-top: 20px;
 }
 .about-orcit__galary-wrap
@@ -384,11 +448,51 @@
 {
   top: -54px;
   left: -58px;
+  @include l
+  {
+    left: auto;
+    top: -30px;
+    right: -40px;
+  }
+  @include xm
+  {
+    top: -21px;
+    left: -15px;
+  }
 }
 .about-orcit__dotted2_bottom
 {
   bottom: -104px;
   right: -68px;
+  @include l
+  {
+    right: auto;
+    left: -40px;
+    bottom: -63px;
+  }
+  @include xm
+  {
+    left: auto;
+    right: -12px;
+    bottom: -216px;
+  }
+}
+.about-orcit__dotted3_bottom
+{
+  bottom: 20px;
+  left: -55px;
+  @include l
+  {
+    left: auto;
+    right: -35px;
+    bottom: 49px;
+  }
+  @include xm
+  {
+    right: auto;
+    left: -15px;
+    bottom: 57px;
+  }
 }
 .about-orcit__galary-item
 {
@@ -432,7 +536,7 @@
     width: calc(50% - 8px);
     margin-bottom: 16px;
     margin-right: 16px;
-    height: 160px;
+    height: 90px;
     &:nth-child(3n)
     {
       margin-right: 16px;

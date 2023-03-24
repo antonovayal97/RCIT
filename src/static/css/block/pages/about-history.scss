@@ -24,18 +24,21 @@
   }
   .about-orcit__double-img
   {
-    .about-orcit__img
-    {
-      height: 214px;
-    }
     @include l
     {
       margin: -5px;
       .about-orcit__img
       {
         width: calc(100% - 10px);
-        height: 160px;
+        height: 214px;
         margin: 5px;
+      }
+    }
+    @include xm
+    {
+      .about-orcit__img
+      {
+        height: 160px;
       }
     }
   }

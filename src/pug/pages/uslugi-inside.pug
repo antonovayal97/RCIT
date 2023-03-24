@@ -41,16 +41,8 @@ block page
             .section__head
               h2 Тарифы
             .uslugi-inside__tarifs-wrap
-              .swiper.home-uslugi
-                .swiper-wrapper.home-uslugi__wrapper
-                  each j in [{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"},{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"}]
-                    .swiper-slide.home-uslugi__slide
-                      +uslugaCard(j.name,j.text,j.img)
-                .swiper-pagination
-              .swiper-button-next.home-uslugi__slide-btn.home-uslugi__slide-btn-next
-                +icon('uslugi-right-arrow')
-              .swiper-button-prev.home-uslugi__slide-btn.home-uslugi__slide-btn-prev
-                +icon('uslugi-left-arrow')
+              each j in [{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"}]
+                +uslugaCard(j.name,j.text,j.img)
           .uslugi-inside__reglaments.uslugi-inside__section
             .section__head
               h2 Регламенты

@@ -23,7 +23,7 @@ mixin pageHeader(name="Заголовок страницы",breadcrumbs=['Гла
           .swiper-wrapper.page-header__btns-swiper-wrapper
             each btn in btns
               if btn.active == true
-                .swiper-slide.page-header__btns-swiper-slide
+                .swiper-slide.page-header__btns-swiper-slide.page-header__active-slide
                   +button(btn.name,"a","button_blue",btn.url)
               if btn.active == false
                 .swiper-slide.page-header__btns-swiper-slide

@@ -1,4 +1,4 @@
-- var linksArr = [{name: 'О нас',links:[{name: 'О РЦИТ',url: './about-orcit.html'},{name: 'История РЦИТ',url: './about-history.html'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: './about-realproject-inside.html'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: './about-docs.html'}]},{name: 'Услуги',links:[],multy_links:[{name: "Связь",links:[{name: "IP - Телефония"},{name: "МТС"},{name: "VPN"},{name: "ПД"},{name: "Интернет и Wi-Fi"},{name: "Аренда сетевого оборудования"},]},{name: "Инфобезопастность",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Облачные решения",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Дата-центр",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "IT-Администрирование",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]}]},{name: 'Сервисы',links:[{name: 'Список сервисов',url: './services.html'},{name: 'Календарь видеоконференции связи с районами',url: './calendar.html'},{name: 'Реестер ГИС',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: './news.html'},{name: 'Объявления',url: './news.html'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: './tehpod-poryadok.html'},{name: 'FAQ',url: './faq.html'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: './tehpod-portal.html'}]},{name: 'Телефонный справочник',links:[]}]
+- var linksArr = [{name: 'О нас',links:[{name: 'О РЦИТ',url: './about-orcit.html'},{name: 'История РЦИТ',url: './about-history.html'},{name: 'Политика РЦИТ',url: '#'},{name: 'Достижения',url: '#'},{name: 'Реализованные проекты',url: './about-realproject.html'},{name: 'Штаб ЦТ',url: '#'},{name: 'Контакты',url: '#'},{name: 'Документы',url: './about-docs.html'}]},{name: 'Услуги',links:[],multy_links:[{name: "Связь",links:[{name: "IP - Телефония"},{name: "МТС"},{name: "VPN"},{name: "ПД"},{name: "Интернет и Wi-Fi"},{name: "Аренда сетевого оборудования"},]},{name: "Инфобезопастность",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Облачные решения",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "Дата-центр",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]},{name: "IT-Администрирование",links:[{name: "Услуга 1"},{name: "Услуга 2"},{name: "Услуга 3"},{name: "Услуга 4"},{name: "Услуга 5"},{name: "Услуга 6"},]}]},{name: 'Сервисы',links:[{name: 'Список сервисов',url: './services.html'},{name: 'Календарь видеоконференции связи с районами',url: './calendar.html'},{name: 'Реестер ГИС',url: '#'}]},{name: 'Пресс-центр',links:[{name: 'Новости',url: './news.html'},{name: 'Объявления',url: './news.html'}]},{name: 'Техническая поддержка',links:[{name: 'Порядок и способ обращения в техподдержку',url: './tehpod-poryadok.html'},{name: 'FAQ',url: './faq.html'},{name: 'Регламенты и инструкции',url: '#'},{name: 'Портал технической поддержки',url: './tehpod-portal.html'}]},{name: 'Телефонный справочник',links:[]}]
 include ../chunk/components/xm-header-accord
 header(class="header-main")
   .header__top
@@ -7,7 +7,7 @@ header(class="header-main")
         a(href="./").header__logo
           +icon('logo','header__logo-image')
         .header__options
-          a(href="#" class="header__btn hidden-l")
+          a(href="#" class="header__btn header__btn-active hidden-l")
             span Для физических лиц
           a(href="#" class="header__btn hidden-l")
             span Для юридических лиц
@@ -99,7 +99,7 @@ header(class="header-main")
   .header__burger-inside
     .header__burger-inside-head.index-wrap
       .header__burger-inside-head-left
-        a(href="#" class="header__btn")
+        a(href="#" class="header__btn header__btn-active")
           span Для физических лиц
         a(href="#" class="header__btn")
           span Для юридических лиц

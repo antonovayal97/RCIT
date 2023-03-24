@@ -13,7 +13,10 @@ document.addEventListener("DOMContentLoaded",(event) => {
   let header = document.querySelector('.header-main')
   let now = window.scrollY
   let mainContent = document.querySelector('main')
-  mainContent.style = "padding-top:" + header.offsetHeight + 'px'
+    mainContent.style = "padding-top:" + header.offsetHeight + 'px'
+  window.addEventListener("resize", () => {
+      mainContent.style = "padding-top:" + header.offsetHeight + 'px'
+  });
   document.addEventListener('scroll',() => {
     if(this.scrollY > now && this.scrollY > 250)
     {
@@ -27,12 +30,18 @@ document.addEventListener("DOMContentLoaded",(event) => {
     }
   })
 
+
+
   let fileinput =  document.querySelectorAll('.inputfile')
   fileinput.forEach(item => {
     item.addEventListener("change",(e) =>{
-      item.nextElementSibling.innerText = item.files[0].name.substr(0, 30)
+       // item.nextElementSibling.innerText = item.files[0].name.substr(0, 30)
+      item.nextElementSibling.nextElementSibling.innerHTML = "<div class='zayavka__download-icon'><svg class='icon icon-upload-sqr'><use href='./img/svg/sprite.svg#upload-check' xlink:href='./img/svg/sprite.svg#upload-check'></use></svg></div>"
+
     })
   });
+
+
 
   let homeObyavl = document.querySelectorAll('.section__cards_reactive')
   homeObyavl.forEach(item => {
@@ -69,10 +78,18 @@ document.addEventListener("DOMContentLoaded",(event) => {
   small_accords.forEach(item => {
     let small_outside = item.querySelector('.small-accord__outside')
     small_outside.addEventListener('click',() => {
+      let hc = item.classList.contains('small-accord__active')
       small_accords.forEach(item => {
         item.classList.remove('small-accord__active')
       })
-      item.classList.toggle('small-accord__active')
+      if(hc)
+      {
+        item.classList.remove('small-accord__active')
+      }
+      else
+      {
+        item.classList.add('small-accord__active')
+      }
     })
   })
 
@@ -190,9 +207,20 @@ document.addEventListener("DOMContentLoaded",(event) => {
     });
     if(document.querySelector('.page-header__btns-swiper'))
     {
+      let activetab = document.querySelector('.page-header__active-slide')
+      // let active_index = parseInt(activetab.getAttribute("aria-label").substr(0, 1))
+      function getNodeIndex( elm ){
+    var c = elm.parentNode.children,
+        i = c.length;
+
+    while(i--)
+      if( c[i] == elm )
+        return i
+}
       let pageHeader = new Swiper(".page-header__btns-swiper", {
         slidesPerView: "auto",
         cssMode: true,
+        initialSlide: getNodeIndex(activetab),
         pagination: {
           el: ".page-header__swiper-paggination",
           type: "progressbar",
@@ -282,6 +310,9 @@ document.addEventListener("DOMContentLoaded",(event) => {
   if(aboutStageWrap)
   {
     aboutStageWrap.style.height = aboutWrapper.scrollWidth + 75 + 'px'
+    window.addEventListener("resize", () => {
+        aboutStageWrap.style.height = aboutWrapper.scrollWidth + 75 + 'px'
+    });
   }
 
   // МОДАЛКИ НАЧАЛО

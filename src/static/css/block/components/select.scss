@@ -18,6 +18,10 @@
     width: 100%;
   }
 }
+.page__select-text
+{
+  text-transform: capitalize;
+}
 .page__select_active
 {
   @include xm
@@ -78,6 +82,13 @@
 .page__select-item
 {
   padding-top: 15px;
+  &:hover
+  {
+    span
+    {
+        color: var(--color-blue-dark);
+    }
+  }
 }
 .page__select-arrow
 {

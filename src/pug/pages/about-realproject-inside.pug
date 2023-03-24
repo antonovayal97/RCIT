@@ -22,14 +22,15 @@ block page
             p Система видеонаблюдения и трансляции изображения состояла из веб-камер (камер видеонаблюдения), устанавливаемых в помещениях для голосования, а также средств записи и хранения видеоинформации и средств обработки данных видеотрансляций, устанавливаемых в центре обработки данных для дальнейшей передачи изображения на сайт видеотрансляции выборов. <br> Средства видеонаблюдения были установлены таким образом, чтобы не нарушалась тайна голосования и отсутствовала возможность контроля за волеизъявлением избирателей, а также контроля за участием гражданина Российской Федерации в выборах.
           .about-realproject-inside__team
             .about-realproject-inside__team-head
-              h2 Команда проекта
+              h2 Решенные задачи
             .about-realproject-inside__team-wrap
-              each person in [1,2,3]
+              each person, index in [1,2,3]
+                - var num = index + 1
                 .about-realproject-inside__team-person
                   .about-realproject-inside__team-person-photo
-                    img(src="./img/manager.png")
+                    img(src="./img/real" + num + ".png")
                   .about-realproject-inside__team-person-name
-                    span Кривошапкин Иван Александрович
+                    span Оптимизирована работа серверов
                   .about-realproject-inside__team-person-post
-                    span Проект менеджер
+                    span + 10% к скорости
   include ../chunk/footer

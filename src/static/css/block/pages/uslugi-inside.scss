@@ -68,16 +68,16 @@
 .advantages__dotted2
 {
   bottom: -40px;
-  right: -40px;
+  right: -55px;
   @include l
   {
-    bottom: -20px;
-    right: -20px;
+    bottom: -10px;
+    right: -30px;
   }
   @include xm
   {
     bottom: -15px;
-    right: -15px;
+    right: -25px;
   }
 }
 .advantage__card
@@ -193,6 +193,39 @@
 .uslugi-inside__tarifs-wrap
 {
   position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  @include xm
+  {
+    width: 332px;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+  & > .usluga-card__link
+  {
+    margin-right: 25px;
+    &:last-child
+    {
+      margin-right: 0;
+    }
+    @include xm
+    {
+      margin-right: 16px;
+      &:last-child
+      {
+        margin-right: 0;
+      }
+      &:nth-child(2n)
+      {
+        margin-right: 0
+      }
+      &:nth-child(3n)
+      {
+        margin-top: 16px;
+      }
+    }
+  }
 }
 .uslugi-inside__reglaments
 {
@@ -365,6 +398,11 @@
   @include xm
   {
     text-align: left;
+    p
+    {
+      color: var(--color-blue-dark);
+      @include font-m-3;
+    }
   }
 }
 .distribution__wrap

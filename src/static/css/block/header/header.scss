@@ -438,7 +438,7 @@ header
       p
       {
         @include font-m-6;
-        font-size: 8px;
+        font-size: 12px;
       }
     }
 
@@ -498,6 +498,15 @@ header
   {
     padding-top: 24px;
   }
+}
+.header__btn-active
+{
+  background-color: var(--color-blue2);
+  span
+  {
+    color: var(--color-white);
+  }
+
 }
 .header__burger-inside-head-right
 {
@@ -734,6 +743,7 @@ header
     li
     {
       width: 20%;
+
     }
     .uslg_items
     {
@@ -768,6 +778,10 @@ header
       margin-bottom: 10px;
       flex-direction: column;
       align-self: flex-start;
+      & > span
+      {
+        white-space: nowrap;
+      }
       .uslg-l__name
       {
         padding: 10px;

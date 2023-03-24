@@ -7,7 +7,7 @@ block page
       .page-wrap
         +pageHeader("Список сервисов",[{name: "Главная", url: "./"},{name: "Сервисы", url: "./services.html"}],[{name: 'Список сервисов',url: './services.html', active: true},{name: 'Календарь видеоконфренцсвязи с районными студиями',url: './calendar.html', active: false},{name: 'Реестер ГИС',url: '#',active: false}])
         .hews
-          .hews__wrap
+          .hews__wrap.services__wrap
             each services in [1,2,3]
               +serviceCard()
               +serviceCard()

@@ -15,6 +15,11 @@
   .project-card
   {
     margin: 10px;
+    width: calc(50% - 20px);
+    @include l
+    {
+      width: 100%;
+    }
   }
 }
 .real-project__dotted1

@@ -4,6 +4,23 @@ footer
   padding-top: 50px;
   padding-bottom: 20px;
   background-color: #0A1A3A;
+  @include l
+  {
+    padding-top: 40px;
+    .index-wrap
+    {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  @include xm
+  {
+    .index-wrap
+    {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
 }
 .footer__top
 {
@@ -18,6 +35,16 @@ footer
   {
     width: 130px;
     height: 50px;
+  }
+  @include l
+  {
+    width: 104px;
+    height: 40px;
+    .icon
+    {
+      width: 104px;
+      height: 40px;
+    }
   }
 }
 .footer__socials
@@ -73,11 +100,19 @@ footer
 }
 .footer__section_B
 {
-  grid-area: B
+  grid-area: B;
+  @include xm
+  {
+    width: 120px;
+  }
 }
 .footer__section_C
 {
-  grid-area: C
+  grid-area: C;
+  @include xm
+  {
+    width: 120px;
+  }
 }
 .footer__section_D
 {
@@ -108,6 +143,10 @@ footer
     @include xm
     {
       gap: 15px;
+    }
+    & > li:hover
+    {
+      color: var(--color-white);
     }
   }
   @include font-d-7;

@@ -1,6 +1,11 @@
 .calendar
 {
   margin-top: 80px;
+  @include l
+  {
+    margin-top: 60px;
+
+  }
 }
 // ::-webkit-scrollbar {
 //   width: 0px;
@@ -67,12 +72,12 @@
 .day-label
 {
   display: block;
-  margin-bottom: 10px;
   @include font-d-5;
 }
 .calendar__event
 {
   padding-top: 15px;
+  margin-top: 10px;
   &:first-child
   {
     border-top: 1px solid var(--color-blue-light2);
@@ -206,6 +211,7 @@ user-select: none;
 .calendar__month_active
 {
   opacity: 1;
+  text-transform: capitalize;
 }
 .calendar__btn-text
 {

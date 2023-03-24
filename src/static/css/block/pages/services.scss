@@ -1,3 +1,16 @@
+.services__wrap
+{
+  margin-top: 60px;
+  margin-bottom: 0;
+  @include l
+  {
+    margin-top: 30px;
+  }
+  @include xm
+  {
+    margin-top: 24px;
+  }
+}
 .service-card
 {
   flex: 1;
@@ -6,6 +19,10 @@
   height: 200px;
   display: flex;
   overflow: hidden;
+  @include xm
+  {
+    height: 173px;
+  }
 }
 .service-card__img
 {
@@ -64,8 +81,6 @@
 }
 .service-card__desc
 {
-  span
-  {
     @include font-d-7;
     color: var(--color-grey);
     @include l
@@ -76,7 +91,6 @@
     {
       @include font-m-6;
     }
-  }
 }
 .service-card__btn
 {
