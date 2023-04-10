@@ -1,10 +1,10 @@
 section
-  .index-wrap
-    .swiper.main-banner-swiper
-      .swiper-wrapper
-        each ban in [1,2,3,4,5,6]
-          .swiper-slide
-            .main-banner
+  .swiper.main-banner-swiper
+    .swiper-wrapper
+      each ban in [1,2,3,4,5,6]
+        .swiper-slide
+          .main-banner
+            .index-wrap
               .main-banner__text-n-btn
                 .main-banner__text
                   span // Есть возможность выбора типа канала
@@ -13,8 +13,9 @@ section
                 a(href="./uslugi-inside.html").main-banner__btn
                   span Подробнее
               .main-banner__img
-                img(src="./img/main-banner-img.png")
-      .swiper-pagination
+                img(src="./img/mainBanner.png")
+    .swiper-pagination.main-banner-pagination
+    .index-wrap
       .main-banner-swiper__btns
         .swiper-button-next.main-banner__slide-btn.page__slide-btn
           +icon('banner-btn-left')
