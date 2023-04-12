@@ -6,6 +6,24 @@ block page
     include ../chunk/main-banner/main-banner
     +homeCard()
     include ../chunk/home-uslugi/home-uslugi
+    section.section_white-p
+      .section__head
+        h2 Почему РЦИТ
+      .section__cards.section__cards_xl
+        .whyrcit
+          .whyrcit-header
+            p Сообщаем, что 2 ноября 2022 года (среда) с 20:00 до 22:00запланировано проведение регламентных работ программно-аппаратногокомплекса обеспечения информационной безопасности на узлах «СахаИнформ-Сеть».Во время проведения регламентных работ будут кратковременные перебои телефонной связи.Работы будут выполнены по следующим адресам:
+          .whyrcit-items
+            each nn in [1,2,3,4]
+              .whyrcit-item
+                .whyrcit-item__header
+                  +icon("glob")
+                .whyrcit-item__name
+                  span Заголовок #{nn}
+                .whyrcit-item__desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+          .whyrcit__btns
+            +button("Подробнее","a","",'./about-orcit.html')
     +homeCard("obyavl")
     include ../chunk/home-news/home-news
     include ../chunk/home-faq/home-faq

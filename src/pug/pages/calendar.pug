@@ -24,7 +24,7 @@ block page
               div(@click="nextMonth()" class="calendar__prev-month-btn paggination__arrow")
                 +icon('uslugi-left-arrow')
               div(class="calendar__prev-month-text calendar__btn-text")
-                span Следующий месяц
+                span Предыдущий месяц
             .calendar__year-select
               +select('thisYear',[{value: 2023,name: '2023'},{value: 2024,name: '2024'},{value: 2025,name: '2025'},{value: 2026,name: '2026'},{value: 2027,name: '2027'}],'changeYear')
             .calendar__month-select

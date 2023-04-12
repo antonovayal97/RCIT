@@ -308,17 +308,29 @@
 {
   display: flex;
   margin-bottom: 25px;
+  @include font-d-4;
+  @include l
+  {
+    @include font-t-3;
+  }
+  @include xm
+  {
+    flex-direction: column;
+    margin-bottom: 20px;
+    @include font-m-3;
+  }
 }
 .tel-page__result-org-text
 {
   margin-right: 10px;
-  @include font-d-4;
+  @include xm
+  {
+    margin-bottom: 10px;
+  }
 }
 .tel-page__result-org-name
 {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
 }
 .tel-page__result-list
 {
@@ -328,6 +340,10 @@
     li
     {
       margin-bottom: 40px;
+      @include xm
+      {
+        margin-bottom: 30px;
+      }
       &:last-child
       {
         margin-bottom: 0;
@@ -337,27 +353,54 @@
 }
 .tel-page__result-item
 {
-  display: flex;
-  @include font-d-6
+  display: grid;
+  justify-content: space-between;
+  grid-row-gap: 12px;
+  grid-template-areas:
+  "a b c d";
+   grid-template-columns: 305px 230px 80px 130px;
+  @include font-d-6;
+  @include l
+  {
+    justify-content: space-between;
+    grid-template-areas:
+    "a c d"
+    "b c d";
+     grid-template-columns: 305px 100px 130px;
+  }
+  @include xm
+  {
+    grid-row-gap: 10px;
+    justify-content: unset;
+    grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d";
+     grid-template-columns: 1fr;
+     @include font-m-3
+  }
 }
 .tel-page__item-a
 {
-  flex: 4
+  grid-area: a;
 }
 .tel-page__item-b
 {
-  flex: 3;
-  text-align: center;
+  grid-area: b;
 }
 .tel-page__item-c
 {
-  flex: 2;
-  text-align: center;
+  grid-area: c;
 }
 .tel-page__item-d
 {
-  flex: 2;
+  grid-area: d;
   text-align: right;
+  @include xm
+  {
+    text-align: left;
+  }
 }
 
 

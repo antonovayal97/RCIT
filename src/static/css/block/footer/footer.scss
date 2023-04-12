@@ -56,6 +56,14 @@ footer
     display: block;
   }
 }
+.footer__social-icon
+{
+  color: var(--color-grey-light);
+  &:hover
+  {
+    color: var(--color-white)
+  }
+}
 .footer__mid
 {
   display: flex;

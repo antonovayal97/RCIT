@@ -30,6 +30,31 @@ document.addEventListener("DOMContentLoaded",(event) => {
     }
   })
 
+let galary_modal = document.querySelector('.about-orcit__galary-modal')
+let imgModal = document.querySelector('.about-orcit__galary-modal-img')
+if(galary_modal)
+{
+  galary_modal.addEventListener("click",(e) =>{
+
+    let modal_wrap = document.querySelector('.about-orcit__galary-modal-wrap-bg')
+    modal_wrap.addEventListener("click",(e) =>{
+
+      galary_modal.classList.remove('about-orcit__galary-modal_active')
+
+    })
+
+  })
+}
+
+
+let photo_galary = document.querySelectorAll('.about-orcit__galary-item__img')
+photo_galary.forEach(item => {
+  item.addEventListener("click",(e) =>{
+
+    galary_modal.classList.add('about-orcit__galary-modal_active')
+    imgModal.innerHTML = '<img src="' + item.childNodes[0].src + '" >'
+  })
+});
 
 
   let fileinput =  document.querySelectorAll('.inputfile')
@@ -275,11 +300,25 @@ document.addEventListener("DOMContentLoaded",(event) => {
     sortSelect.forEach(item => {
       let sort_inside = item.querySelector('.news__select-inside')
       let sort_outside = item.querySelector('.news__select-outside')
+      let sort_text = item.querySelector('.news__select-outside-text')
+      let invisible_wrap = item.querySelector('.news__sort-wrap')
+      let options = item.querySelectorAll('.news__select-option')
+      options.forEach(opt => {
+        opt.addEventListener('click',() => {
+          item.classList.toggle('news__sort-select_active')
+           invisible_wrap.classList.remove("news__sort-wrap_active")
+          sort_text.innerHTML = '<span>' + opt.childNodes[0].innerText + '</span>'
+        })
+      })
+
       sort_outside.addEventListener('click',() => {
+        console.log(invisible_wrap)
+        invisible_wrap.classList.add("news__sort-wrap_active")
         item.classList.toggle('news__sort-select_active')
       })
-      sort_inside.addEventListener('click',() => {
-        item.classList.toggle('news__sort-select_active')
+      invisible_wrap.addEventListener("click", () => {
+        invisible_wrap.classList.remove("news__sort-wrap_active")
+        item.classList.remove('news__sort-select_active')
       })
     })
   }, 1)

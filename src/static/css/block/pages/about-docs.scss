@@ -65,6 +65,13 @@
     padding: 20px 15px;
     flex-direction: column;
   }
+  &:hover
+  {
+    .doc-link__name
+    {
+      color: var(--color-blue2);
+    }
+  }
 }
 .doc-link__name
 {

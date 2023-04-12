@@ -4,13 +4,76 @@ section
     .section__head
       h2 Популярные услуги
     .section__cards.section__cards_xl
-      .swiper.home-uslugi
-        .swiper-wrapper.home-uslugi__wrapper
-          each j in [{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"},{name:'Аренда каналов связи',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "arenda"},{name:'IP-Телефония',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "iptel"},{name:'Местная телефонная связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет',img: "call"},{name:'Видеоконференц связь',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "monitor"},{name:'Доступ к сети Интернет',text:'Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет', img: "global"}]
-            .swiper-slide.home-uslugi__slide
-              +uslugaCard(j.name,j.text,j.img,true)
-        .swiper-pagination
-      .swiper-button-next.home-uslugi__slide-btn.home-uslugi__slide-btn-next
-        +icon('uslugi-right-arrow')
-      .swiper-button-prev.home-uslugi__slide-btn.home-uslugi__slide-btn-prev
-        +icon('uslugi-left-arrow')
+      .home-newUslugi
+        .home-newUslugi__wrap
+          .home-newUslugi__row1
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("airdrop")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("glob")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+          .home-newUslugi__row2
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("airdrop")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("iptel")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+          .home-newUslugi__row3
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("videotel")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+            a(href="./uslugi-inside.html").new-uslg__card
+              .new-uslg__card-header
+                .new-uslg__card-header-icon
+                  +icon("phone")
+                .new-uslg__card-header-back
+                  +icon("arrowRight")
+              .new-uslg__card-bottom
+                .new-uslg__card-name
+                  span Аренда каналов связи
+                .new-uslg__card-desc
+                  span Имеющаяся сеть ВОЛС ГБУ РС (Я) "РЦИТ" в г. Якутск позволяет...
+        .dotted.home-news__dotted-1
+        .dotted.home-news__dotted-2

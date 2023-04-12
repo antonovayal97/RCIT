@@ -31,6 +31,20 @@
   margin-top: 27px;
   color: var(--color-blue-dark);
 }
+.news__sort-wrap
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  z-index: 2;
+  &_active
+  {
+    display: block;
+  }
+}
 .news__sort-text
 {
   margin-right: 10px;

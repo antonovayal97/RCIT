@@ -12,6 +12,13 @@
     align-items: flex-start;
     margin-bottom: 20px;
   }
+  &:hover
+  {
+    .document__name
+    {
+      color: var(--color-blue2)
+    }
+  }
 }
 .document__icon
 {

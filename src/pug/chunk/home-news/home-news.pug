@@ -1,15 +1,29 @@
 include ../components/news-card
-section.section_white-p
+section
   .index-wrap
     .section__head
       h2 Новости
     .section__cards.section__cards_xl
       .home-news
         .home-news__wrap
-          +newsCard()
-          +newsCard()
-          +newsCard()
-        .dotted.home-news__dotted-1
-        .dotted.home-news__dotted-2
-    .section__btn
-      +button("Все новости",'a','','./news.html')
+          a(href="./news-inside.html").home-new-news__card
+            .home-new-news__card-img
+              img(src="./img/news1.png")
+            .home-new-news__card-name
+              span Проверка систем оповещения населения 02 ноября в 10:40
+            .home-new-news__card-date
+              span 30.11.2022
+          a(href="./news-inside.html").home-new-news__card
+            .home-new-news__card-img
+              img(src="./img/news2.png")
+            .home-new-news__card-name
+              span Проверка систем оповещения населения 02 ноября в 10:40
+            .home-new-news__card-date
+              span 30.11.2022
+          a(href="./news-inside.html").home-new-news__card
+            .home-new-news__card-img
+              img(src="./img/news3.png")
+            .home-new-news__card-name
+              span Проверка систем оповещения населения 02 ноября в 10:40
+            .home-new-news__card-date
+              span 30.11.2022
